@@ -1,0 +1,178 @@
+BEGIN K_POSE_SEQUENCE
+  CHARACTER:Amber
+  START:asap
+  FADE_IN:200
+  FADE_OUT:200
+  BEGIN K_POSE            #  ---- Rest Pose  ----  #
+    TIME_POINT:+200
+    HOLD:500
+    BEGIN POSITION_CONSTRAINT
+      BODY_GROUP:rarm
+      TARGET:-0.3;-0.03;0.02
+      JOINT:rhand
+      OFFSET:0.0;0.0;0.0
+    END
+    BEGIN POSITION_CONSTRAINT
+      BODY_GROUP:larm
+      TARGET:0.2;-0.03;0.02
+      JOINT:lhand
+      OFFSET:0.0;0.0;0.0
+    END
+  END
+  BEGIN K_POSE         #  ---- First Pose hands touching ----   #
+    TIME_POINT:+900
+    HOLD:0
+    BEGIN POSITION_CONSTRAINT
+      BODY_GROUP:rarm
+      TARGET:-0.02;-0.31;0.32
+      JOINT:rhand
+      OFFSET:0.0;0.0;0.0
+    END
+    BEGIN ORIENTATION_CONSTRAINT
+      BODY_GROUP:rarm
+      DIRECTION:-1.0;0.0;0.0
+      NORMAL:Zaxis
+      JOINT:rhand
+    END
+    BEGIN POSITION_CONSTRAINT
+      BODY_GROUP:larm
+      TARGET:0.03;-0.36;0.33
+      JOINT:lhand
+      OFFSET:0.0;0.0;0.0
+    END
+    BEGIN ORIENTATION_CONSTRAINT
+      BODY_GROUP:larm
+      DIRECTION:1.0;0.0;0.0
+      NORMAL:Zaxis
+      JOINT:lhand
+    END
+  END
+    BEGIN K_POSE         #  ---- Second Pose hands outside ----   #
+    TIME_POINT:+1400
+    HOLD:0
+    BEGIN POSITION_CONSTRAINT
+      BODY_GROUP:rarm
+      TARGET:-0.17;-0.31;0.32
+      JOINT:rhand
+      OFFSET:0.0;0.0;0.0
+    END
+    BEGIN ORIENTATION_CONSTRAINT
+      BODY_GROUP:rarm
+      DIRECTION:-1.0;0.5;0.0
+      NORMAL:Zaxis
+      JOINT:rhand
+    END
+    BEGIN POSITION_CONSTRAINT
+      BODY_GROUP:larm
+      TARGET:0.17;-0.36;0.33
+      JOINT:lhand
+      OFFSET:0.0;0.0;0.0
+    END
+    BEGIN ORIENTATION_CONSTRAINT
+      BODY_GROUP:larm
+      DIRECTION:1.0;0.5;0.0
+      NORMAL:Zaxis
+      JOINT:lhand
+    END
+  END
+  BEGIN K_POSE         #  ---- Third Pose hands touching ----   #
+    TIME_POINT:+1900
+    HOLD:0
+    BEGIN POSITION_CONSTRAINT
+      BODY_GROUP:rarm
+      TARGET:-0.02;-0.31;0.32
+      JOINT:rhand
+      OFFSET:0.0;0.0;0.0
+    END
+    BEGIN ORIENTATION_CONSTRAINT
+      BODY_GROUP:rarm
+      DIRECTION:-1.0;0.0;0.0
+      NORMAL:Zaxis
+      JOINT:rhand
+    END
+    BEGIN POSITION_CONSTRAINT
+      BODY_GROUP:larm
+      TARGET:0.03;-0.36;0.33
+      JOINT:lhand
+      OFFSET:0.0;0.0;0.0
+    END
+    BEGIN ORIENTATION_CONSTRAINT
+      BODY_GROUP:larm
+      DIRECTION:1.0;0.0;0.0
+      NORMAL:Zaxis
+      JOINT:lhand
+    END
+  END
+    BEGIN K_POSE         #  ---- Fourth Pose hands outside ----   #
+    TIME_POINT:+2400
+    HOLD:0
+    BEGIN POSITION_CONSTRAINT
+      BODY_GROUP:rarm
+      TARGET:-0.17;-0.31;0.32
+      JOINT:rhand
+      OFFSET:0.0;0.0;0.0
+    END
+    BEGIN ORIENTATION_CONSTRAINT
+      BODY_GROUP:rarm
+      DIRECTION:-1.0;0.5;0.0
+      NORMAL:Zaxis
+      JOINT:rhand
+    END
+    BEGIN POSITION_CONSTRAINT
+      BODY_GROUP:larm
+      TARGET:0.17;-0.36;0.33
+      JOINT:lhand
+      OFFSET:0.0;0.0;0.0
+    END
+    BEGIN ORIENTATION_CONSTRAINT
+      BODY_GROUP:larm
+      DIRECTION:1.0;0.5;0.0
+      NORMAL:Zaxis
+      JOINT:lhand
+    END
+  END
+  BEGIN K_POSE         #  ---- Fifth Pose hands togehter ----   #
+    TIME_POINT:+2900
+    HOLD:0
+    BEGIN POSITION_CONSTRAINT
+      BODY_GROUP:rarm
+      TARGET:-0.02;-0.31;0.32
+      JOINT:rhand
+      OFFSET:0.0;0.0;0.0
+    END
+    BEGIN ORIENTATION_CONSTRAINT
+      BODY_GROUP:rarm
+      DIRECTION:-1.0;0.0;0.0
+      NORMAL:Zaxis
+      JOINT:rhand
+    END
+    BEGIN POSITION_CONSTRAINT
+      BODY_GROUP:larm
+      TARGET:0.03;-0.36;0.33
+      JOINT:lhand
+      OFFSET:0.0;0.0;0.0
+    END
+    BEGIN ORIENTATION_CONSTRAINT
+      BODY_GROUP:larm
+      DIRECTION:1.0;0.0;0.0
+      NORMAL:Zaxis
+      JOINT:lhand
+    END
+  END
+    BEGIN K_POSE            #  ---- Rest Pose  ----  #
+    TIME_POINT:+3300
+    HOLD:500
+    BEGIN POSITION_CONSTRAINT
+      BODY_GROUP:rarm
+      TARGET:-0.3;-0.03;0.02
+      JOINT:rhand
+      OFFSET:0.0;0.0;0.0
+    END
+    BEGIN POSITION_CONSTRAINT
+      BODY_GROUP:larm
+      TARGET:0.2;-0.03;0.02
+      JOINT:lhand
+      OFFSET:0.0;0.0;0.0
+    END
+  END
+END

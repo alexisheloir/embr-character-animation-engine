@@ -1,0 +1,1661 @@
+<CoordinateSystem> { Z-Up }
+
+<Comment> {
+  "egg-optchar -keepall -inplace -flag hair1=hairMidLong -flag hair2=hairRasta 'C:\Users\aheloir\Desktop\HeikeL\faceGen.egg' 'C:\Users\aheloir\Desktop\HeikeL\faceGen-anim1.egg'"
+}
+<Comment> {
+  "Egg laid by Chicken for Blender vR44"
+}
+<Table> {
+  <Bundle> Armature {
+    <Table> morph {
+      <S$Anim> Basis {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 0_PhonW {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 0_Phonth {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 0_PhonR {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> "0_Phonooh,Q" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 0_Phonoh {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 0_PhonN {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 0_PhonK {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 0_Phoni {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> "0_PhonF,V" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 0_Phoneh {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 0_Phonee {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> "0_PhonD,S,T" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> "0_Phonch,J,sh" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 0_Phonbigaah {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> "0_PhonB,M,P" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 0_Phonaah {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 0_ModLookUp {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 0_ModLookRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 0_ModLookLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 0_ModLookDown {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 0_ModEyeSquintRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 0_ModEyeSquintLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 0_ModEarsOut {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 0_ModBrowUpRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 0_ModBrowUpLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 0_ModBrowInRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 0_ModBrowInLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 0_ModBrowDownRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 0_ModBrowDownLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 0_ModBlinkRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 0_ModBlinkLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 0_ExpSurprise {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 0_ExpSmileOpen {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 0_ExpSmileClosed {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 0_ExpSad {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 0_ExpFear {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 0_ExpDisgust {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 0_ExpAnger {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> Basis {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_PhonW {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 5_Phonth {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 5_PhonR {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> "5_Phonooh,Q" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 5_Phonoh {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 5_PhonN {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 5_PhonK {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 5_Phoni {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> "5_PhonF,V" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 5_Phoneh {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 5_Phonee {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> "5_PhonD,S,T" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> "5_Phonch,J,sh" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 5_Phonbigaah {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> "5_PhonB,M,P" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 5_Phonaah {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 5_ModLookUp {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 5_ModLookRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 5_ModLookLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 5_ModLookDown {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 5_ModEyeSquintRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 5_ModEyeSquintLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 5_ModEarsOut {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 5_ModBrowUpRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 5_ModBrowUpLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 5_ModBrowInRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 5_ModBrowInLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 5_ModBrowDownRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 5_ModBrowDownLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 5_ModBlinkRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 5_ModBlinkLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 5_ExpSurprise {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 5_ExpSmileOpen {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 5_ExpSmileClosed {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 5_ExpSad {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 5_ExpFear {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 5_ExpDisgust {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 5_ExpAnger {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> Basis {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 1_PhonW {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 1_Phonth {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 1_PhonR {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> "1_Phonooh,Q" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 1_Phonoh {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 1_PhonN {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 1_PhonK {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 1_Phoni {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> "1_PhonF,V" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 1_Phoneh {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 1_Phonee {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> "1_PhonD,S,T" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> "1_Phonch,J,sh" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 1_Phonbigaah {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> "1_PhonB,M,P" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 1_Phonaah {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 1_ModLookUp {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 1_ModLookRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 1_ModLookLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 1_ModLookDown {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 1_ModEyeSquintRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 1_ModEyeSquintLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 1_ModEarsOut {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 1_ModBrowUpRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 1_ModBrowUpLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 1_ModBrowInRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 1_ModBrowInLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 1_ModBrowDownRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 1_ModBrowDownLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 1_ModBlinkRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 1_ModBlinkLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 1_ExpSurprise {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 1_ExpSmileOpen {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 1_ExpSmileClosed {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 1_ExpSad {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 1_ExpFear {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 1_ExpDisgust {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 1_ExpAnger {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> Basis {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_PhonW {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 6_Phonth {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 6_PhonR {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> "6_Phonooh,Q" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 6_Phonoh {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 6_PhonN {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 6_PhonK {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 6_Phoni {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> "6_PhonF,V" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 6_Phoneh {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 6_Phonee {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> "6_PhonD,S,T" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> "6_Phonch,J,sh" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 6_Phonbigaah {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> "6_PhonB,M,P" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 6_Phonaah {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 6_ModLookUp {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 6_ModLookRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 6_ModLookLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 6_ModLookDown {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 6_ModEyeSquintRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 6_ModEyeSquintLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 6_ModEarsOut {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 6_ModBrowUpRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 6_ModBrowUpLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 6_ModBrowInRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 6_ModBrowInLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 6_ModBrowDownRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 6_ModBrowDownLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 6_ModBlinkRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 6_ModBlinkLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 6_ExpSurprise {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 6_ExpSmileOpen {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 6_ExpSmileClosed {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 6_ExpSad {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 6_ExpFear {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 6_ExpDisgust {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 6_ExpAnger {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> Basis {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_PhonW {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 2_Phonth {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 2_PhonR {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> "2_Phonooh,Q" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 2_Phonoh {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 2_PhonN {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 2_PhonK {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 2_Phoni {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> "2_PhonF,V" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 2_Phoneh {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 2_Phonee {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> "2_PhonD,S,T" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> "2_Phonch,J,sh" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 2_Phonbigaah {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> "2_PhonB,M,P" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 2_Phonaah {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 2_ModLookUp {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 2_ModLookRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 2_ModLookLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 2_ModLookDown {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 2_ModEyeSquintRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 2_ModEyeSquintLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 2_ModEarsOut {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 2_ModBrowUpRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 2_ModBrowUpLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 2_ModBrowInRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 2_ModBrowInLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 2_ModBrowDownRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 2_ModBrowDownLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 2_ModBlinkRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 2_ModBlinkLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 2_ExpSurprise {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 2_ExpSmileOpen {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 2_ExpSmileClosed {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 2_ExpSad {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 2_ExpFear {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 2_ExpDisgust {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 2_ExpAnger {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> Basis {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_PhonW {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 3_Phonth {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 3_PhonR {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> "3_Phonooh,Q" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 3_Phonoh {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 3_PhonN {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 3_PhonK {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 3_Phoni {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> "3_PhonF,V" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 3_Phoneh {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 3_Phonee {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> "3_PhonD,S,T" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> "3_Phonch,J,sh" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 3_Phonbigaah {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> "3_PhonB,M,P" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 3_Phonaah {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 3_ModLookUp {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 3_ModLookRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 3_ModLookLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 3_ModLookDown {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 3_ModEyeSquintRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 3_ModEyeSquintLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 3_ModEarsOut {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 3_ModBrowUpRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 3_ModBrowUpLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 3_ModBrowInRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 3_ModBrowInLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 3_ModBrowDownRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 3_ModBrowDownLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 3_ModBlinkRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 3_ModBlinkLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 3_ExpSurprise {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 3_ExpSmileOpen {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 3_ExpSmileClosed {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 3_ExpSad {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 3_ExpFear {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 3_ExpDisgust {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 3_ExpAnger {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> Basis {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_PhonW {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 4_Phonth {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 4_PhonR {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> "4_Phonooh,Q" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 4_Phonoh {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 4_PhonN {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 4_PhonK {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 4_Phoni {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> "4_PhonF,V" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 4_Phoneh {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 4_Phonee {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> "4_PhonD,S,T" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> "4_Phonch,J,sh" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 4_Phonbigaah {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> "4_PhonB,M,P" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 4_Phonaah {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 4_ModLookUp {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 4_ModLookRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 4_ModLookLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 4_ModLookDown {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 4_ModEyeSquintRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 4_ModEyeSquintLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 4_ModEarsOut {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 4_ModBrowUpRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 4_ModBrowUpLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 4_ModBrowInRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 4_ModBrowInLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 4_ModBrowDownRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 4_ModBrowDownLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 4_ModBlinkRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 4_ModBlinkLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 4_ExpSurprise {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 4_ExpSmileOpen {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 4_ExpSmileClosed {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 4_ExpSad {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 4_ExpFear {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 4_ExpDisgust {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+      <S$Anim> 4_ExpAnger {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+        }
+      }
+    }
+    <Table> "<skeleton>" {
+      <Table> Bone {
+        <Xfm$Anim_S$> xform {
+          <Scalar> fps { 24 }
+          <Char*> order { sprht }
+          <S$Anim> p { <V> { 90 } }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,3302 @@
+<CoordinateSystem> { Z-Up }
+
+<Comment> {
+  "egg-optchar -flag Trousers=theTrousers -flag lshoe=theLeftShoe -flag rshoe=theRightShoe -flag Jacket=theJacket -flag bodyAndHead=theBody -flag 2_a=theHead -flag hair=theHair -flag leye=theLEye -flag reye=theREye -keepall -inplace -pd 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber' -ps rel 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_claw.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_fist.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_index.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_open_relaxed.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_open_spread.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_open_straight.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_purse.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_ring.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_DGS_A.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_DGS_B.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_DGS_C.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_DGS_D.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_DGS_E.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_DGS_F.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_DGS_G.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_DGS_H.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_DGS_I.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_DGS_J.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_DGS_K.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_DGS_L.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_DGS_M.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_DGS_N.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_DGS_O.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_DGS_P.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_DGS_Q.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_DGS_R.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_DGS_T.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_DGS_U.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_DGS_V.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_DGS_W.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_DGS_X.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_DGS_Y.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_DGS_Z.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_DGS_SCH.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_ASL_G.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_ASL_M.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_ASL_N.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_ASL_T.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_ASL_SCL.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_ASL_1CL.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_ASL_2CL.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_ASL_3CL.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_ASL_4CL.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_ASL_5aCL.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_ASL_5bCL.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_ASL_ACL.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_ASL_BCL.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_ASL_CCL.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_ASL_FCL.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_ASL_GCL.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_ASL_ICL.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_ASL_ILYCL.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_ASL_VaCL.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_ASL_VbCL.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_ASL_YCL.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_ASL_TCL.egg' 'C:\Users\aheloir\projects\programming\NEMBR\DEVELOPMENT\TRUNK\data\amber\amber-hands_ASL_CbCL.egg'"
+}
+<Comment> {
+  "Egg laid by Chicken for Blender vR44"
+}
+<Table> {
+  <Bundle> Armature {
+    <Table> morph {
+      <S$Anim> Basis {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> inspire {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> Basis {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_PhonW {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_Phonth {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_PhonR {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "2_Phonooh,Q" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_Phonoh {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_PhonN {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_PhonK {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_Phoni {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "2_PhonF,V" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_Phoneh {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_Phonee {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "2_PhonD,S,T" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "2_Phonch,J,sh" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_Phonbigaah {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "2_PhonB,M,P" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_Phonaah {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_ModLookUp {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_ModLookRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_ModLookLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_ModLookDown {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_ModEyeSquintRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_ModEyeSquintLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_ModEarsOut {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_ModBrowUpRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_ModBrowUpLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_ModBrowInRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_ModBrowInLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_ModBrowDownRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_ModBrowDownLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_ModBlinkRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_ModBlinkLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_ExpSurprise {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_ExpSmileOpen {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_ExpSmileClosed {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_ExpSad {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_ExpFear {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_ExpDisgust {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_ExpAnger {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> Basis {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_PhonW {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_Phonth {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_PhonR {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "3_Phonooh,Q" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_Phonoh {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_PhonN {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_PhonK {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_Phoni {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "3_PhonF,V" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_Phoneh {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_Phonee {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "3_PhonD,S,T" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "3_Phonch,J,sh" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_Phonbigaah {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "3_PhonB,M,P" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_Phonaah {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_ModLookUp {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_ModLookRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_ModLookLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_ModLookDown {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_ModEyeSquintRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_ModEyeSquintLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_ModEarsOut {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_ModBrowUpRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_ModBrowUpLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_ModBrowInRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_ModBrowInLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_ModBrowDownRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_ModBrowDownLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_ModBlinkRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_ModBlinkLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_ExpSurprise {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_ExpSmileOpen {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_ExpSmileClosed {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_ExpSad {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_ExpFear {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_ExpDisgust {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_ExpAnger {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> Basis {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_PhonW {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_Phonth {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_PhonR {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "4_Phonooh,Q" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_Phonoh {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_PhonN {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_PhonK {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_Phoni {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "4_PhonF,V" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_Phoneh {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_Phonee {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "4_PhonD,S,T" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "4_Phonch,J,sh" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_Phonbigaah {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "4_PhonB,M,P" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_Phonaah {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_ModLookUp {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_ModLookRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_ModLookLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_ModLookDown {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_ModEyeSquintRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_ModEyeSquintLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_ModEarsOut {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_ModBrowUpRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_ModBrowUpLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_ModBrowInRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_ModBrowInLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_ModBrowDownRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_ModBrowDownLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_ModBlinkRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_ModBlinkLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_ExpSurprise {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_ExpSmileOpen {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_ExpSmileClosed {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_ExpSad {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_ExpFear {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_ExpDisgust {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_ExpAnger {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> Basis {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_PhonW {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_Phonth {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_PhonR {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "5_Phonooh,Q" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_Phonoh {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_PhonN {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_PhonK {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_Phoni {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "5_PhonF,V" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_Phoneh {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_Phonee {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "5_PhonD,S,T" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "5_Phonch,J,sh" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_Phonbigaah {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "5_PhonB,M,P" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_Phonaah {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_ModLookUp {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_ModLookRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_ModLookLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_ModLookDown {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_ModEyeSquintRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_ModEyeSquintLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_ModEarsOut {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_ModBrowUpRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_ModBrowUpLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_ModBrowInRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_ModBrowInLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_ModBrowDownRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_ModBrowDownLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_ModBlinkRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_ModBlinkLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_ExpSurprise {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_ExpSmileOpen {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_ExpSmileClosed {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_ExpSad {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_ExpFear {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_ExpDisgust {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_ExpAnger {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> Basis {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_PhonW {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_Phonth {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_PhonR {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "6_Phonooh,Q" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_Phonoh {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_PhonN {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_PhonK {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_Phoni {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "6_PhonF,V" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_Phoneh {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_Phonee {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "6_PhonD,S,T" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "6_Phonch,J,sh" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_Phonbigaah {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "6_PhonB,M,P" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_Phonaah {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_ModLookUp {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_ModLookRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_ModLookLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_ModLookDown {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_ModEyeSquintRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_ModEyeSquintLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_ModEarsOut {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_ModBrowUpRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_ModBrowUpLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_ModBrowInRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_ModBrowInLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_ModBrowDownRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_ModBrowDownLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_ModBlinkRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_ModBlinkLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_ExpSurprise {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_ExpSmileOpen {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_ExpSmileClosed {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_ExpSad {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_ExpFear {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_ExpDisgust {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_ExpAnger {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> Basis {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> inspire {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> Basis {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_PhonW {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_Phonth {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_PhonR {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "2_Phonooh,Q" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_Phonoh {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_PhonN {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_PhonK {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_Phoni {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "2_PhonF,V" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_Phoneh {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_Phonee {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "2_PhonD,S,T" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "2_Phonch,J,sh" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_Phonbigaah {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "2_PhonB,M,P" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_Phonaah {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_ModLookUp {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_ModLookRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_ModLookLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_ModLookDown {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_ModEyeSquintRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_ModEyeSquintLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_ModEarsOut {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_ModBrowUpRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_ModBrowUpLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_ModBrowInRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_ModBrowInLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_ModBrowDownRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_ModBrowDownLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_ModBlinkRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_ModBlinkLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_ExpSurprise {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_ExpSmileOpen {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_ExpSmileClosed {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_ExpSad {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_ExpFear {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_ExpDisgust {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 2_ExpAnger {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> Basis {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_PhonW {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_Phonth {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_PhonR {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "3_Phonooh,Q" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_Phonoh {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_PhonN {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_PhonK {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_Phoni {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "3_PhonF,V" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_Phoneh {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_Phonee {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "3_PhonD,S,T" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "3_Phonch,J,sh" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_Phonbigaah {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "3_PhonB,M,P" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_Phonaah {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_ModLookUp {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_ModLookRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_ModLookLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_ModLookDown {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_ModEyeSquintRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_ModEyeSquintLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_ModEarsOut {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_ModBrowUpRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_ModBrowUpLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_ModBrowInRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_ModBrowInLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_ModBrowDownRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_ModBrowDownLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_ModBlinkRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_ModBlinkLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_ExpSurprise {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_ExpSmileOpen {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_ExpSmileClosed {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_ExpSad {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_ExpFear {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_ExpDisgust {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 3_ExpAnger {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> Basis {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_PhonW {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_Phonth {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_PhonR {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "4_Phonooh,Q" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_Phonoh {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_PhonN {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_PhonK {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_Phoni {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "4_PhonF,V" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_Phoneh {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_Phonee {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "4_PhonD,S,T" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "4_Phonch,J,sh" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_Phonbigaah {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "4_PhonB,M,P" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_Phonaah {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_ModLookUp {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_ModLookRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_ModLookLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_ModLookDown {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_ModEyeSquintRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_ModEyeSquintLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_ModEarsOut {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_ModBrowUpRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_ModBrowUpLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_ModBrowInRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_ModBrowInLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_ModBrowDownRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_ModBrowDownLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_ModBlinkRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_ModBlinkLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_ExpSurprise {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_ExpSmileOpen {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_ExpSmileClosed {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_ExpSad {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_ExpFear {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_ExpDisgust {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 4_ExpAnger {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> Basis {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_PhonW {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_Phonth {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_PhonR {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "5_Phonooh,Q" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_Phonoh {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_PhonN {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_PhonK {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_Phoni {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "5_PhonF,V" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_Phoneh {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_Phonee {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "5_PhonD,S,T" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "5_Phonch,J,sh" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_Phonbigaah {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "5_PhonB,M,P" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_Phonaah {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_ModLookUp {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_ModLookRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_ModLookLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_ModLookDown {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_ModEyeSquintRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_ModEyeSquintLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_ModEarsOut {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_ModBrowUpRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_ModBrowUpLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_ModBrowInRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_ModBrowInLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_ModBrowDownRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_ModBrowDownLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_ModBlinkRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_ModBlinkLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_ExpSurprise {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_ExpSmileOpen {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_ExpSmileClosed {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_ExpSad {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_ExpFear {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_ExpDisgust {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 5_ExpAnger {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> Basis {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_PhonW {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_Phonth {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_PhonR {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "6_Phonooh,Q" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_Phonoh {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_PhonN {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_PhonK {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_Phoni {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "6_PhonF,V" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_Phoneh {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_Phonee {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "6_PhonD,S,T" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "6_Phonch,J,sh" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_Phonbigaah {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> "6_PhonB,M,P" {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_Phonaah {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_ModLookUp {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_ModLookRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_ModLookLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_ModLookDown {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_ModEyeSquintRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_ModEyeSquintLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_ModEarsOut {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_ModBrowUpRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_ModBrowUpLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_ModBrowInRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_ModBrowInLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_ModBrowDownRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_ModBrowDownLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_ModBlinkRight {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_ModBlinkLeft {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_ExpSurprise {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_ExpSmileOpen {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_ExpSmileClosed {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_ExpSad {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_ExpFear {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_ExpDisgust {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+      <S$Anim> 6_ExpAnger {
+        <Scalar> fps { 24 }
+        <V> {
+          0 1
+        }
+      }
+    }
+    <Table> "<skeleton>" {
+      <Table> root {
+        <Xfm$Anim_S$> xform {
+          <Scalar> fps { 24 }
+          <Char*> order { sprht }
+          <S$Anim> h { <V> { -89.9999 } }
+          <S$Anim> p { <V> { 90.0013 } }
+          <S$Anim> r { <V> { 0.488358 } }
+          <S$Anim> y { <V> { 0.0393311 } }
+          <S$Anim> z { <V> { -0.0477869 } }
+        }
+        <Table> hip.Left {
+          <Xfm$Anim_S$> xform {
+            <Scalar> fps { 24 }
+            <Char*> order { sprht }
+            <S$Anim> h { <V> { 21.4557 } }
+            <S$Anim> p { <V> { -110.969 } }
+            <S$Anim> r { <V> { -32.8254 } }
+            <S$Anim> y { <V> { 0.0605139 } }
+          }
+          <Table> femur.Left {
+            <Xfm$Anim_S$> xform {
+              <Scalar> fps { 24 }
+              <Char*> order { sprht }
+              <S$Anim> h { <V> { 38.685 } }
+              <S$Anim> p { <V> { -64.1941 } }
+              <S$Anim> r { <V> { 12.6165 } }
+              <S$Anim> y { <V> { 0.10727 } }
+            }
+            <Table> tibias.Left {
+              <Xfm$Anim_S$> xform {
+                <Scalar> fps { 24 }
+                <Char*> order { sprht }
+                <S$Anim> h { <V> { 1.63024 } }
+                <S$Anim> p { <V> { -4.37133 } }
+                <S$Anim> r { <V> { -2.35528 } }
+                <S$Anim> y { <V> { 0.436317 } }
+              }
+              <Table> foot.Left {
+                <Xfm$Anim_S$> xform {
+                  <Scalar> fps { 24 }
+                  <Char*> order { sprht }
+                  <S$Anim> h { <V> { 14.6872 } }
+                  <S$Anim> p { <V> { 71.1004 } }
+                  <S$Anim> r { <V> { 103.008 } }
+                  <S$Anim> y { <V> { 0.381117 } }
+                }
+                <Table> toeLittleMCP.Left {
+                  <Xfm$Anim_S$> xform {
+                    <Scalar> fps { 24 }
+                    <Char*> order { sprht }
+                    <S$Anim> h { <V> { 16.3417 } }
+                    <S$Anim> p { <V> { 11.236 } }
+                    <S$Anim> r { <V> { 18.2628 } }
+                    <S$Anim> x { <V> { -0.0696357 } }
+                    <S$Anim> y { <V> { 0.123315 } }
+                    <S$Anim> z { <V> { -0.0101206 } }
+                  }
+                  <Table> toeLitteIP.Left {
+                    <Xfm$Anim_S$> xform {
+                      <Scalar> fps { 24 }
+                      <Char*> order { sprht }
+                      <S$Anim> h { <V> { -0.00026422 } }
+                      <S$Anim> p { <V> { 0.000515242 } }
+                      <S$Anim> r { <V> { 0.00119673 } }
+                      <S$Anim> y { <V> { 0.0388962 } }
+                    }
+                  }
+                }
+                <Table> toeIndexMCP.Left {
+                  <Xfm$Anim_S$> xform {
+                    <Scalar> fps { 24 }
+                    <Char*> order { sprht }
+                    <S$Anim> h { <V> { 18.0639 } }
+                    <S$Anim> p { <V> { 11.8958 } }
+                    <S$Anim> r { <V> { 22.112 } }
+                    <S$Anim> x { <V> { -0.0256981 } }
+                    <S$Anim> y { <V> { 0.152342 } }
+                    <S$Anim> z { <V> { -0.000555641 } }
+                  }
+                  <Table> toeIndexIP.Left {
+                    <Xfm$Anim_S$> xform {
+                      <Scalar> fps { 24 }
+                      <Char*> order { sprht }
+                      <S$Anim> h { <V> { -0.000297111 } }
+                      <S$Anim> p { <V> { 0.000708434 } }
+                      <S$Anim> r { <V> { 0.000325664 } }
+                      <S$Anim> y { <V> { 0.0443575 } }
+                    }
+                  }
+                }
+                <Table> toeMCP.Left {
+                  <Xfm$Anim_S$> xform {
+                    <Scalar> fps { 24 }
+                    <Char*> order { sprht }
+                    <S$Anim> h { <V> { 25.0922 } }
+                    <S$Anim> p { <V> { 13.5825 } }
+                    <S$Anim> r { <V> { 38.1824 } }
+                    <S$Anim> y { <V> { 0.153963 } }
+                  }
+                  <Table> toeIP.Left {
+                    <Xfm$Anim_S$> xform {
+                      <Scalar> fps { 24 }
+                      <Char*> order { sprht }
+                      <S$Anim> p { <V> { 0.00120996 } }
+                      <S$Anim> r { <V> { 0.000306397 } }
+                      <S$Anim> y { <V> { 0.0358924 } }
+                    }
+                  }
+                }
+                <Table> toeMiddleMCP.Left {
+                  <Xfm$Anim_S$> xform {
+                    <Scalar> fps { 24 }
+                    <Char*> order { sprht }
+                    <S$Anim> h { <V> { 18.4802 } }
+                    <S$Anim> p { <V> { 16.0191 } }
+                    <S$Anim> r { <V> { 18.9168 } }
+                    <S$Anim> x { <V> { -0.0418865 } }
+                    <S$Anim> y { <V> { 0.141746 } }
+                    <S$Anim> z { <V> { -0.00696758 } }
+                  }
+                  <Table> toeMiddleIP.Left {
+                    <Xfm$Anim_S$> xform {
+                      <Scalar> fps { 24 }
+                      <Char*> order { sprht }
+                      <S$Anim> h { <V> { -0.000230821 } }
+                      <S$Anim> p { <V> { 0.000241745 } }
+                      <S$Anim> r { <V> { 0.00144555 } }
+                      <S$Anim> y { <V> { 0.0415714 } }
+                    }
+                  }
+                }
+                <Table> toeRingMCP.Left {
+                  <Xfm$Anim_S$> xform {
+                    <Scalar> fps { 24 }
+                    <Char*> order { sprht }
+                    <S$Anim> h { <V> { 18.2956 } }
+                    <S$Anim> p { <V> { 13.6488 } }
+                    <S$Anim> r { <V> { 20.772 } }
+                    <S$Anim> x { <V> { -0.0553331 } }
+                    <S$Anim> y { <V> { 0.129315 } }
+                    <S$Anim> z { <V> { -0.00880214 } }
+                  }
+                  <Table> toeRingIP.Left {
+                    <Xfm$Anim_S$> xform {
+                      <Scalar> fps { 24 }
+                      <Char*> order { sprht }
+                      <S$Anim> h { <V> { -0.000488219 } }
+                      <S$Anim> p { <V> { 0.000546929 } }
+                      <S$Anim> r { <V> { -0.000425572 } }
+                      <S$Anim> y { <V> { 0.0408997 } }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        <Table> hip.Right {
+          <Xfm$Anim_S$> xform {
+            <Scalar> fps { 24 }
+            <Char*> order { sprht }
+            <S$Anim> h { <V> { -146.819 } }
+            <S$Anim> p { <V> { 57.3085 } }
+            <S$Anim> r { <V> { -30.815 } }
+            <S$Anim> y { <V> { 0.0605139 } }
+          }
+          <Table> femur.Right {
+            <Xfm$Anim_S$> xform {
+              <Scalar> fps { 24 }
+              <Char*> order { sprht }
+              <S$Anim> h { <V> { -48.4642 } }
+              <S$Anim> p { <V> { -50.4852 } }
+              <S$Anim> r { <V> { -13.0265 } }
+              <S$Anim> y { <V> { 0.0985945 } }
+            }
+            <Table> tibias.Right {
+              <Xfm$Anim_S$> xform {
+                <Scalar> fps { 24 }
+                <Char*> order { sprht }
+                <S$Anim> h { <V> { -0.595477 } }
+                <S$Anim> p { <V> { -6.02344 } }
+                <S$Anim> r { <V> { -13.3899 } }
+                <S$Anim> y { <V> { 0.431417 } }
+              }
+              <Table> foot.Right {
+                <Xfm$Anim_S$> xform {
+                  <Scalar> fps { 24 }
+                  <Char*> order { sprht }
+                  <S$Anim> h { <V> { -56.1231 } }
+                  <S$Anim> p { <V> { 112.837 } }
+                  <S$Anim> r { <V> { -93.9085 } }
+                  <S$Anim> y { <V> { 0.381082 } }
+                }
+                <Table> toeRingMCP.Right {
+                  <Xfm$Anim_S$> xform {
+                    <Scalar> fps { 24 }
+                    <Char*> order { sprht }
+                    <S$Anim> h { <V> { -18.2924 } }
+                    <S$Anim> p { <V> { 13.6377 } }
+                    <S$Anim> r { <V> { -20.7456 } }
+                    <S$Anim> x { <V> { 0.0553286 } }
+                    <S$Anim> y { <V> { 0.129314 } }
+                    <S$Anim> z { <V> { -0.00883398 } }
+                  }
+                  <Table> toeRingIP.Right {
+                    <Xfm$Anim_S$> xform {
+                      <Scalar> fps { 24 }
+                      <Char*> order { sprht }
+                      <S$Anim> h { <V> { 0.000338626 } }
+                      <S$Anim> r { <V> { -0.00148816 } }
+                      <S$Anim> y { <V> { 0.0408995 } }
+                    }
+                  }
+                }
+                <Table> toeLittleMCP.Right {
+                  <Xfm$Anim_S$> xform {
+                    <Scalar> fps { 24 }
+                    <Char*> order { sprht }
+                    <S$Anim> h { <V> { -16.341 } }
+                    <S$Anim> p { <V> { 11.2267 } }
+                    <S$Anim> r { <V> { -18.2439 } }
+                    <S$Anim> x { <V> { 0.0696307 } }
+                    <S$Anim> y { <V> { 0.123315 } }
+                    <S$Anim> z { <V> { -0.0101607 } }
+                  }
+                  <Table> toeLittleIP.Right {
+                    <Xfm$Anim_S$> xform {
+                      <Scalar> fps { 24 }
+                      <Char*> order { sprht }
+                      <S$Anim> h { <V> { 0.00043762 } }
+                      <S$Anim> p { <V> { 0.000744793 } }
+                      <S$Anim> r { <V> { -0.00039894 } }
+                      <S$Anim> y { <V> { 0.0388961 } }
+                    }
+                  }
+                }
+                <Table> toeMCP.Right {
+                  <Xfm$Anim_S$> xform {
+                    <Scalar> fps { 24 }
+                    <Char*> order { sprht }
+                    <S$Anim> h { <V> { -25.078 } }
+                    <S$Anim> p { <V> { 13.5628 } }
+                    <S$Anim> r { <V> { -38.1444 } }
+                    <S$Anim> y { <V> { 0.153959 } }
+                  }
+                  <Table> toeIP.Right {
+                    <Xfm$Anim_S$> xform {
+                      <Scalar> fps { 24 }
+                      <Char*> order { sprht }
+                      <S$Anim> h { <V> { 0.000207824 } }
+                      <S$Anim> p { <V> { 0.000864579 } }
+                      <S$Anim> r { <V> { -0.0012235 } }
+                      <S$Anim> y { <V> { 0.0358923 } }
+                    }
+                  }
+                }
+                <Table> toeIndexMCP.Right {
+                  <Xfm$Anim_S$> xform {
+                    <Scalar> fps { 24 }
+                    <Char*> order { sprht }
+                    <S$Anim> h { <V> { -18.0607 } }
+                    <S$Anim> p { <V> { 11.885 } }
+                    <S$Anim> r { <V> { -22.0871 } }
+                    <S$Anim> x { <V> { 0.025698 } }
+                    <S$Anim> y { <V> { 0.152339 } }
+                    <S$Anim> z { <V> { -0.000570541 } }
+                  }
+                  <Table> toeIndexIP.Right {
+                    <Xfm$Anim_S$> xform {
+                      <Scalar> fps { 24 }
+                      <Char*> order { sprht }
+                      <S$Anim> h { <V> { 0.000259278 } }
+                      <S$Anim> p { <V> { 0.000722081 } }
+                      <S$Anim> r { <V> { -0.00170843 } }
+                      <S$Anim> y { <V> { 0.0443577 } }
+                    }
+                  }
+                }
+                <Table> toeMiddleMCP.Right {
+                  <Xfm$Anim_S$> xform {
+                    <Scalar> fps { 24 }
+                    <Char*> order { sprht }
+                    <S$Anim> h { <V> { -18.4775 } }
+                    <S$Anim> p { <V> { 16.0083 } }
+                    <S$Anim> r { <V> { -18.8914 } }
+                    <S$Anim> x { <V> { 0.0418831 } }
+                    <S$Anim> y { <V> { 0.141744 } }
+                    <S$Anim> z { <V> { -0.00699149 } }
+                  }
+                  <Table> toeMiddleIP.Right {
+                    <Xfm$Anim_S$> xform {
+                      <Scalar> fps { 24 }
+                      <Char*> order { sprht }
+                      <S$Anim> h { <V> { 0.000478905 } }
+                      <S$Anim> p { <V> { 0.000333159 } }
+                      <S$Anim> r { <V> { -0.00033024 } }
+                      <S$Anim> y { <V> { 0.0415717 } }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        <Table> spine1 {
+          <Xfm$Anim_S$> xform {
+            <Scalar> fps { 24 }
+            <Char*> order { sprht }
+            <S$Anim> h { <V> { -51.8143 } }
+            <S$Anim> p { <V> { -43.5298 } }
+            <S$Anim> r { <V> { 89.8831 } }
+            <S$Anim> y { <V> { 0.0605139 } }
+          }
+          <Table> spine2 {
+            <Xfm$Anim_S$> xform {
+              <Scalar> fps { 24 }
+              <Char*> order { sprht }
+              <S$Anim> h { <V> { 0.105196 } }
+              <S$Anim> p { <V> { -20.4875 } }
+              <S$Anim> r { <V> { 0.0154001 } }
+              <S$Anim> y { <V> { 0.109506 } }
+            }
+            <Table> spine3 {
+              <Xfm$Anim_S$> xform {
+                <Scalar> fps { 24 }
+                <Char*> order { sprht }
+                <S$Anim> p { <V> { 1.67596 } }
+                <S$Anim> r { <V> { 0.0735819 } }
+                <S$Anim> y { <V> { 0.141778 } }
+              }
+              <Table> spine4 {
+                <Xfm$Anim_S$> xform {
+                  <Scalar> fps { 24 }
+                  <Char*> order { sprht }
+                  <S$Anim> h { <V> { 0.00234872 } }
+                  <S$Anim> p { <V> { 14.0011 } }
+                  <S$Anim> r { <V> { 0.00959224 } }
+                  <S$Anim> y { <V> { 0.120483 } }
+                }
+                <Table> rclavicle {
+                  <Xfm$Anim_S$> xform {
+                    <Scalar> fps { 24 }
+                    <Char*> order { sprht }
+                    <S$Anim> h { <V> { 40.6745 } }
+                    <S$Anim> p { <V> { -50.6618 } }
+                    <S$Anim> r { <V> { 98.5839 } }
+                    <S$Anim> y { <V> { 0.112117 } }
+                  }
+                  <Table> rhumerus {
+                    <Xfm$Anim_S$> xform {
+                      <Scalar> fps { 24 }
+                      <Char*> order { sprht }
+                      <S$Anim> h { <V> { -23.8405 } }
+                      <S$Anim> p { <V> { -47.8755 } }
+                      <S$Anim> r { <V> { 8.22264 } }
+                      <S$Anim> y { <V> { 0.165111 } }
+                    }
+                    <Table> rradius {
+                      <Xfm$Anim_S$> xform {
+                        <Scalar> fps { 24 }
+                        <Char*> order { sprht }
+                        <S$Anim> h { <V> { 20.6561 } }
+                        <S$Anim> p { <V> { 0.434802 } }
+                        <S$Anim> r { <V> { -3.0967 } }
+                        <S$Anim> y { <V> { 0.242866 } }
+                      }
+                      <Table> rhand {
+                        <Xfm$Anim_S$> xform {
+                          <Scalar> fps { 24 }
+                          <Char*> order { sprht }
+                          <S$Anim> h { <V> { 7.0549 } }
+                          <S$Anim> p { <V> { 13.9786 } }
+                          <S$Anim> r { <V> { -18.3715 } }
+                          <S$Anim> y { <V> { 0.234973 } }
+                        }
+                        <Table> 5Cp.Right {
+                          <Xfm$Anim_S$> xform {
+                            <Scalar> fps { 24 }
+                            <Char*> order { sprht }
+                            <S$Anim> h { <V> { -35.1524 } }
+                            <S$Anim> p { <V> { 1.65994 } }
+                            <S$Anim> r { <V> { -2.81799 } }
+                            <S$Anim> y { <V> { 0.0360043 } }
+                          }
+                          <Table> 5Mcp.Right {
+                            <Xfm$Anim_S$> xform {
+                              <Scalar> fps { 24 }
+                              <Char*> order { sprht }
+                              <S$Anim> h { <V> { 17.4024 } }
+                              <S$Anim> p { <V> { -95.939 } }
+                              <S$Anim> r { <V> { 1.32533 } }
+                              <S$Anim> y { <V> { 0.0680397 } }
+                            }
+                            <Table> 5Prox.Right {
+                              <Xfm$Anim_S$> xform {
+                                <Scalar> fps { 24 }
+                                <Char*> order { sprht }
+                                <S$Anim> h { <V> { -0.739214 } }
+                                <S$Anim> p { <V> { -87.3234 } }
+                                <S$Anim> r { <V> { 1.81975 } }
+                                <S$Anim> y { <V> { 0.0285064 } }
+                              }
+                              <Table> 5Dist.Right {
+                                <Xfm$Anim_S$> xform {
+                                  <Scalar> fps { 24 }
+                                  <Char*> order { sprht }
+                                  <S$Anim> p { <V> { -89.9999 } }
+                                  <S$Anim> r { <V> { 0.000235453 } }
+                                  <S$Anim> y { <V> { 0.0210553 } }
+                                }
+                              }
+                            }
+                          }
+                        }
+                        <Table> 4Cp.Right {
+                          <Xfm$Anim_S$> xform {
+                            <Scalar> fps { 24 }
+                            <Char*> order { sprht }
+                            <S$Anim> h { <V> { -18.4233 } }
+                            <S$Anim> p { <V> { 6.5416 } }
+                            <S$Anim> r { <V> { 1.45033 } }
+                            <S$Anim> y { <V> { 0.0360043 } }
+                          }
+                          <Table> 4Mcp.Right {
+                            <Xfm$Anim_S$> xform {
+                              <Scalar> fps { 24 }
+                              <Char*> order { sprht }
+                              <S$Anim> h { <V> { 11.7161 } }
+                              <S$Anim> p { <V> { -109.328 } }
+                              <S$Anim> r { <V> { -4.51098 } }
+                              <S$Anim> y { <V> { 0.0665698 } }
+                            }
+                            <Table> 4Prox.Right {
+                              <Xfm$Anim_S$> xform {
+                                <Scalar> fps { 24 }
+                                <Char*> order { sprht }
+                                <S$Anim> h { <V> { -0.377457 } }
+                                <S$Anim> p { <V> { -78.9408 } }
+                                <S$Anim> r { <V> { 6.34305 } }
+                                <S$Anim> y { <V> { 0.0358882 } }
+                              }
+                              <Table> 4Dist.Right {
+                                <Xfm$Anim_S$> xform {
+                                  <Scalar> fps { 24 }
+                                  <Char*> order { sprht }
+                                  <S$Anim> h { <V> { -0.00162279 } }
+                                  <S$Anim> p { <V> { -89.9999 } }
+                                  <S$Anim> r { <V> { -4.99929 } }
+                                  <S$Anim> y { <V> { 0.0254521 } }
+                                }
+                              }
+                            }
+                          }
+                        }
+                        <Table> 3Cp.Right {
+                          <Xfm$Anim_S$> xform {
+                            <Scalar> fps { 24 }
+                            <Char*> order { sprht }
+                            <S$Anim> h { <V> { -0.615012 } }
+                            <S$Anim> p { <V> { 4.63859 } }
+                            <S$Anim> r { <V> { -4.03994 } }
+                            <S$Anim> y { <V> { 0.0360043 } }
+                          }
+                          <Table> 3Mcp.Right {
+                            <Xfm$Anim_S$> xform {
+                              <Scalar> fps { 24 }
+                              <Char*> order { sprht }
+                              <S$Anim> h { <V> { -5.6219 } }
+                              <S$Anim> p { <V> { -105.286 } }
+                              <S$Anim> r { <V> { -2.43407 } }
+                              <S$Anim> y { <V> { 0.0675998 } }
+                            }
+                            <Table> 3Prox.Right {
+                              <Xfm$Anim_S$> xform {
+                                <Scalar> fps { 24 }
+                                <Char*> order { sprht }
+                                <S$Anim> h { <V> { -1.54905 } }
+                                <S$Anim> p { <V> { -83.3083 } }
+                                <S$Anim> r { <V> { 0.445262 } }
+                                <S$Anim> y { <V> { 0.0387049 } }
+                              }
+                              <Table> 3Dist.Right {
+                                <Xfm$Anim_S$> xform {
+                                  <Scalar> fps { 24 }
+                                  <Char*> order { sprht }
+                                  <S$Anim> h { <V> { 2.37982 } }
+                                  <S$Anim> p { <V> { -89.6793 } }
+                                  <S$Anim> r { <V> { 4.89307 } }
+                                  <S$Anim> y { <V> { 0.0262238 } }
+                                }
+                              }
+                            }
+                          }
+                        }
+                        <Table> 1Cp.Right {
+                          <Xfm$Anim_S$> xform {
+                            <Scalar> fps { 24 }
+                            <Char*> order { sprht }
+                            <S$Anim> h { <V> { 80.5614 } }
+                            <S$Anim> p { <V> { -26.7912 } }
+                            <S$Anim> r { <V> { 1.48022 } }
+                            <S$Anim> y { <V> { 0.0360043 } }
+                          }
+                          <Table> 1Mcp.Right {
+                            <Xfm$Anim_S$> xform {
+                              <Scalar> fps { 24 }
+                              <Char*> order { sprht }
+                              <S$Anim> h { <V> { -77.5945 } }
+                              <S$Anim> p { <V> { 12.5537 } }
+                              <S$Anim> r { <V> { -58.5723 } }
+                              <S$Anim> y { <V> { 0.0316031 } }
+                            }
+                            <Table> 1Prox.Right {
+                              <Xfm$Anim_S$> xform {
+                                <Scalar> fps { 24 }
+                                <Char*> order { sprht }
+                                <S$Anim> h { <V> { 19.2625 } }
+                                <S$Anim> p { <V> { -73.1599 } }
+                                <S$Anim> r { <V> { -3.70731 } }
+                                <S$Anim> y { <V> { 0.0384888 } }
+                              }
+                              <Table> 1Dist.Right {
+                                <Xfm$Anim_S$> xform {
+                                  <Scalar> fps { 24 }
+                                  <Char*> order { sprht }
+                                  <S$Anim> h { <V> { 3.73134 } }
+                                  <S$Anim> p { <V> { -63.0112 } }
+                                  <S$Anim> r { <V> { 5.61565 } }
+                                  <S$Anim> y { <V> { 0.030678 } }
+                                }
+                              }
+                            }
+                          }
+                        }
+                        <Table> 2Cp.Right {
+                          <Xfm$Anim_S$> xform {
+                            <Scalar> fps { 24 }
+                            <Char*> order { sprht }
+                            <S$Anim> h { <V> { 14.1178 } }
+                            <S$Anim> p { <V> { 5.92677 } }
+                            <S$Anim> r { <V> { -1.76737 } }
+                            <S$Anim> y { <V> { 0.0360043 } }
+                          }
+                          <Table> 2Mcp.Right {
+                            <Xfm$Anim_S$> xform {
+                              <Scalar> fps { 24 }
+                              <Char*> order { sprht }
+                              <S$Anim> h { <V> { -15.3694 } }
+                              <S$Anim> p { <V> { -34.0551 } }
+                              <S$Anim> r { <V> { 0.21133 } }
+                              <S$Anim> y { <V> { 0.0727495 } }
+                            }
+                            <Table> 2Prox.Right {
+                              <Xfm$Anim_S$> xform {
+                                <Scalar> fps { 24 }
+                                <Char*> order { sprht }
+                                <S$Anim> h { <V> { -5.41468 } }
+                                <S$Anim> p { <V> { 10.7757 } }
+                                <S$Anim> r { <V> { -4.62913 } }
+                                <S$Anim> y { <V> { 0.0324445 } }
+                              }
+                              <Table> 2Dist.Right {
+                                <Xfm$Anim_S$> xform {
+                                  <Scalar> fps { 24 }
+                                  <Char*> order { sprht }
+                                  <S$Anim> h { <V> { -0.000828145 } }
+                                  <S$Anim> p { <V> { 0.000978056 } }
+                                  <S$Anim> r { <V> { -0.00110078 } }
+                                  <S$Anim> y { <V> { 0.0254697 } }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                <Table> lclavicle {
+                  <Xfm$Anim_S$> xform {
+                    <Scalar> fps { 24 }
+                    <Char*> order { sprht }
+                    <S$Anim> h { <V> { -40.631 } }
+                    <S$Anim> p { <V> { -50.7035 } }
+                    <S$Anim> r { <V> { -98.5864 } }
+                    <S$Anim> y { <V> { 0.112117 } }
+                  }
+                  <Table> lhumerus {
+                    <Xfm$Anim_S$> xform {
+                      <Scalar> fps { 24 }
+                      <Char*> order { sprht }
+                      <S$Anim> h { <V> { 23.9107 } }
+                      <S$Anim> p { <V> { -47.9704 } }
+                      <S$Anim> r { <V> { -8.25011 } }
+                      <S$Anim> y { <V> { 0.165454 } }
+                    }
+                    <Table> lradius {
+                      <Xfm$Anim_S$> xform {
+                        <Scalar> fps { 24 }
+                        <Char*> order { sprht }
+                        <S$Anim> h { <V> { -20.7342 } }
+                        <S$Anim> p { <V> { 0.401754 } }
+                        <S$Anim> r { <V> { 3.22917 } }
+                        <S$Anim> y { <V> { 0.242547 } }
+                      }
+                      <Table> lhand {
+                        <Xfm$Anim_S$> xform {
+                          <Scalar> fps { 24 }
+                          <Char*> order { sprht }
+                          <S$Anim> h { <V> { -6.48899 } }
+                          <S$Anim> p { <V> { 14.5644 } }
+                          <S$Anim> r { <V> { 18.9916 } }
+                          <S$Anim> y { <V> { 0.235227 } }
+                        }
+                        <Table> 2Cp.Left {
+                          <Xfm$Anim_S$> xform {
+                            <Scalar> fps { 24 }
+                            <Char*> order { sprht }
+                            <S$Anim> h { <V> { -14.0539 } }
+                            <S$Anim> p { <V> { 5.79115 } }
+                            <S$Anim> r { <V> { 4.54814 } }
+                            <S$Anim> y { <V> { 0.0356383 } }
+                          }
+                          <Table> 2Mcp.Left {
+                            <Xfm$Anim_S$> xform {
+                              <Scalar> fps { 24 }
+                              <Char*> order { sprht }
+                              <S$Anim> h { <V> { 15.402 } }
+                              <S$Anim> p { <V> { -35.0085 } }
+                              <S$Anim> r { <V> { -3.68131 } }
+                              <S$Anim> y { <V> { 0.0727506 } }
+                            }
+                            <Table> 2Prox.Left {
+                              <Xfm$Anim_S$> xform {
+                                <Scalar> fps { 24 }
+                                <Char*> order { sprht }
+                                <S$Anim> h { <V> { 5.41455 } }
+                                <S$Anim> p { <V> { 10.7759 } }
+                                <S$Anim> r { <V> { 4.62908 } }
+                                <S$Anim> y { <V> { 0.0324446 } }
+                              }
+                              <Table> 2Dist.Left {
+                                <Xfm$Anim_S$> xform {
+                                  <Scalar> fps { 24 }
+                                  <Char*> order { sprht }
+                                  <S$Anim> h { <V> { 0.00102412 } }
+                                  <S$Anim> p { <V> { 0.000901582 } }
+                                  <S$Anim> r { <V> { 0.0011215 } }
+                                  <S$Anim> y { <V> { 0.0254697 } }
+                                }
+                              }
+                            }
+                          }
+                        }
+                        <Table> 5Cp.Left {
+                          <Xfm$Anim_S$> xform {
+                            <Scalar> fps { 24 }
+                            <Char*> order { sprht }
+                            <S$Anim> h { <V> { 34.8322 } }
+                            <S$Anim> p { <V> { 0.953202 } }
+                            <S$Anim> r { <V> { 2.91353 } }
+                            <S$Anim> y { <V> { 0.0356383 } }
+                          }
+                          <Table> 5Mcp.Left {
+                            <Xfm$Anim_S$> xform {
+                              <Scalar> fps { 24 }
+                              <Char*> order { sprht }
+                              <S$Anim> h { <V> { -17.4054 } }
+                              <S$Anim> p { <V> { -95.787 } }
+                              <S$Anim> r { <V> { -1.80447 } }
+                              <S$Anim> y { <V> { 0.0680402 } }
+                            }
+                            <Table> 5Prox.Left {
+                              <Xfm$Anim_S$> xform {
+                                <Scalar> fps { 24 }
+                                <Char*> order { sprht }
+                                <S$Anim> h { <V> { 0.739211 } }
+                                <S$Anim> p { <V> { -87.3234 } }
+                                <S$Anim> r { <V> { -1.81974 } }
+                                <S$Anim> y { <V> { 0.0285066 } }
+                              }
+                              <Table> 5Dist.Left {
+                                <Xfm$Anim_S$> xform {
+                                  <Scalar> fps { 24 }
+                                  <Char*> order { sprht }
+                                  <S$Anim> h { <V> { 0.000102294 } }
+                                  <S$Anim> p { <V> { -90 } }
+                                  <S$Anim> r { <V> { -0.000290538 } }
+                                  <S$Anim> y { <V> { 0.0210554 } }
+                                }
+                              }
+                            }
+                          }
+                        }
+                        <Table> 4Cp.Left {
+                          <Xfm$Anim_S$> xform {
+                            <Scalar> fps { 24 }
+                            <Char*> order { sprht }
+                            <S$Anim> h { <V> { 18.2933 } }
+                            <S$Anim> p { <V> { 5.97827 } }
+                            <S$Anim> r { <V> { -0.620847 } }
+                            <S$Anim> y { <V> { 0.0356383 } }
+                          }
+                          <Table> 4Mcp.Left {
+                            <Xfm$Anim_S$> xform {
+                              <Scalar> fps { 24 }
+                              <Char*> order { sprht }
+                              <S$Anim> h { <V> { -11.6957 } }
+                              <S$Anim> p { <V> { -109.036 } }
+                              <S$Anim> r { <V> { 3.11125 } }
+                              <S$Anim> y { <V> { 0.0665709 } }
+                            }
+                            <Table> 4Prox.Left {
+                              <Xfm$Anim_S$> xform {
+                                <Scalar> fps { 24 }
+                                <Char*> order { sprht }
+                                <S$Anim> h { <V> { 0.377254 } }
+                                <S$Anim> p { <V> { -78.9414 } }
+                                <S$Anim> r { <V> { -6.34342 } }
+                                <S$Anim> y { <V> { 0.0358885 } }
+                              }
+                              <Table> 4Dist.Left {
+                                <Xfm$Anim_S$> xform {
+                                  <Scalar> fps { 24 }
+                                  <Char*> order { sprht }
+                                  <S$Anim> h { <V> { 0.00173592 } }
+                                  <S$Anim> p { <V> { -89.9993 } }
+                                  <S$Anim> r { <V> { 5.99991 } }
+                                  <S$Anim> y { <V> { 0.025452 } }
+                                }
+                              }
+                            }
+                          }
+                        }
+                        <Table> 3Cp.Left {
+                          <Xfm$Anim_S$> xform {
+                            <Scalar> fps { 24 }
+                            <Char*> order { sprht }
+                            <S$Anim> h { <V> { 0.488938 } }
+                            <S$Anim> p { <V> { 4.30184 } }
+                            <S$Anim> r { <V> { 5.85621 } }
+                            <S$Anim> y { <V> { 0.0356383 } }
+                          }
+                          <Table> 3Mcp.Left {
+                            <Xfm$Anim_S$> xform {
+                              <Scalar> fps { 24 }
+                              <Char*> order { sprht }
+                              <S$Anim> h { <V> { 5.0234 } }
+                              <S$Anim> p { <V> { -105.539 } }
+                              <S$Anim> r { <V> { 0.895114 } }
+                              <S$Anim> y { <V> { 0.0676007 } }
+                            }
+                            <Table> 3Prox.Left {
+                              <Xfm$Anim_S$> xform {
+                                <Scalar> fps { 24 }
+                                <Char*> order { sprht }
+                                <S$Anim> h { <V> { 1.54985 } }
+                                <S$Anim> p { <V> { -83.3395 } }
+                                <S$Anim> r { <V> { -1.61344 } }
+                                <S$Anim> y { <V> { 0.038705 } }
+                              }
+                              <Table> 3Dist.Left {
+                                <Xfm$Anim_S$> xform {
+                                  <Scalar> fps { 24 }
+                                  <Char*> order { sprht }
+                                  <S$Anim> h { <V> { -2.38002 } }
+                                  <S$Anim> p { <V> { -89.68 } }
+                                  <S$Anim> r { <V> { -4.89396 } }
+                                  <S$Anim> y { <V> { 0.0262242 } }
+                                }
+                              }
+                            }
+                          }
+                        }
+                        <Table> 1Cp.Left {
+                          <Xfm$Anim_S$> xform {
+                            <Scalar> fps { 24 }
+                            <Char*> order { sprht }
+                            <S$Anim> h { <V> { -80.8749 } }
+                            <S$Anim> p { <V> { -26.1177 } }
+                            <S$Anim> r { <V> { -1.94423 } }
+                            <S$Anim> y { <V> { 0.0356383 } }
+                          }
+                          <Table> 1Mcp.Left {
+                            <Xfm$Anim_S$> xform {
+                              <Scalar> fps { 24 }
+                              <Char*> order { sprht }
+                              <S$Anim> h { <V> { 47.3761 } }
+                              <S$Anim> p { <V> { -12.5732 } }
+                              <S$Anim> r { <V> { 53.3051 } }
+                              <S$Anim> y { <V> { 0.0316033 } }
+                            }
+                            <Table> 1Prox.Left {
+                              <Xfm$Anim_S$> xform {
+                                <Scalar> fps { 24 }
+                                <Char*> order { sprht }
+                                <S$Anim> h { <V> { 5.18926 } }
+                                <S$Anim> p { <V> { -75.9097 } }
+                                <S$Anim> r { <V> { 17.4815 } }
+                                <S$Anim> y { <V> { 0.0384888 } }
+                              }
+                              <Table> 1Dist.Left {
+                                <Xfm$Anim_S$> xform {
+                                  <Scalar> fps { 24 }
+                                  <Char*> order { sprht }
+                                  <S$Anim> h { <V> { 10.3139 } }
+                                  <S$Anim> p { <V> { -63.7126 } }
+                                  <S$Anim> r { <V> { -6.60658 } }
+                                  <S$Anim> y { <V> { 0.0306783 } }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                <Table> neck {
+                  <Xfm$Anim_S$> xform {
+                    <Scalar> fps { 24 }
+                    <Char*> order { sprht }
+                    <S$Anim> h { <V> { -0.00291197 } }
+                    <S$Anim> p { <V> { 3.03357 } }
+                    <S$Anim> r { <V> { -0.0647123 } }
+                    <S$Anim> y { <V> { 0.112117 } }
+                  }
+                  <Table> head {
+                    <Xfm$Anim_S$> xform {
+                      <Scalar> fps { 24 }
+                      <Char*> order { sprht }
+                      <S$Anim> h { <V> { 0.000498063 } }
+                      <S$Anim> p { <V> { 3.19053 } }
+                      <S$Anim> r { <V> { 0.0640573 } }
+                      <S$Anim> y { <V> { 0.0992134 } }
+                    }
+                    <Table> rhead_eye {
+                      <Xfm$Anim_S$> xform {
+                        <Scalar> fps { 24 }
+                        <Char*> order { sprht }
+                        <S$Anim> h { <V> { 2.41579 } }
+                        <S$Anim> p { <V> { -84.221 } }
+                        <S$Anim> r { <V> { 155.332 } }
+                        <S$Anim> y { <V> { 0.138519 } }
+                      }
+                      <Table> reye {
+                        <Xfm$Anim_S$> xform {
+                          <Scalar> fps { 24 }
+                          <Char*> order { sprht }
+                          <S$Anim> h { <V> { 24.7679 } }
+                          <S$Anim> p { <V> { -1.79059 } }
+                          <S$Anim> r { <V> { 0.00218334 } }
+                          <S$Anim> y { <V> { 0.0787631 } }
+                        }
+                        <Table> reyeEnd {
+                          <Xfm$Anim_S$> xform {
+                            <Scalar> fps { 24 }
+                            <Char*> order { sprht }
+                            <S$Anim> h { <V> { 0.000137359 } }
+                            <S$Anim> p { <V> { 1.35782 } }
+                            <S$Anim> r { <V> { 0.000488929 } }
+                            <S$Anim> y { <V> { 0.0402791 } }
+                          }
+                        }
+                      }
+                    }
+                    <Table> headDir {
+                      <Xfm$Anim_S$> xform {
+                        <Scalar> fps { 24 }
+                        <Char*> order { sprht }
+                        <S$Anim> h { <V> { -0.000153306 } }
+                        <S$Anim> p { <V> { -79.4887 } }
+                        <S$Anim> r { <V> { 179.991 } }
+                        <S$Anim> y { <V> { 0.138519 } }
+                      }
+                      <Table> headEnd {
+                        <Xfm$Anim_S$> xform {
+                          <Scalar> fps { 24 }
+                          <Char*> order { sprht }
+                          <S$Anim> p { <V> { 0.460038 } }
+                          <S$Anim> r { <V> { 0.000130526 } }
+                          <S$Anim> y { <V> { 0.102499 } }
+                        }
+                      }
+                    }
+                    <Table> lhead_eye {
+                      <Xfm$Anim_S$> xform {
+                        <Scalar> fps { 24 }
+                        <Char*> order { sprht }
+                        <S$Anim> h { <V> { -2.69816 } }
+                        <S$Anim> p { <V> { -83.6016 } }
+                        <S$Anim> r { <V> { -155.134 } }
+                        <S$Anim> y { <V> { 0.138519 } }
+                      }
+                      <Table> leye {
+                        <Xfm$Anim_S$> xform {
+                          <Scalar> fps { 24 }
+                          <Char*> order { sprht }
+                          <S$Anim> h { <V> { -25.6077 } }
+                          <S$Anim> p { <V> { -3.0375 } }
+                          <S$Anim> r { <V> { -0.0342882 } }
+                          <S$Anim> y { <V> { 0.0788558 } }
+                        }
+                        <Table> leyeEnd {
+                          <Xfm$Anim_S$> xform {
+                            <Scalar> fps { 24 }
+                            <Char*> order { sprht }
+                            <S$Anim> h { <V> { -0.106784 } }
+                            <S$Anim> p { <V> { 1.56407 } }
+                            <S$Anim> r { <V> { 0.019673 } }
+                            <S$Anim> y { <V> { 0.0399668 } }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,79 @@
+//Cg
+
+//////////////////////////////////////////////////////////////////////////////////
+// Vertex Shader
+//////////////////////////////////////////////////////////////////////////////////
+
+#include "<SHADERPATH>defaultVertexShader.cg"
+
+//////////////////////////////////////////////////////////////////////////////////
+// Fragment Shader
+//////////////////////////////////////////////////////////////////////////////////
+
+#include "<SHADERPATH>lighting.cg"
+#include "<SHADERPATH>defaultFragmentShader.cg"
+
+//textures
+struct FSTEXTURES
+{
+    sampler2D Diffuse;
+    sampler2D AmbientOcclusion;
+};
+
+//constants
+struct FSCONSTANTS
+{
+    float Color;
+    
+    float Shade;
+};
+
+float4 Shade( FSINPUT input, FSTEXTURES textures, LIGHTING lighting, FSCONSTANTS constants )
+{
+    //sample texture maps
+	float4 sampleDiffuse    = tex2D( textures.Diffuse, input.UV );
+	//float4 sampleNormal     = tex2D( textures.Normal, input.UV );
+	float4 sampleAO         = tex2D( textures.AmbientOcclusion, input.UV );
+	//float4 sampleBlood      = tex2D( textures.Blood, input.UV );
+	//float4 sampleSSS        = tex2D( textures.SubsurfaceScatteringStrength, input.UV );
+
+    //compute blushing
+    //float3 skinColor = lerp( sampleDiffuse.rgb, sampleBlood.rgb, constants.Blushing * sampleBlood.a );
+    
+    //lighting.Directional[0].Shadow = constants.Shade;
+    
+    float4 result = ComputeDiffuseAO( input.Normal, sampleDiffuse, sampleAO.x, constants.Color, lighting );
+    
+	return float4(result.xyz,1);
+}
+
+//fragment shader
+FRAGMENT_SHADER_PARAMETERS
+    //texture samplers
+	uniform sampler2D tex_0,//diffuse map
+	//uniform sampler2D tex_1,//normal map
+	uniform sampler2D tex_1,//ambient occlusion map
+	//uniform sampler2D tex_2,//blood map
+	//uniform sampler2D tex_4,//subsurface scattering strength map
+    
+    //uniform float4 k_values,//constant vector that was stored using setShaderInput
+    
+    
+    
+FRAGMENT_SHADER_BEGIN
+    //get textures
+    FSTEXTURES textures;
+    textures.Diffuse            = tex_0;
+    //textures.Normal             = tex_1;
+    textures.AmbientOcclusion   = tex_1;
+    //textures.Blood              = tex_2;
+    //textures.SubsurfaceScatteringStrength   = tex_4;
+    
+    FSCONSTANTS constants;    
+    constants.Color = float4(1,1,1,0);;//k_values.x;
+    //constants.Shade = tex2Dproj( k_Ldepthmap, l_shadowcoord );
+ /*   float shade = tex2Dproj( k_Ldepthmap, l_shadowcoord );
+  
+    o_color = float4( shade.xxx, 0 );
+}*/
+FRAGMENT_SHADER_END
