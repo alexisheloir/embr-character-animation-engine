@@ -67,7 +67,7 @@ ELSE(APPLE)
 ENDIF(APPLE)
 
 
-IF(WIN322)
+IF(WIN32)
 
     SET(GUI "Win32")
     
@@ -98,7 +98,6 @@ ELSE(WIN32)
     
   ENDIF(UNIX)
 ENDIF(WIN32)
-
 
 
 IF(WIN32)
