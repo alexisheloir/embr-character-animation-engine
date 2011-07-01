@@ -62,6 +62,9 @@ class Agent:
         self.positionX = x
         self.positionY = y
         self.positionZ = z
+
+    def getPosition( self ):
+        return self.agent.getPos()
         
     def setLightingConfiguration( self, _config, _name ):
         self.lightingConfig = _config
@@ -140,108 +143,109 @@ class Agent:
 
         self.agentSMRSkel = SMRPy.SMRSkeleton(True,True,'agent')
         self.createSkel( self.agent, self.agentSMRSkel, 'root', '' )
-        #SMRPy.exportSkeletonToBvh('exportedPose.bvh',self.agentSMRSkel);
+		#pascal: output of both skeletons amber and alfonse as chracter.bvh
+        #SMRPy.exportSkeletonToBvh(self.name + '.bvh',self.agentSMRSkel);
         self.newSkeleton = SMRPy.SMRSkeleton(True,True,'pose')
-        self.createFKSkel(self.animationAgent, self.newSkeleton, "root", '')    
-
+        self.createFKSkel(self.animationAgent, self.newSkeleton, "root", '')       
         self.realizer.addCharacter( self.name, self.agentSMRSkel );
-        
         for key in self.targets.keys():
             self.realizer.addMorphTarget( self.name, key )
         
         self.realizer.addShaderParameter( self.name, 'blushing' )
-                
-        self.addAnimation(self.name,'breathing')
-        self.addAnimation(self.name,'hands_claw')
-        self.addAnimation(self.name,'hands_fist')
-        self.addAnimation(self.name,'hands_index')
-        self.addAnimation(self.name,'hands_open-relaxed')
-        self.addAnimation(self.name,'hands_open-spread')
-        self.addAnimation(self.name,'hands_open-straight')
-        self.addAnimation(self.name,'hands_purse')
-        self.addAnimation(self.name,'hands_ring')
-        self.addAnimation(self.name,'poseNeutral')
+        
 
-        self.addAnimation(self.name,'hands_DGS_A')
-        self.addAnimation(self.name,'hands_DGS_B')
-        self.addAnimation(self.name,'hands_DGS_C')
-        self.addAnimation(self.name,'hands_DGS_D')
-        self.addAnimation(self.name,'hands_DGS_E')
-        self.addAnimation(self.name,'hands_DGS_F')
-        self.addAnimation(self.name,'hands_DGS_G')
-        self.addAnimation(self.name,'hands_DGS_H')
-        self.addAnimation(self.name,'hands_DGS_I')
-        self.addAnimation(self.name,'hands_DGS_J')
-        self.addAnimation(self.name,'hands_DGS_K')
-        self.addAnimation(self.name,'hands_DGS_L')
-        self.addAnimation(self.name,'hands_DGS_M')
-        self.addAnimation(self.name,'hands_DGS_N')
-        self.addAnimation(self.name,'hands_DGS_O')
-        self.addAnimation(self.name,'hands_DGS_P')
-        self.addAnimation(self.name,'hands_DGS_Q')
-        self.addAnimation(self.name,'hands_DGS_R')
-        self.addAnimation(self.name,'hands_DGS_T')
-        self.addAnimation(self.name,'hands_DGS_U')
-        self.addAnimation(self.name,'hands_DGS_V')
-        self.addAnimation(self.name,'hands_DGS_W')
-        self.addAnimation(self.name,'hands_DGS_X')
-        self.addAnimation(self.name,'hands_DGS_Y')
-        self.addAnimation(self.name,'hands_DGS_Z')
-        self.addAnimation(self.name,'hands_DGS_SCH')
+        # self.addAnimation(self.name,'breathing')
+        # self.addAnimation(self.name,'hands_claw')
+        # #self.addAnimation(self.name,'endian')
+        # self.addAnimation(self.name,'hands_fist')
+        # self.addAnimation(self.name,'hands_index')
+        # self.addAnimation(self.name,'hands_open-relaxed')
+        # self.addAnimation(self.name,'hands_open-spread')
+        # self.addAnimation(self.name,'hands_open-straight')
+        # self.addAnimation(self.name,'hands_purse')
+        # self.addAnimation(self.name,'hands_ring')
+        # self.addAnimation(self.name,'poseNeutral')
+        # self.addAnimation(self.name,'shrug')
+        # self.addAnimation(self.name,'hands_DGS_A')
+        # self.addAnimation(self.name,'hands_DGS_B')
+        # self.addAnimation(self.name,'hands_DGS_C')
+        # self.addAnimation(self.name,'hands_DGS_D')
+        # self.addAnimation(self.name,'hands_DGS_E')
+        # self.addAnimation(self.name,'hands_DGS_F')
+        # self.addAnimation(self.name,'hands_DGS_G')
+        # self.addAnimation(self.name,'hands_DGS_H')
+        # self.addAnimation(self.name,'hands_DGS_I')
+        # self.addAnimation(self.name,'hands_DGS_J')
+        # self.addAnimation(self.name,'hands_DGS_K')
+        # self.addAnimation(self.name,'hands_DGS_L')
+        # self.addAnimation(self.name,'hands_DGS_M')
+        # self.addAnimation(self.name,'hands_DGS_N')
+        # self.addAnimation(self.name,'hands_DGS_O')
+        # self.addAnimation(self.name,'hands_DGS_P')
+        # self.addAnimation(self.name,'hands_DGS_Q')
+        # self.addAnimation(self.name,'hands_DGS_R')
+        # self.addAnimation(self.name,'hands_DGS_T')
+        # self.addAnimation(self.name,'hands_DGS_U')
+        # self.addAnimation(self.name,'hands_DGS_V')
+        # self.addAnimation(self.name,'hands_DGS_W')
+        # self.addAnimation(self.name,'hands_DGS_X')
+        # self.addAnimation(self.name,'hands_DGS_Y')
+        # self.addAnimation(self.name,'hands_DGS_Z')
+        # self.addAnimation(self.name,'hands_DGS_SCH')
 
-        self.addAnimation(self.name,'hands_ASL_A')
-        self.addAnimation(self.name,'hands_ASL_B')
-        self.addAnimation(self.name,'hands_ASL_C')
-        self.addAnimation(self.name,'hands_ASL_D')
-        self.addAnimation(self.name,'hands_ASL_E')
-        self.addAnimation(self.name,'hands_ASL_F')
-        self.addAnimation(self.name,'hands_ASL_G')
-        self.addAnimation(self.name,'hands_ASL_H')
-        self.addAnimation(self.name,'hands_ASL_I')
-        self.addAnimation(self.name,'hands_ASL_J')
-        self.addAnimation(self.name,'hands_ASL_K')
-        self.addAnimation(self.name,'hands_ASL_L')
-        self.addAnimation(self.name,'hands_ASL_M')
-        self.addAnimation(self.name,'hands_ASL_N')
-        self.addAnimation(self.name,'hands_ASL_O')
-        self.addAnimation(self.name,'hands_ASL_P')
-        self.addAnimation(self.name,'hands_ASL_Q')
-        self.addAnimation(self.name,'hands_ASL_R')
-        self.addAnimation(self.name,'hands_ASL_T')
-        self.addAnimation(self.name,'hands_ASL_U')
-        self.addAnimation(self.name,'hands_ASL_V')
-        self.addAnimation(self.name,'hands_ASL_W')
-        self.addAnimation(self.name,'hands_ASL_X')
-        self.addAnimation(self.name,'hands_ASL_Y')
-        self.addAnimation(self.name,'hands_ASL_Z')
+        # self.addAnimation(self.name,'hands_ASL_A')
+        # self.addAnimation(self.name,'hands_ASL_B')
+        # self.addAnimation(self.name,'hands_ASL_C')
+        # self.addAnimation(self.name,'hands_ASL_D')
+        # self.addAnimation(self.name,'hands_ASL_E')
+        # self.addAnimation(self.name,'hands_ASL_F')
+        # self.addAnimation(self.name,'hands_ASL_G')
+        # self.addAnimation(self.name,'hands_ASL_H')
+        # self.addAnimation(self.name,'hands_ASL_I')
+        # self.addAnimation(self.name,'hands_ASL_J')
+        # self.addAnimation(self.name,'hands_ASL_K')
+        # self.addAnimation(self.name,'hands_ASL_L')
+        # self.addAnimation(self.name,'hands_ASL_M')
+        # self.addAnimation(self.name,'hands_ASL_N')
+        # self.addAnimation(self.name,'hands_ASL_O')
+        # self.addAnimation(self.name,'hands_ASL_P')
+        # self.addAnimation(self.name,'hands_ASL_Q')
+        # self.addAnimation(self.name,'hands_ASL_R')
+        # self.addAnimation(self.name,'hands_ASL_T')
+        # self.addAnimation(self.name,'hands_ASL_U')
+        # self.addAnimation(self.name,'hands_ASL_V')
+        # self.addAnimation(self.name,'hands_ASL_W')
+        # self.addAnimation(self.name,'hands_ASL_X')
+        # self.addAnimation(self.name,'hands_ASL_Y')
+        # self.addAnimation(self.name,'hands_ASL_Z')
 
-        self.addAnimation(self.name,'hands_ASL_1CL')
-        self.addAnimation(self.name,'hands_ASL_2CL')
-        self.addAnimation(self.name,'hands_ASL_3CL')
-        self.addAnimation(self.name,'hands_ASL_4CL')
-        self.addAnimation(self.name,'hands_ASL_5aCL')
-        self.addAnimation(self.name,'hands_ASL_5bCL')
-        self.addAnimation(self.name,'hands_ASL_ACL')
-        self.addAnimation(self.name,'hands_ASL_BCL')
-        self.addAnimation(self.name,'hands_ASL_CCL')
-        self.addAnimation(self.name,'hands_ASL_FCL')
-        self.addAnimation(self.name,'hands_ASL_ICL')
-        self.addAnimation(self.name,'hands_ASL_ILYCL')
-        self.addAnimation(self.name,'hands_ASL_M')
-        self.addAnimation(self.name,'hands_ASL_N')
-        self.addAnimation(self.name,'hands_ASL_SCL')
-        self.addAnimation(self.name,'hands_ASL_T')
-        self.addAnimation(self.name,'hands_ASL_VaCL')
-        self.addAnimation(self.name,'hands_ASL_VbCL')
-        self.addAnimation(self.name,'hands_ASL_YCL')
-
-        #self.addAnimation(self.name,'endian')
+        # self.addAnimation(self.name,'hands_ASL_1CL')
+        # self.addAnimation(self.name,'hands_ASL_2CL')
+        # self.addAnimation(self.name,'hands_ASL_3CL')
+        # self.addAnimation(self.name,'hands_ASL_4CL')
+        # self.addAnimation(self.name,'hands_ASL_5aCL')
+        # self.addAnimation(self.name,'hands_ASL_5bCL')
+        # self.addAnimation(self.name,'hands_ASL_ACL')
+        # self.addAnimation(self.name,'hands_ASL_BCL')
+        # self.addAnimation(self.name,'hands_ASL_CCL')
+        # self.addAnimation(self.name,'hands_ASL_FCL')
+        # self.addAnimation(self.name,'hands_ASL_ICL')
+        # self.addAnimation(self.name,'hands_ASL_ILYCL')
+        # self.addAnimation(self.name,'hands_ASL_M')
+        # self.addAnimation(self.name,'hands_ASL_N')
+        # self.addAnimation(self.name,'hands_ASL_SCL')
+        # self.addAnimation(self.name,'hands_ASL_T')
+        # self.addAnimation(self.name,'hands_ASL_VaCL')
+        # self.addAnimation(self.name,'hands_ASL_VbCL')
+        # self.addAnimation(self.name,'hands_ASL_YCL')
+        # self.addAnimation(self.name,'hands_ASL_CbCL')
+        # self.addAnimation(self.name,'hands_ASL_TCL')
         
         if 'default' in self.animationFileNames:
             self.addAnimation(self.name,'default')
         
         #self.realizer.addCharacterSkeleton( self.name,  );
-        
+
         self.agent.reparentTo( render )
         self.agent.hide( BitMask32.bit( self.cameraMask ) )
         
@@ -270,8 +274,8 @@ class Agent:
                 #print(weight, "\n")
                 morphTarget.setX(weight)
                 
-        blushingValue = self.realizer.getShaderParameterValue( self.name, 'blushing' )
-        self.shaders.headShader.blushing.set( blushingValue )
+        #blushingValue = self.realizer.getShaderParameterValue( self.name, 'blushing' )
+        #self.shaders.headShader.blushing.set( blushingValue )
         
         self.lighting.update()
         if self.createShadowMap == 1:
@@ -291,7 +295,25 @@ class Agent:
             self.realizer.addPoseToAnimation(_actorName, _animationName, self.newSkeleton)
         self.animationAgent.detachNode()
         print "animation",_animationName,"added"
+    
+    def addAnimationWE(self,_actorName,_animationName):
+        self.animationAgent.reparentTo(render)
+        self.animationAgent.setScale(10)
+        agentSMRMotion = SMRPy.SMRMotion()
+        agentSMRMotion.setTimeStep(0.04)
+        self.realizer.addAnimation(_actorName, _animationName)
+        for i in range (self.animationAgent.getNumFrames(_animationName)):
+            self.animationAgent.pose(_animationName,i)
+            base.graphicsEngine.renderFrame()
+            self.updateSMRSkeleton(self.agentNodePaths, self.newSkeleton)
+            self.realizer.addPoseToAnimation(_actorName, _animationName, self.newSkeleton)
+            agentSMRMotion.insertSkeleton(self.newSkeleton)
+        self.animationAgent.detachNode()
+        print "animation",_animationName,"added"
+        SMRPy.exportMotionToBvh(_animationName+".bvh",agentSMRMotion)
+
      
+
     def createSkel(self, _pandaAgent, _smrSkel, _initialJointName, _parentName):
         #get the agent's currentJoint
         currentPandaJoint = _pandaAgent.getJoints(None,_initialJointName)
@@ -319,7 +341,10 @@ class Agent:
         quatRot = quatRot.multiply(quatY)
         quatRot.normalize();
 
+        #quatRot = currentPandaCJoint.getQuat()
+
         newJoint.setPos(position.getX(),position.getY(),position.getZ())
+        #newJoint.setRotQuat(quatRot.getR(),quatRot.getI(),quatRot.getJ(),quatRot.getK())
         newJoint.setRotQuat(quatRot.getW(),quatRot.getX(),quatRot.getY(),quatRot.getZ())
 
         newJoint.setParentName(_parentName)
@@ -341,19 +366,7 @@ class Agent:
         currentPandaJoint = _pandaAgent.getJoints(None, _initialJointName)
 
         currentPandaJointPath = _pandaAgent.exposeJoint(None, 'modelRoot', _initialJointName, "lodRoot", True)
-        
-        #currentPandaCJoint = _pandaAgent.controlJoint(None, 'modelRoot', _initialJointName)
-        #if (_parentName == 'root' or _parentName == '' or _parentName == 'Bone.001'):
-        #    currentPandaJointPath = _pandaAgent.exposeJoint(None, 'modelRoot', _initialJointName)
-        #else:
-        #    print(_parentName)
-        #    currentPandaJointPath = _pandaAgent.exposeJoint(None, _parentName, _initialJointName)
-            
-        #if (_initialJointName == "lhand"):
-        #    self.rhand = currentPandaJointPath
-
         self.agentNodePaths.append(currentPandaJointPath)
-
         #get the first joint's position
         position = currentPandaJointPath.getPos()
 
@@ -387,8 +400,8 @@ class Agent:
         #synchronize root joint
         SMRJoint = _smrSkeleton.getJoint(0)
         PANDAJoint = agentControlJoints[0]
-        position = SMRJoint.getPos() 
-        PANDAJoint.setPos(position.X(),position.Y(),position.Z());
+        #position = SMRJoint.getPos() 
+        #PANDAJoint.setPos(position.X(),position.Y(),position.Z());
 
         for i in range(_smrSkeleton.getNumjoints()):
           SMRJoint = _smrSkeleton.getJoint(i)

@@ -23,9 +23,10 @@ import os
 from pandac.PandaModules import Filename
 import re
 
+from pandac.PandaModules import TransparencyAttrib
 
 class AmberModel:
-    def __init__( self, actor, lighting, dataPath, shaderPath ):
+    def __init__( self, actor, lighting, dataPath ):
         self.modelHead = actor.find("**/theHead")
         
         materials=actor.findAllMaterials()
@@ -45,20 +46,20 @@ class AmberModel:
         self.lighting = lighting
         
         #create shaders
-        self.hairShader = HairShader( self.modelHair, camera, lighting, dataPath, shaderPath )
-        self.headShader = HeadShader( self.modelHead, camera, lighting, dataPath, shaderPath )
-        self.eyeShader = EyeShader( self.modelLEye, self.modelREye, camera, lighting, dataPath, shaderPath )
-        self.bodyShader = BodyShader( self.modelBody, camera, lighting, dataPath, shaderPath )
-        self.jacketShader = GenericShader( self.modelJacket, camera, lighting, "UVTex", "models/amber/textures/jacket/jacketDiffuse.jpg", "models/amber/textures/jacket/jacketShadow.jpg", dataPath, shaderPath )
-        self.trousersShader = GenericShader( self.modelTrousers, camera, lighting, "UVTex", "models/amber/textures/trousers/trousersDiffuse.jpg", "models/amber/textures/trousers/trousersShadow.jpg", dataPath, shaderPath )
+        #self.hairShader = HairShader( self.modelHair, camera, lighting, dataPath, "models/amber/textures/hair/", "hairDiffuse.jpg" )
+        self.headShader = HeadShader( self.modelHead, camera, lighting, dataPath, "models/amber/textures/head/" )
+        self.eyeShader = EyeShader( self.modelLEye, self.modelREye, camera, lighting, dataPath, "models/amber/textures/eyes/", "textures/cubemaps/" )
+        self.bodyShader = BodyShader( self.modelBody, camera, lighting, dataPath, "models/amber/textures/body/" )
+        self.jacketShader = GenericShader( self.modelJacket, camera, lighting, "UVTex", "models/amber/textures/jacket/jacketDiffuse.jpg", "models/amber/textures/jacket/jacketShadow.jpg", dataPath )
+        self.trousersShader = GenericShader( self.modelTrousers, camera, lighting, "UVTex", "models/amber/textures/trousers/trousersDiffuse.jpg", "models/amber/textures/trousers/trousersShadow.jpg", dataPath )
         
-        self.lshoeShader = GenericShader( self.modelLShoe, camera, lighting, "UVTex", "models/amber/textures/shoes/shoeDiffuse.jpg", "models/amber/textures/shoes/shoeShadow.jpg", dataPath, shaderPath )
-        self.rshoeShader = GenericShader( self.modelRShoe, camera, lighting, "UVTex", "models/amber/textures/shoes/shoeDiffuse.jpg", "models/amber/textures/shoes/shoeShadow.jpg", dataPath, shaderPath )
+        self.lshoeShader = GenericShader( self.modelLShoe, camera, lighting, "UVTex", "models/amber/textures/shoes/shoeDiffuse.jpg", "models/amber/textures/shoes/shoeShadow.jpg", dataPath )
+        self.rshoeShader = GenericShader( self.modelRShoe, camera, lighting, "UVTex", "models/amber/textures/shoes/shoeDiffuse.jpg", "models/amber/textures/shoes/shoeShadow.jpg", dataPath )
         
         self.modelJacket.setTwoSided(True)
         
     def update(self):
-        self.hairShader.update()
+        #self.hairShader.update()
         self.headShader.update()
         self.eyeShader.update()
         self.bodyShader.update()
@@ -66,17 +67,15 @@ class AmberModel:
         self.trousersShader.update()
         self.lshoeShader.update()
         self.rshoeShader.update()
-        
     def updateWithShadows( self, shadowMap ):
-        """self.hairShader.update()
+        #self.hairShader.update()
         self.headShader.update()
         self.eyeShader.update()
         self.bodyShader.update()
         self.jacketShader.update()
         self.trousersShader.update()
         self.lshoeShader.update()
-        self.rshoeShader.update()"""
-        self.update()
+        self.rshoeShader.update()
         
         shadowMap.setTexture( self.modelHair )
         shadowMap.setTexture( self.modelJacket )
@@ -88,6 +87,74 @@ class AmberModel:
         shadowMap.setTexture( self.modelLShoe )
         shadowMap.setTexture( self.modelRShoe )
 
+class AlfonseModel:
+    def __init__( self, actor, lighting, dataPath ):
+        print "Alfonse:"
+        self.modelHead = actor.find("**/theHead")
+        print self.modelHead
+        
+        materials=actor.findAllMaterials()
+        
+        self.modelHair = actor.find("**/theHair")
+        print self.modelHair
+        self.modelJacket = actor.find("**/theJacket")
+        
+        self.modelLEye = actor.find("**/theLEye")
+        self.modelREye = actor.find("**/theREye")
+        
+        self.modelBody = actor.find("**/theBody")
+        self.modelTrousers = actor.find("**/theTrousers")
+        
+        self.modelLShoe = actor.find("**/theLeftShoe")
+        self.modelRShoe = actor.find("**/theRightShoe")
+        
+        self.lighting = lighting
+        
+        #create shaders
+        #self.hairShader = HairShader( self.modelHair, camera, lighting, dataPath, "models/alfonse/textures/hair/", "hair.png" )
+        self.headShader = HeadShader( self.modelHead, camera, lighting, dataPath, "models/alfonse/textures/head/" )
+        self.eyeShader = EyeShader( self.modelLEye, self.modelREye, camera, lighting, dataPath, "models/alfonse/textures/eyes/", "textures/cubemaps/" )
+        self.bodyShader = BodyShader( self.modelBody, camera, lighting, dataPath, "models/alfonse/textures/body/" )
+        self.jacketShader = GenericShader( self.modelJacket, camera, lighting, "UVTex", "models/alfonse/textures/jacket/jacketDiffuse.jpg", "models/alfonse/textures/jacket/jacketShadow.jpg", dataPath )
+        self.trousersShader = GenericShader( self.modelTrousers, camera, lighting, "UVTex", "models/alfonse/textures/trousers/trousersDiffuse.jpg", "models/alfonse/textures/trousers/trousersShadow.jpg", dataPath )
+        
+        #self.lshoeShader = GenericShader( self.modelLShoe, camera, lighting, "UVTex", "models/amber/textures/shoes/shoeDiffuse.jpg", "models/amber/textures/shoes/shoeShadow.jpg", dataPath )
+        #self.rshoeShader = GenericShader( self.modelRShoe, camera, lighting, "UVTex", "models/amber/textures/shoes/shoeDiffuse.jpg", "models/amber/textures/shoes/shoeShadow.jpg", dataPath )
+        
+        self.modelJacket.setTwoSided(True)
+        
+        
+        #self.modelHair.setTransparency( TransparencyAttrib.MAlpha, 1 )
+        
+    def update(self):
+        #self.hairShader.update()
+        self.headShader.update()
+        self.eyeShader.update()
+        self.bodyShader.update()
+        self.jacketShader.update()
+        self.trousersShader.update()
+        #self.lshoeShader.update()
+        #self.rshoeShader.update()
+    def updateWithShadows( self, shadowMap ):
+        #self.hairShader.update()
+        self.headShader.update()
+        self.eyeShader.update()
+        self.bodyShader.update()
+        self.jacketShader.update()
+        self.trousersShader.update()
+        #self.lshoeShader.update()
+        #self.rshoeShader.update()
+        
+        shadowMap.setTexture( self.modelHair )
+        shadowMap.setTexture( self.modelJacket )
+        shadowMap.setTexture( self.modelHead )
+        shadowMap.setTexture( self.modelLEye )
+        shadowMap.setTexture( self.modelREye )
+        shadowMap.setTexture( self.modelBody )
+        shadowMap.setTexture( self.modelTrousers )
+        #shadowMap.setTexture( self.modelLShoe )
+        #shadowMap.setTexture( self.modelRShoe )
+        
 class ShaderDirectionalLight:
     def __init__( self, color, direction, intensity, index ):
         self.color = color
@@ -191,6 +258,16 @@ class Lighting:
         for i in range(4):
             self.directionalLights[i].update()
         
+    def copy( self, source ):
+      self.ambientColor = source.ambientColor
+      for i in range(4):
+        light = self.directionalLights[i]
+        lightSrc = source.directionalLights[i]
+        
+        light.intensity = lightSrc.intensity
+        light.direction = lightSrc.direction
+        light.color = lightSrc.color
+        
     def setShaderInput(self,model):
         print "blub"
 
@@ -211,6 +288,7 @@ class Lighting:
             light.intensity = intensity
             light.direction = Vec3( math.sin(theta) * math.cos(phi), math.cos(theta) * math.cos(phi), math.sin(phi) )
             light.color = hsvToRGB( hue, saturation, 1 )
+            
 class Shader:
     def __init__(self):
         print "blub"
@@ -297,15 +375,15 @@ class Shader:
         return shader
     
 class HairShader(Shader):
-    def __init__(self,modelHair,camera, lighting, dataPath, shaderPath ):
+    def __init__(self,modelHair,camera, lighting, dataPath, texturePath, diffuseTexture ):
         #textures
         texCoordName="UVTex"
         
        	#set diffuse and specular map
-        self.loadAndSetTexture( modelHair, dataPath + "models/amber/textures/hair/hair.png",  "diffuse",  texCoordName, 0 )
-        self.loadAndSetTexture( modelHair, dataPath + "models/amber/textures/hair/hairSpecular.jpg", "specular", texCoordName, 1 )
+        self.loadAndSetTexture( modelHair, dataPath + texturePath + diffuseTexture,  "diffuse",  texCoordName, 0 )
+        self.loadAndSetTexture( modelHair, dataPath + texturePath + "hairSpecular.jpg", "specular", texCoordName, 1 )
 		
-        shader = self.loadShaderRelative( shaderPath, "hair.sha" )
+        shader = self.loadShaderRelative( dataPath + "shaders/", "hair.sha" )
         
         modelHair.setShader(shader,-1)
         modelHair.setShaderInput("camera",camera)
@@ -318,19 +396,21 @@ class HairShader(Shader):
         
     def update(self):
         self.setLighting( self.modelHair, self.lighting )
+        #print self.lighting.ambientColor
+        #print self.lighting
         
 class HeadShader(Shader):
-    def __init__( self, modelHead, camera, lighting, dataPath, shaderPath ):
+    def __init__( self, modelHead, camera, lighting, dataPath, texturePath ):
         #textures
         texCoordName="UVTex"
                 
         #set diffuse, normal, ambient occlusion, blood and subsurface scattering strength map
-        self.loadAndSetTexture( modelHead, dataPath + "models/amber/textures/head/headDiffuse.jpg",  "diffuse", texCoordName, 0 )
-        self.loadAndSetTexture( modelHead, dataPath + "models/amber/textures/head/headShadow.jpg",   "shadow",  texCoordName, 2 )
-        self.loadAndSetTexture( modelHead, dataPath + "models/amber/textures/head/headBlushing.png", "blood",   texCoordName, 3 )
+        self.loadAndSetTexture( modelHead, dataPath + texturePath + "headDiffuse.jpg",  "diffuse", texCoordName, 0 )
+        self.loadAndSetTexture( modelHead, dataPath + texturePath + "headShadow.jpg",   "shadow",  texCoordName, 2 )
+        self.loadAndSetTexture( modelHead, dataPath + texturePath + "headBlushing.png", "blood",   texCoordName, 3 )
         
         #load shader
-        shader = self.loadShaderRelative( shaderPath, "head.sha" )
+        shader = self.loadShaderRelative( dataPath + "shaders/", "head.sha" )
         modelHead.setShader(shader,-1)
         
        	#make camera position available to vertex shader for fresnel view direction computation
@@ -345,18 +425,20 @@ class HeadShader(Shader):
         
     def update(self):
         self.setLighting( self.modelHead, self.lighting )
+        #print self.lighting.ambientColor
+        #print self.lighting
 
 class EyeShader(Shader):
-    def __init__( self, modelLEye, modelREye, camera, lighting, dataPath, shaderPath ):
+    def __init__( self, modelLEye, modelREye, camera, lighting, dataPath, texturePath, cubemapPath ):
         #textures
         texCoordName="UVTex"
         
        	#load maps
-        self.loadAndSetTexture2( modelLEye, modelREye, dataPath + "models/amber/textures/eyes/eyeDiffuse.jpg",       "diffuse", texCoordName, 0 )
-        self.loadAndSetCubeTexture2( modelLEye, modelREye, dataPath + 'models/amber/textures/eyes/brightday2_#.png', "cube",    texCoordName, 1 )
+        self.loadAndSetTexture2( modelLEye, modelREye, dataPath + texturePath + "eyeDiffuse.jpg",       "diffuse", texCoordName, 0 )
+        self.loadAndSetCubeTexture2( modelLEye, modelREye, dataPath + cubemapPath + 'brightday2_#.png', "cube",    texCoordName, 1 )
  
         #load shader
-        shader = self.loadShaderRelative( shaderPath, "eye.sha" )
+        shader = self.loadShaderRelative( dataPath + "shaders/", "eye.sha" )
         modelLEye.setShader(shader,-1)
         modelREye.setShader(shader,-1)
         modelLEye.setShaderInput("camera",camera)
@@ -385,16 +467,16 @@ class EyeShader(Shader):
         self.setLighting( self.modelREye, self.lighting )
         
 class BodyShader(Shader):
-    def __init__( self, modelBody, camera, lighting, dataPath, shaderPath ):
+    def __init__( self, modelBody, camera, lighting, dataPath, texturePath ):
         #textures
         texCoordName="body"
                 
         #set maps
-        self.loadAndSetTexture( modelBody, dataPath + "models/amber/textures/body/bodyDiffuse.jpg", "diffuse",  texCoordName,0 )
-        self.loadAndSetTexture( modelBody, dataPath + "models/amber/textures/body/bodyShadow.jpg",  "shadow",   texCoordName,1 )
+        self.loadAndSetTexture( modelBody, dataPath + texturePath + "bodyDiffuse.jpg", "diffuse",  texCoordName,0 )
+        self.loadAndSetTexture( modelBody, dataPath + texturePath + "bodyShadow.jpg",  "shadow",   texCoordName,1 )
         
        	#load shader
-        shader = self.loadShaderRelative( shaderPath, "body.sha" )
+        shader = self.loadShaderRelative( dataPath + "shaders/", "body.sha" )
         modelBody.setShader(shader,-1)
         
        	#make camera position available to vertex shader for fresnel view direction computation
@@ -409,13 +491,13 @@ class BodyShader(Shader):
         self.setLighting( self.modelBody, self.lighting )
         
 class GenericShader(Shader):
-    def __init__( self, model, camera, lighting, texCoordName, fileNameDiffuse, fileNameShadow, dataPath, shaderPath ): 
+    def __init__( self, model, camera, lighting, texCoordName, fileNameDiffuse, fileNameShadow, dataPath ): 
         #set maps
         self.loadAndSetTexture( model, dataPath + fileNameDiffuse, "diffuse", texCoordName, 0 )
         self.loadAndSetTexture( model, dataPath + fileNameShadow,  "shadow",  texCoordName, 1 )
         
        	#load shader
-        shader = self.loadShaderRelative( shaderPath, "generic.sha" )
+        shader = self.loadShaderRelative( dataPath + "shaders/", "generic.sha" )
         model.setShader(shader,-1)
         
        	#make camera position available to vertex shader for fresnel view direction computation

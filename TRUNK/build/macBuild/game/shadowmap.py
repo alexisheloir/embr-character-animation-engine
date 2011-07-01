@@ -5,9 +5,9 @@ class ShadowMap:
         # creating the offscreen buffer.
         winprops = WindowProperties.size(512,512)
         props = FrameBufferProperties()
-        props.setRgbColor(1)
-        props.setAlphaBits(1)
-        props.setDepthBits(1)
+        props.setRgbColor(0)
+        props.setAlphaBits(0)
+        props.setDepthBits(0)
         LBuffer = base.graphicsEngine.makeOutput(
                  base.pipe, "offscreen buffer", -2,
                  props, winprops,

@@ -99,7 +99,9 @@ class World(DirectObject):
                                   pos=(0.8,-0.95), scale = .07)            
         #setup key input
         self.accept('escape', sys.exit)
-
+        
+        self.dataPath = "../../../data/"
+        
         self.agent = Actor('models/amber/amber.bam', {"morph":"models/amber/animations/amber-morphTargets.bam"})
         
         self.agent2 = Actor('models/amber/amber.bam', {"morph":"models/amber/animations/amber-morphTargets.bam"})

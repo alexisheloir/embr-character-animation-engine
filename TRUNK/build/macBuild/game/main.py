@@ -2,14 +2,8 @@
 # Models and Textures by: Alexis Heloir
 # Last Updated: 17/10/08
 #
-import embr
-import SMRPy
 import getopt
 import sys
-
-
-#create the Realizer
-realizer = SMRPy.Realizer()
 
 def usage():
     print (
@@ -71,6 +65,14 @@ for opt,arg in opts :
     elif opt in ("--ADVANCED_SHADERS","-a"):
         useAdvancedShaders = 1
 
+import embr
+#import alfonse
+import SMRPy
+
+
+#create the Realizer
+realizer = SMRPy.Realizer()
+
 realizer.configureLogger(5,xmlLoggerLevel)
 realizer.configureLogger(4,modifierLoggerLevel)
 realizer.configureLogger(3,parserLoggerLevel)
@@ -78,8 +80,5 @@ realizer.configureLogger(2,schedulerLoggerLevel)
 realizer.configureLogger(1,ikLoggerLevel)
 realizer.configureLogger(0,globalLoggerLevel)
 
-w = embr.World( realizer, useAdvancedShaders )
-
-w.setDataPath("../../../data/")
-
+w = embr.World( realizer )
 run()              #Run the realizer

@@ -309,95 +309,95 @@
     </kinematics>
     <animations>
       <animation>
-        <bvhmotion name="ASL_1CL"/>
+        <bvhmotion name="hands_ASL_1CL"/>
         <ressource filepath="./animations/hands_ASL_1CL.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="ASL_2CL"/>
+        <bvhmotion name="hands_ASL_2CL"/>
         <ressource filepath="./animations/hands_ASL_2CL.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="ASL_3CL"/>
+        <bvhmotion name="hands_ASL_3CL"/>
         <ressource filepath="./animations/hands_ASL_3CL.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="ASL_4CL"/>
+        <bvhmotion name="hands_ASL_4CL"/>
         <ressource filepath="./animations/hands_ASL_4CL.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="ASL_5aCL"/>
+        <bvhmotion name="hands_ASL_5aCL"/>
         <ressource filepath="./animations/hands_ASL_5aCL.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="ASL_A5bCL"/>
+        <bvhmotion name="hands_ASL_A5bCL"/>
         <ressource filepath="./animations/hands_ASL_5bCL.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="ASL_ACL"/>
+        <bvhmotion name="hands_ASL_ACL"/>
         <ressource filepath="./animations/hands_ASL_ACL.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="ASL_BCL"/>
+        <bvhmotion name="hands_ASL_BCL"/>
         <ressource filepath="./animations/hands_ASL_BCL.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="ASL_CbCL"/>
+        <bvhmotion name="hands_ASL_CbCL"/>
         <ressource filepath="./animations/hands_ASL_CbCL.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="ASL_CCL"/>
+        <bvhmotion name="hands_ASL_CCL"/>
         <ressource filepath="./animations/hands_ASL_CCL.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="ASL_FCL"/>
+        <bvhmotion name="hands_ASL_FCL"/>
         <ressource filepath="./animations/hands_ASL_FCL.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="ASL_GCL"/>
+        <bvhmotion name="hands_ASL_GCL"/>
         <ressource filepath="./animations/hands_ASL_G.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="ASL_G"/>
+        <bvhmotion name="hands_ASL_G"/>
         <ressource filepath="./animations/hands_ASL_G.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="ASL_ICL"/>
+        <bvhmotion name="hands_ASL_ICL"/>
         <ressource filepath="./animations/hands_ASL_ICL.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="ASL_ILYCL"/>
+        <bvhmotion name="hands_ASL_ILYCL"/>
         <ressource filepath="./animations/hands_ASL_ILYCL.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="ASL_M"/>
+        <bvhmotion name="hands_ASL_M"/>
         <ressource filepath="./animations/hands_ASL_M.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="ASL_N"/>
+        <bvhmotion name="hands_ASL_N"/>
         <ressource filepath="./animations/hands_ASL_N.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="ASL_SCL"/>
+        <bvhmotion name="hands_ASL_SCL"/>
         <ressource filepath="./animations/hands_ASL_SCL.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="ASL_TCL"/>
+        <bvhmotion name="hands_ASL_TCL"/>
         <ressource filepath="./animations/hands_ASL_TCL.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="ASL_T"/>
+        <bvhmotion name="hands_ASL_T"/>
         <ressource filepath="./animations/hands_ASL_T.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="ASL_VaCL"/>
+        <bvhmotion name="hands_ASL_VaCL"/>
         <ressource filepath="./animations/hands_ASL_VaCL.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="ASL_VbCL"/>
+        <bvhmotion name="hands_ASL_VbCL"/>
         <ressource filepath="./animations/hands_ASL_VbCL.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="ASL_YCL"/>
+        <bvhmotion name="hands_ASL_YCL"/>
         <ressource filepath="./animations/hands_ASL_YCL.bvh"/>
       </animation>
       <animation>
@@ -429,111 +429,115 @@
         <ressource filepath="./animations/hands_open-relaxed.bvh"/>
       </animation>
       <animation>
+        <bvhmotion name="hands_index"/>
+        <ressource filepath="./animations/hands_index.bvh"/>
+      </animation>
+      <animation>
         <bvhmotion name="poseNeutral"/>
         <ressource filepath="./animations/poseNeutral.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_A"/>
+        <bvhmotion name="hands_DGS_A"/>
         <ressource filepath="./animations/hands_DGS_A.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_B"/>
+        <bvhmotion name="hands_DGS_B"/>
         <ressource filepath="./animations/hands_DGS_B.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_C"/>
+        <bvhmotion name="hands_DGS_C"/>
         <ressource filepath="./animations/hands_DGS_C.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_D"/>
+        <bvhmotion name="hands_DGS_D"/>
         <ressource filepath="./animations/hands_DGS_D.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_E"/>
+        <bvhmotion name="hands_DGS_E"/>
         <ressource filepath="./animations/hands_DGS_E.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_F"/>
+        <bvhmotion name="hands_DGS_F"/>
         <ressource filepath="./animations/hands_DGS_F.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_G"/>
+        <bvhmotion name="hands_DGS_G"/>
         <ressource filepath="./animations/hands_DGS_G.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_H"/>
+        <bvhmotion name="hands_DGS_H"/>
         <ressource filepath="./animations/hands_DGS_H.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_I"/>
+        <bvhmotion name="hands_DGS_I"/>
         <ressource filepath="./animations/hands_DGS_I.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_J"/>
+        <bvhmotion name="hands_DGS_J"/>
         <ressource filepath="./animations/hands_DGS_J.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_K"/>
+        <bvhmotion name="hands_DGS_K"/>
         <ressource filepath="./animations/hands_DGS_K.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_L"/>
+        <bvhmotion name="hands_DGS_L"/>
         <ressource filepath="./animations/hands_DGS_L.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_M"/>
+        <bvhmotion name="hands_DGS_M"/>
         <ressource filepath="./animations/hands_DGS_M.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_N"/>
+        <bvhmotion name="hands_DGS_N"/>
         <ressource filepath="./animations/hands_DGS_N.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_O"/>
+        <bvhmotion name="hands_DGS_O"/>
         <ressource filepath="./animations/hands_DGS_O.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_P"/>
+        <bvhmotion name="hands_DGS_P"/>
         <ressource filepath="./animations/hands_DGS_P.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_Q"/>
+        <bvhmotion name="hands_DGS_Q"/>
         <ressource filepath="./animations/hands_DGS_Q.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_R"/>
+        <bvhmotion name="hands_DGS_R"/>
         <ressource filepath="./animations/hands_DGS_R.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_SCH"/>
+        <bvhmotion name="hands_DGS_SCH"/>
         <ressource filepath="./animations/hands_DGS_SCH.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_T"/>
+        <bvhmotion name="hands_DGS_T"/>
         <ressource filepath="./animations/hands_DGS_T.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_U"/>
+        <bvhmotion name="hands_DGS_U"/>
         <ressource filepath="./animations/hands_DGS_U.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_V"/>
+        <bvhmotion name="hands_DGS_V"/>
         <ressource filepath="./animations/hands_DGS_V.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_W"/>
+        <bvhmotion name="hands_DGS_W"/>
         <ressource filepath="./animations/hands_DGS_W.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_X"/>
+        <bvhmotion name="hands_DGS_X"/>
         <ressource filepath="./animations/hands_DGS_X.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_Y"/>
+        <bvhmotion name="hands_DGS_Y"/>
         <ressource filepath="./animations/hands_DGS_Y.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_Z"/>
+        <bvhmotion name="hands_DGS_Z"/>
         <ressource filepath="./animations/hands_DGS_Z.bvh"/>
       </animation>
       
@@ -929,95 +933,95 @@
 
     <animations>
       <animation>
-        <bvhmotion name="ASL_1CL"/>
+        <bvhmotion name="hands_ASL_1CL"/>
         <ressource filepath="./animations/hands_ASL_1CL.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="ASL_2CL"/>
+        <bvhmotion name="hands_ASL_2CL"/>
         <ressource filepath="./animations/hands_ASL_2CL.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="ASL_3CL"/>
+        <bvhmotion name="hands_ASL_3CL"/>
         <ressource filepath="./animations/hands_ASL_3CL.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="ASL_4CL"/>
+        <bvhmotion name="hands_ASL_4CL"/>
         <ressource filepath="./animations/hands_ASL_4CL.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="ASL_5aCL"/>
+        <bvhmotion name="hands_ASL_5aCL"/>
         <ressource filepath="./animations/hands_ASL_5aCL.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="ASL_A5bCL"/>
+        <bvhmotion name="hands_ASL_A5bCL"/>
         <ressource filepath="./animations/hands_ASL_5bCL.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="ASL_ACL"/>
+        <bvhmotion name="hands_ASL_ACL"/>
         <ressource filepath="./animations/hands_ASL_ACL.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="ASL_BCL"/>
+        <bvhmotion name="hands_ASL_BCL"/>
         <ressource filepath="./animations/hands_ASL_BCL.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="ASL_CbCL"/>
+        <bvhmotion name="hands_ASL_CbCL"/>
         <ressource filepath="./animations/hands_ASL_CbCL.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="ASL_CCL"/>
+        <bvhmotion name="hands_ASL_CCL"/>
         <ressource filepath="./animations/hands_ASL_CCL.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="ASL_FCL"/>
+        <bvhmotion name="hands_ASL_FCL"/>
         <ressource filepath="./animations/hands_ASL_FCL.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="ASL_GCL"/>
+        <bvhmotion name="hands_ASL_GCL"/>
         <ressource filepath="./animations/hands_ASL_G.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="ASL_G"/>
+        <bvhmotion name="hands_ASL_G"/>
         <ressource filepath="./animations/hands_ASL_G.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="ASL_ICL"/>
+        <bvhmotion name="hands_ASL_ICL"/>
         <ressource filepath="./animations/hands_ASL_ICL.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="ASL_ILYCL"/>
+        <bvhmotion name="hands_ASL_ILYCL"/>
         <ressource filepath="./animations/hands_ASL_ILYCL.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="ASL_M"/>
+        <bvhmotion name="hands_ASL_M"/>
         <ressource filepath="./animations/hands_ASL_M.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="ASL_N"/>
+        <bvhmotion name="hands_ASL_N"/>
         <ressource filepath="./animations/hands_ASL_N.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="ASL_SCL"/>
+        <bvhmotion name="hands_ASL_SCL"/>
         <ressource filepath="./animations/hands_ASL_SCL.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="ASL_TCL"/>
+        <bvhmotion name="hands_ASL_TCL"/>
         <ressource filepath="./animations/hands_ASL_TCL.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="ASL_T"/>
+        <bvhmotion name="hands_ASL_T"/>
         <ressource filepath="./animations/hands_ASL_T.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="ASL_VaCL"/>
+        <bvhmotion name="hands_ASL_VaCL"/>
         <ressource filepath="./animations/hands_ASL_VaCL.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="ASL_VbCL"/>
+        <bvhmotion name="hands_ASL_VbCL"/>
         <ressource filepath="./animations/hands_ASL_VbCL.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="ASL_YCL"/>
+        <bvhmotion name="hands_ASL_YCL"/>
         <ressource filepath="./animations/hands_ASL_YCL.bvh"/>
       </animation>
       <animation>
@@ -1049,111 +1053,115 @@
         <ressource filepath="./animations/hands_open-relaxed.bvh"/>
       </animation>
       <animation>
+        <bvhmotion name="hands_index"/>
+        <ressource filepath="./animations/hands_index.bvh"/>
+      </animation>
+      <animation>
         <bvhmotion name="poseNeutral"/>
         <ressource filepath="./animations/poseNeutral.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_A"/>
+        <bvhmotion name="hands_DGS_A"/>
         <ressource filepath="./animations/hands_DGS_A.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_B"/>
+        <bvhmotion name="hands_DGS_B"/>
         <ressource filepath="./animations/hands_DGS_B.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_C"/>
+        <bvhmotion name="hands_DGS_C"/>
         <ressource filepath="./animations/hands_DGS_C.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_D"/>
+        <bvhmotion name="hands_DGS_D"/>
         <ressource filepath="./animations/hands_DGS_D.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_E"/>
+        <bvhmotion name="hands_DGS_E"/>
         <ressource filepath="./animations/hands_DGS_E.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_F"/>
+        <bvhmotion name="hands_DGS_F"/>
         <ressource filepath="./animations/hands_DGS_F.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_G"/>
+        <bvhmotion name="hands_DGS_G"/>
         <ressource filepath="./animations/hands_DGS_G.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_H"/>
+        <bvhmotion name="hands_DGS_H"/>
         <ressource filepath="./animations/hands_DGS_H.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_I"/>
+        <bvhmotion name="hands_DGS_I"/>
         <ressource filepath="./animations/hands_DGS_I.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_J"/>
+        <bvhmotion name="hands_DGS_J"/>
         <ressource filepath="./animations/hands_DGS_J.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_K"/>
+        <bvhmotion name="hands_DGS_K"/>
         <ressource filepath="./animations/hands_DGS_K.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_L"/>
+        <bvhmotion name="hands_DGS_L"/>
         <ressource filepath="./animations/hands_DGS_L.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_M"/>
+        <bvhmotion name="hands_DGS_M"/>
         <ressource filepath="./animations/hands_DGS_M.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_N"/>
+        <bvhmotion name="hands_DGS_N"/>
         <ressource filepath="./animations/hands_DGS_N.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_O"/>
+        <bvhmotion name="hands_DGS_O"/>
         <ressource filepath="./animations/hands_DGS_O.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_P"/>
+        <bvhmotion name="hands_DGS_P"/>
         <ressource filepath="./animations/hands_DGS_P.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_Q"/>
+        <bvhmotion name="hands_DGS_Q"/>
         <ressource filepath="./animations/hands_DGS_Q.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_R"/>
+        <bvhmotion name="hands_DGS_R"/>
         <ressource filepath="./animations/hands_DGS_R.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_SCH"/>
+        <bvhmotion name="hands_DGS_SCH"/>
         <ressource filepath="./animations/hands_DGS_SCH.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_T"/>
+        <bvhmotion name="hands_DGS_T"/>
         <ressource filepath="./animations/hands_DGS_T.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_U"/>
+        <bvhmotion name="hands_DGS_U"/>
         <ressource filepath="./animations/hands_DGS_U.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_V"/>
+        <bvhmotion name="hands_DGS_V"/>
         <ressource filepath="./animations/hands_DGS_V.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_W"/>
+        <bvhmotion name="hands_DGS_W"/>
         <ressource filepath="./animations/hands_DGS_W.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_X"/>
+        <bvhmotion name="hands_DGS_X"/>
         <ressource filepath="./animations/hands_DGS_X.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_Y"/>
+        <bvhmotion name="hands_DGS_Y"/>
         <ressource filepath="./animations/hands_DGS_Y.bvh"/>
       </animation>
       <animation>
-        <bvhmotion name="DGS_Z"/>
+        <bvhmotion name="hands_DGS_Z"/>
         <ressource filepath="./animations/hands_DGS_Z.bvh"/>
       </animation>
       <!--
@@ -1189,7 +1197,7 @@
       </shaderParameters>
     </shaders>
 
-    <behaviors><!-- 
+    <behaviors> 
       <autonomousParameters>
         <autonomousParameter name="breathingFrequency" initialValue="0.35"/>
         <autonomousParameter name="breathingAmplitude" initialValue="0.1"/>
@@ -1197,7 +1205,7 @@
         <autonomousParameter name="blinkProbability" initialValue="4000.0"/>
       </autonomousParameters>
 
-      <autonomousBehavior name="breathingMorph" type="periodic" frequency="breathingFrequency">
+      <!--<autonomousBehavior name="breathingMorph" type="periodic" frequency="breathingFrequency">
         <actuatorMorphAnimation value="breathingAmplitude">
           <morphKey name="inspire" relativeKey="0.0"  value="0.5"/>
           <morphKey name="inspire" relativeKey="0.25" value="1.0"/>
@@ -1205,7 +1213,7 @@
           <morphKey name="inspire" relativeKey="1.0"  value="0.5"/>
         </actuatorMorphAnimation>
         <actuatorSkelAnimation animation="breathing" jointGroup="upperBodyNoArms" useVelocity="True" value="breathingAmplitude"/>
-      </autonomousBehavior>
+      </autonomousBehavior>-->
 
       <autonomousBehavior name="blinking" type="random" frequency="blinkProbability">
         <actuatorMorphAnimation value="blinkIntensity">
@@ -1218,7 +1226,7 @@
           <morphKey name="ModBlinkRight" relativeKey="0.5" value="1.0"/>
           <morphKey name="ModBlinkRight" relativeKey="1.0" value="0.0"/>
         </actuatorMorphAnimation>
-      </autonomousBehavior>-->
+      </autonomousBehavior>
 
     </behaviors>
   </character>

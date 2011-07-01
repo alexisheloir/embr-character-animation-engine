@@ -14,8 +14,8 @@ Realizer myRealizer;
 
 //Parser::getInstance();
 
-SMRMotion motion = loadMotionFromBVH("exportedPose.bvh");
-SMRSkeleton posture = motion.getSkeleton(0);
+//SMRMotion motion = loadMotionFromBVH("exportedPose.bvh");
+//SMRSkeleton posture = motion.getSkeleton(0);
 
 //ActuatorFactory::getInstance()->addCharacter("Alfonse");
 //Character* currentCharacter = ActuatorFactory::getInstance()->getCharacter("Alfonse");
