@@ -1,0 +1,11 @@
+/CMakeFiles/
+/CMakeScripts/
+/*.cmake
+/macBuild/Smr/
+/macBuild/.EMBR*$
+/*.xcodeproj/
+/CMakeCache.*$
+egExtensions_auto_include.h
+egExtensions_auto_install.h
+EMBR.xcodeProj
+
