@@ -29,6 +29,8 @@
 
 static char alpha[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPGRSTUVWXYZ";
 
+static string xmlc = "0123456789XYZ";
+
 typedef SMRSmartPtr<GestureModifier> GMPtr;
 
 class NUCLEUS
@@ -83,7 +85,7 @@ public:
 class GESTURE_COMPONENT
 {
 public:
-  GESTURE_COMPONENT():key(""),type(""),absoluteTimePointInMs(0),holdDuration(0),nucID(-1){};
+  GESTURE_COMPONENT():key(""),type(""),absoluteTimePointInMs(0),holdDuration(0),nucID(-1),id(0){};
   ~GESTURE_COMPONENT(){};
 
 public:
@@ -96,6 +98,7 @@ public:
   string animationClip;
   string stencil;
   MotionSegment* keyFrame;
+  int id;
 };
 
 
@@ -143,6 +146,8 @@ public:
    * \brief The big ugly command which parses the EMBRScript
    */
   void parse_commands();
+  
+ // void parse_commandXML(string &_command);
 
   /**
    * \brief add a new command line to the command queue (called by the socket listener)
@@ -151,18 +156,30 @@ public:
 
   void setSchedulerManager(SchedulerManager *_schedulerManager);
 
-  void parse_commandLine( stringstream &_commandLine, std::vector<string> &_parsedElements, GESTURE &_currentGesture, GESTURE_COMPONENT &_currentComponent, CONSTRAINT &_currentConstraint, NUCLEUS &_currentNucleus, unsigned int &_timeOffset, int &_lastStopTime );
+  //XML parsing functionality
+  void parse_commandLineXML( stringstream &_commandLine, std::vector<string> &_parsedElements, GESTURE &_currentGesture, GESTURE_COMPONENT &_currentComponent, CONSTRAINT &_currentConstraint, NUCLEUS &_currentNucleus, unsigned int &_timeOffset, int &_lastStopTime,string &_currentElement);
 
-  void openElement(stringstream &_commandLine, std::vector<string> &_parsedElements, string &_currentToken, GESTURE &_currentGesture, GESTURE_COMPONENT &_currentComponent, CONSTRAINT &_currentConstraint, NUCLEUS &_currentNucleus);
+  void closeElementXML(stringstream &_commandLine, std::vector<string> &_parsedElements, string &_currentToken, GESTURE &_currentGesture, GESTURE_COMPONENT &_currentComponent, CONSTRAINT &_currentConstraint, NUCLEUS &_currentNucleus, int &_lastStopTime);
 
-  void closeElement(stringstream &_commandLine, std::vector<string> &_parsedElements, string &_currentToken, GESTURE &_currentGesture, GESTURE_COMPONENT &_currentComponent, CONSTRAINT &_currentConstraint, NUCLEUS &_currentNucleus, int &_lastStopTime);
+  void parseAttribute(stringstream &_commandLine, std::vector<string> &_parsedElements, string &_currentToken, GESTURE &_currentGesture, GESTURE_COMPONENT &_currentComponent, CONSTRAINT &_currentConstraint, NUCLEUS &_currentNucleus, unsigned int &_timeOffset, int &_lastStopTime);
+
+  void parseElement(stringstream &_commandLine, std::vector<string> &_parsedElements, string &_currentToken, GESTURE &_currentGesture, GESTURE_COMPONENT &_currentComponent, CONSTRAINT &_currentConstraint, NUCLEUS &_currentNucleus,string &_currentElement);
+  
+  void parseShortElement(stringstream &_commandLine, std::vector<string> &_parsedElements, string &_currentToken, GESTURE &_currentGesture, GESTURE_COMPONENT &_currentComponent, CONSTRAINT &_currentConstraint, NUCLEUS &_currentNucleus,string &_currentElement);
+
+  // old parsing functionality
+  void parse_commandLine( stringstream &_commandLine, std::vector<string> &_parsedElements, GESTURE &_currentGesture, GESTURE_COMPONENT &_currentComponent, CONSTRAINT &_currentConstraint, NUCLEUS &_currentNucleus, unsigned int &_timeOffset, int &_lastStopTime);
 
   void parseParameters(stringstream &_commandLine, std::vector<string> &_parsedElements, string &_currentToken, GESTURE &_currentGesture, GESTURE_COMPONENT &_currentComponent, CONSTRAINT &_currentConstraint, NUCLEUS &_currentNucleus, unsigned int &_timeOffset, int &_lastStopTime);
+  
+  void closeElement(stringstream &_commandLine, std::vector<string> &_parsedElements, string &_currentToken, GESTURE &_currentGesture, GESTURE_COMPONENT &_currentComponent, CONSTRAINT &_currentConstraint, NUCLEUS &_currentNucleus, int &_lastStopTime);
 
+  void openElement(stringstream &_commandLine, std::vector<string> &_parsedElements, string &_currentToken, GESTURE &_currentGesture, GESTURE_COMPONENT &_currentComponent, CONSTRAINT &_currentConstraint, NUCLEUS &_currentNucleus);
 private:
   std::vector<string> m_embotCommands;
   std::map<int, GMPtr *> m_gestureModifiers;
   SchedulerManager *m_schedulerManager;
+  int comment;
 };
 
 #endif
