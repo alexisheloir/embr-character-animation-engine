@@ -1,6 +1,7 @@
 //because I've got to commit
 #include "Parser.h"
- 
+
+
 float tokenize(string &_inputString, string _separator)
 {
   string token;
@@ -15,6 +16,7 @@ float tokenize(string &_inputString, string _separator)
   ss >> result;
   return result;
 }
+
 
 string stringTokenize(string &_inputString, string _separator)
 {
@@ -47,8 +49,54 @@ string removeComments(string &_inputString)
     token = _inputString;
   }
   return token;
-
 }
+
+string removeCommentsXML(string &_inputString, int &comment)
+{
+  string token;
+  
+  if (comment == 0)
+  {
+    size_t pos = _inputString.find('?',0);
+    if (pos == string::npos)
+    {
+      pos = _inputString.find("<!--",0);
+      if (pos != string::npos)
+      {
+        comment = 1;
+        token = _inputString.substr(0,pos);
+      }else
+      {
+        pos = _inputString.find('!',0);
+        if (pos == string::npos)
+        {
+          token =  removeComments(_inputString);
+        }
+      }
+    }
+  }
+  if (comment == 1)
+  {
+    size_t pos = _inputString.find("-->",0);
+    if (pos != string::npos)
+    {
+      comment = 0;
+      token += _inputString.substr(pos+3,_inputString.size()-pos+3);
+    }
+  }
+  return token;
+}
+
+
+string getAttribute(string &_commandLine, string &_attribute)
+{
+  size_t posBeg = _commandLine.find(_attribute);
+  posBeg =  _commandLine.find('"') + 1;
+  size_t posEnd =  _commandLine.find('"',posBeg);
+  string value = _commandLine.substr(posBeg,posEnd);
+  return value;
+ }
+  
 
   void Parser::setSchedulerManager(SchedulerManager *_schedulerManager)
   {
@@ -56,11 +104,10 @@ string removeComments(string &_inputString)
   }
 
 
-
 // Singleton initialization.  At first, there is no object created.
 //Parser *Parser::m_singleton = NULL;
 
-Parser::Parser():m_schedulerManager(NULL)
+Parser::Parser():m_schedulerManager(NULL),comment(0)
 {
 }
 
@@ -70,13 +117,15 @@ Parser::~Parser() {
 void Parser::enqueueCommand(const string &_command)
 {
   string TIME_RESET = _command;
+  
   // chunk the command line per line
   while(TIME_RESET.length() > 0)
   {
     boost::mutex::scoped_lock lock(parserMutex);
     string line = stringTokenize(TIME_RESET,"\n");
+    
     LOG_TRACE(parserLogger,"Current command to enqueue is " <<line<< endl);
-    line = removeComments(line);
+    line = removeCommentsXML(line,comment);
     m_embotCommands.push_back(line);
   }
 }
@@ -85,27 +134,47 @@ void Parser::parse_commands(void)
 { 
   stringstream commandLine;
   std::vector<string> parsedElements;
-
   GESTURE currentGesture;
   GESTURE_COMPONENT currentComponent;
   CONSTRAINT currentConstraint;
   NUCLEUS currentNucleus;
-
+  string currentElement;
+  string commandLineString;
   unsigned int timeOffset = 0;
   int lastStopTime = 0;
-  
+  bool parsedXML = false;
   while(1)
   {
-    LOG_TRACE(parserLogger,"parser is looping" << endl);
+   // LOG_TRACE(parserLogger,"parser is looping" << endl);
     if (m_embotCommands.size() > 0)
     {
       boost::mutex::scoped_lock lock(parserMutex);
-      commandLine.str((*(m_embotCommands.begin())).c_str()) ;
+      commandLineString = (*(m_embotCommands.begin()));
+      commandLine.str(commandLineString.c_str()) ;
+     
+      commandLine.seekg(commandLine.beg);
       m_embotCommands.erase(m_embotCommands.begin());
-      parse_commandLine(commandLine, parsedElements, currentGesture, currentComponent, currentConstraint, currentNucleus, timeOffset, lastStopTime);
+      size_t pos = commandLineString.find('<');
+      if (parsedXML)  
+      {
+        parse_commandLineXML(commandLine, parsedElements, currentGesture, currentComponent, currentConstraint, currentNucleus, timeOffset, lastStopTime, currentElement);
+      }else
+      {
+        size_t pos = commandLineString.find('<');
+        if (pos != string::npos)
+        {
+          parse_commandLineXML(commandLine, parsedElements, currentGesture, currentComponent, currentConstraint, currentNucleus, timeOffset, lastStopTime, currentElement);  
+          parsedXML = true;
+        }else 
+        {
+          parse_commandLine(commandLine, parsedElements, currentGesture, currentComponent, currentConstraint, currentNucleus, timeOffset, lastStopTime);      
+          parsedXML = false;
+         }
+      }
     }else
     {
       LOG_TRACE(parserLogger,"no command in heap, sleeping" << endl);
+      parsedXML = false;
 #ifdef WIN32
       Sleep(1);
 #else
@@ -114,6 +183,79 @@ void Parser::parse_commands(void)
     }
   }
 }
+
+
+void Parser::parse_commandLineXML( stringstream &_commandLine, std::vector<string> &_parsedElements, GESTURE &_currentGesture, GESTURE_COMPONENT &_currentComponent, CONSTRAINT &_currentConstraint, NUCLEUS &_currentNucleus, unsigned int &_timeOffset, int &_lastStopTime,string &_currentElement)
+{
+  if (_commandLine.str().length() > 0 && _commandLine.str().find("!") == string::npos &&_commandLine.str().find("?") == string::npos&& _commandLine.str()[1] != '?'  && _commandLine.str()[1] != '!')
+  {
+    string currentToken = "";
+    string prevToken = "";
+    _commandLine >> currentToken;
+    while(prevToken != currentToken) 
+    {
+      LOG_TRACE(parserLogger,"2 - currentToken is " <<currentToken<< " cmdline is "<<_commandLine<< endl);
+      if (currentToken ==("<animl>"))
+      {
+        LOG_TRACE(parserLogger,"parsing <animl>" << endl);
+        //new animl so clean up
+        m_gestureModifiers.clear();
+        _parsedElements.push_back("ANIML");
+      }else if (currentToken ==("<animl"))  
+      {
+        LOG_TRACE(parserLogger,"1 - parsing <animl " << endl);
+        m_gestureModifiers.clear();
+        prevToken = currentToken;
+        _commandLine >> currentToken;
+        
+        //check for time_reset:
+        string reset = "";
+        string tm = "time-reset";
+        reset = getAttribute(currentToken,tm);
+        if (reset =="True" || reset == "true")
+        {
+          LOG_TRACE(parserLogger,"parsed time-reset='true'" << endl);
+          m_schedulerManager->resetAllSchedulers();
+          _timeOffset = SMRUtils::getCurrentTime();
+        }
+        _parsedElements.push_back("ANIML");
+      }else if (currentToken[0] == '<' )
+      {
+        currentToken.erase(0,1);
+        if(currentToken[0] == '/')
+        {
+          if ( _currentElement == "" )
+          {
+            closeElementXML(_commandLine, _parsedElements, currentToken, _currentGesture, _currentComponent, _currentConstraint, _currentNucleus, _lastStopTime);
+          }else
+          {
+            _currentElement.clear();
+          }
+        }else
+        {
+          parseElement(_commandLine,_parsedElements,currentToken,_currentGesture,_currentComponent,_currentConstraint,_currentNucleus,_currentElement); 
+        }
+      }else if (currentToken.find("=",0) != string::npos)
+      {
+        LOG_TRACE(parserLogger,"1 - parsing attribute" << endl);
+        parseAttribute(_commandLine,_parsedElements, currentToken,_currentGesture, _currentComponent, _currentConstraint,_currentNucleus, _timeOffset,_lastStopTime);
+      }else if (_currentElement != "")
+      {
+        parseShortElement(_commandLine,_parsedElements,currentToken,_currentGesture,_currentComponent,_currentConstraint,_currentNucleus,_currentElement);
+      }else
+      {
+        LOG_ERROR(parserLogger,"syntax error: " << currentToken << " is unknown");
+      }   
+      prevToken = currentToken;
+      _commandLine >> currentToken;
+    }
+    _commandLine.seekp(ios_base::beg);
+    _commandLine.seekg(ios_base::beg);
+    _commandLine.str("");
+    _commandLine.clear();
+  }
+}
+
 
 void Parser::parse_commandLine( stringstream &_commandLine, std::vector<string> &_parsedElements, GESTURE &_currentGesture, GESTURE_COMPONENT &_currentComponent, CONSTRAINT &_currentConstraint, NUCLEUS &_currentNucleus, unsigned int &_timeOffset, int &_lastStopTime   )
 {
@@ -156,6 +298,624 @@ void Parser::parse_commandLine( stringstream &_commandLine, std::vector<string> 
     _commandLine.clear();
   }
 }
+
+void Parser::parseElement(stringstream &_commandLine, std::vector<string> &_parsedElements, string &_currentToken, GESTURE &_currentGesture, GESTURE_COMPONENT &_currentComponent, CONSTRAINT &_currentConstraint, NUCLEUS &_currentNucleus, string &_currentElement)
+{
+  if (_currentToken == "key-pose-sequence" )
+  {
+    if (_parsedElements.size()>0 && _parsedElements.back() != "ANIML")
+    {
+      LOG_ERROR(parserLogger,"error : a key-poses-sequence element cannot be nested into another ELEMENT" << endl);
+    }else
+    {
+      LOG_TRACE(parserLogger,"Parsing a key-pose-sequence " << endl);
+      _currentGesture = GESTURE();
+      _parsedElements.push_back("K_POSE_SEQUENCE");     
+    }
+  }else if (_currentToken == "key-pose" || _currentToken == "animation-clip")
+  {
+    _currentComponent = GESTURE_COMPONENT();
+    Character* character = ActuatorFactory::getInstance()->getCharacter(_currentGesture.characterName);
+    _currentComponent.keyFrame = new MotionSegment(character);
+    _currentComponent.type = _currentToken;
+    _currentComponent.nucID = -1;
+    _parsedElements.push_back("GESTURE_COMPONENT");
+  }else if (_currentToken == "swivel-constraint" || _currentToken == "position-constraint" || _currentToken == "orientation-constraint" || _currentToken == "look-at-constraint" || _currentToken == "morph-target" || _currentToken == "shader-target" || _currentToken == "autonomous-behavior" || _currentToken == "pose-target")
+  {
+    _currentConstraint = CONSTRAINT();
+    _currentConstraint.type = _currentToken;
+    _parsedElements.push_back("CONSTRAINT");
+  }else if (_currentToken == "nucleus")
+  { 
+    if (_parsedElements.size() > 0 && _parsedElements.back() != "ANIML")
+    {
+      LOG_ERROR(parserLogger,"error : a NUCLEUS element cannot be nested into another ELEMENT" << endl);
+      //exit(1);
+    }else 
+    { 
+      LOG_TRACE(parserLogger,"Parsing a nucleus" << endl);
+      _currentNucleus = NUCLEUS();
+      _parsedElements.push_back("GESTURE_NUCLEUS");
+    }
+  }else if (_currentToken[_currentToken.size()-1] == '>')
+  {
+    _currentToken.erase(_currentToken.size()-1,1);
+    _currentElement = _currentToken; 
+  }else 
+  {
+    //unknown element or parsing error.
+  } 
+}
+
+void Parser::parseAttribute(stringstream &_commandLine, std::vector<string> &_parsedElements, string &_currentToken, GESTURE &_currentGesture, GESTURE_COMPONENT &_currentComponent, CONSTRAINT &_currentConstraint, NUCLEUS &_currentNucleus, unsigned int &_timeOffset, int &_lastStopTime)
+{
+  string::size_type idx = _currentToken.find('=');
+  string parameterKey = _currentToken.substr(0, idx);
+  string parameterValue = _currentToken.substr(idx+2);
+  idx = parameterValue.find('"');
+  parameterValue.erase(idx,1);
+  if(  parameterValue[idx] =='>')parameterValue.erase(idx,1); 
+  LOG_TRACE(parserLogger,"Parsing attribute: " <<parameterKey<<"  to "<< parameterValue<<endl);
+  if (parameterKey == "character-name")
+  {
+    if (_parsedElements.back() == "K_POSE_SEQUENCE")
+    {
+      stringstream ss(parameterValue);
+      string characterName;
+      ss >> characterName;
+      Character* character = ActuatorFactory::getInstance()->getCharacter(characterName);
+      _currentGesture.characterName = characterName;
+    }else
+    {
+      LOG_ERROR(parserLogger,"CHARACTER parameter can only be nested in a K_POSE_SEQUENCE element");
+    }
+  }else if (parameterKey == "start-time")
+  {
+    if (_parsedElements.back() == "K_POSE_SEQUENCE")
+    {
+      stringstream ss(parameterValue);
+      string startInfo;
+      ss >> startInfo;
+      if (startInfo == "asap")
+      {
+       unsigned int clock = SMRUtils::getCurrentTime();
+        _currentGesture.absoluteStartMs = clock -_timeOffset;
+        _lastStopTime = _currentGesture.absoluteStartMs;
+      }
+      else if (startInfo[0] == '+')
+      {
+        startInfo.erase(0,1);
+        stringstream ss1(startInfo);
+        int time;
+        ss1 >> time; 
+        unsigned int clock = SMRUtils::getCurrentTime();
+        _currentGesture.absoluteStartMs = clock-_timeOffset+time ;
+        _lastStopTime = _currentGesture.absoluteStartMs;
+      }
+      else
+      {
+        stringstream ss1(parameterValue);
+        int time;
+        ss1 >> time;
+        _currentGesture.absoluteStartMs = time;
+        _lastStopTime = _currentGesture.absoluteStartMs;
+      }
+    }else
+    {
+      LOG_ERROR(parserLogger,"START parameter can only be nested in a K_POSE_SEQUENCE element");
+    }
+  }else if (parameterKey == "time-point")
+  {
+    if (_parsedElements.back() == "GESTURE_COMPONENT")
+    {
+      stringstream ss(parameterValue);
+      string value;
+      ss >> value;
+      if (value[0] == '+')
+      {
+        value.erase(0,1);
+        stringstream ss1(value);
+        int timeOffset;
+        ss1 >> timeOffset;
+        _currentComponent.absoluteTimePointInMs = _currentGesture.absoluteStartMs + timeOffset ;
+        _currentComponent.keyFrame->setAbsoluteStartTime(_currentGesture.absoluteStartMs + timeOffset);
+        _currentGesture.absoluteStopMs = _currentGesture.absoluteStartMs + timeOffset;
+      }else
+      {
+        stringstream ss1(parameterValue);
+        int time;
+        ss1 >> time;
+        _currentComponent.absoluteTimePointInMs = time;
+        _currentComponent.keyFrame->setAbsoluteStartTime(time);
+        _currentGesture.absoluteStopMs = time;
+      }
+    }else
+    {
+      LOG_ERROR(parserLogger,"REL_START parameter can only be nested in a K_POSE element");
+    }
+  }else if (parameterKey == "hold")
+  {
+    if (_parsedElements.back() == "GESTURE_COMPONENT")
+    {
+      stringstream ss(parameterValue);
+      ss >> _currentComponent.holdDuration;
+    }else
+    {
+      LOG_ERROR(parserLogger,"HOLD parameter can only be nested in a K_POSE element");
+    }
+  }
+  else if (parameterKey == "nucleus-ref")
+  {
+    if (_parsedElements.back() == "GESTURE_COMPONENT")
+    {
+      stringstream ss(parameterValue);
+      ss >> _currentComponent.nucID;
+      //compute time to start with next motion
+      _currentGesture.modTime = _currentComponent.absoluteTimePointInMs + _currentComponent.holdDuration;
+    }else
+    {
+      LOG_ERROR(parserLogger,"NUCLEUS can only be assigned to a K_POSE element");
+    }
+  }else if (parameterKey == "key")
+  {
+    if (_parsedElements.back() == "CONSTRAINT" &&  _currentConstraint.type == "pose-target")
+    {
+      _currentConstraint.key = parameterValue;
+    }else 
+    {
+      _currentConstraint.morphKey = parameterValue;
+    }  
+  }else if (parameterKey == "value")
+  {
+    stringstream ss(parameterValue);
+    ss >> _currentConstraint.value;
+  }else if (parameterKey == "fade-in")
+  {
+    if (_parsedElements.back() == "K_POSE_SEQUENCE")
+    {
+      stringstream ss(parameterValue);
+      ss >> _currentGesture.fadeInMS;
+    }else
+    {
+      LOG_ERROR(parserLogger,"FADE_IN parameter can only be nested in an K_POSE_SEQUENCE element");
+    }
+  }else if (parameterKey == "fade-out")
+  {
+    if (_parsedElements.back() == "K_POSE_SEQUENCE")
+    {
+      stringstream ss(parameterValue);
+      ss >> _currentGesture.fadeOutMS;
+    }else
+    {
+      LOG_ERROR(parserLogger,"FADE_OUT parameter can only be nested in an K_POSE_SEQUENCE element");
+    }
+  }else if (parameterKey == "influence")
+  {
+    if (_parsedElements.back() == "CONSTRAINT" && _currentConstraint.type == "pose-target")
+    {
+      stringstream ss(parameterValue);
+      ss >> _currentConstraint.influence;
+    }else
+    {
+      LOG_ERROR(parserLogger,"INFLUENCE parameter can only be nested in an POSE_TARGET CONSTRAINT");
+    }
+  }else if (parameterKey == "joint")
+  {
+    if (_parsedElements.back() == "CONSTRAINT")
+    {
+      _currentConstraint.joint = parameterValue;
+    }else
+    {
+      LOG_ERROR(parserLogger,"JOINT parameter can only be nested in a CONSTRAINT element");
+    }
+  }else if (parameterKey == "body-group")
+  {
+    if (_parsedElements.back() == "CONSTRAINT")
+    {
+      _currentConstraint.stencil = parameterValue;
+    }else if (_parsedElements.back() == "GESTURE_COMPONENT" && _currentComponent.type == "animation-clip")
+    {
+      _currentComponent.stencil = parameterValue;
+    }else
+    {
+      LOG_ERROR(parserLogger,"BODY_GROUP parameter can only be nested in a CONSTRAINT or an ANIMATION element");
+    }
+  }else if (parameterKey == "feedback-id")
+  {
+    if (_parsedElements.back() == "CONSTRAINT")
+    {
+      _currentConstraint.feedbackID= parameterValue;
+    }else
+    {
+      LOG_ERROR(parserLogger,"FEEDBACK_ID parameter can only be nested in an CONSTRAINT element");
+    }
+  }else if (parameterKey == "time-warp")
+  {
+    if (_parsedElements.back() == "K_POSE_SEQUENCE")
+    {
+      stringstream ss(parameterValue);
+      float stipness;
+      string symetryType;
+      symetryType = stringTokenize(parameterValue,";");
+      stipness = tokenize(parameterValue,";");
+      _currentGesture.timeWarpStipness = stipness;
+      _currentGesture.timeWarpSym = symetryType;
+    }else
+    {
+      LOG_ERROR(parserLogger,"TIME_WARP parameter can only be nested in a K_POSE_SEQUENCE element");
+    }
+  }else if (parameterKey == "feedback-message")
+  {
+    ActuatorFactory::getInstance()->setFeedbackMessage(parameterValue);
+    LOG_ERROR(parserLogger,"a feedback message has been received: " << parameterValue);
+    
+  }else if (parameterKey == "spatial-extent")
+  {
+    if (_parsedElements.back() == "GESTURE_NUCLEUS")
+    { 
+      stringstream ss(parameterValue);
+      ss >> _currentNucleus.spatialExt;
+    }else
+    {
+      LOG_ERROR(parserLogger,"SPATIAL_EXT parameter can only be nested in a NUCLEUS element");
+    }
+  }else if (parameterKey == "temporal-extent")
+  {              
+    if (_parsedElements.back() == "GESTURE_NUCLEUS")
+    { 
+      stringstream ss(parameterValue);
+      ss >> _currentNucleus.temporalExt;
+    }else
+    {
+      LOG_ERROR(parserLogger,"TEMPORAL_EXT parameter can only be nested in a NUCLEUS element");
+    }
+  }else if (parameterKey == "power")
+  {
+    if (_parsedElements.back() == "GESTURE_NUCLEUS")
+    { 
+      stringstream ss(parameterValue);
+      ss >> _currentNucleus.powerValue;
+    }else
+    {
+      LOG_ERROR(parserLogger,"POWER parameter can only be nested in a NUCLEUS element");
+    }
+  }else if (parameterKey == "fluidity")
+  {
+    if (_parsedElements.back() == "GESTURE_NUCLEUS")
+    {   
+      stringstream ss(parameterValue);
+      ss >> _currentNucleus.fluidityValue;
+    }else
+    { 
+      LOG_ERROR(parserLogger,"FLUIDITY parameter can only be nested in a NUCLEUS element");
+    }
+  }else if (parameterKey == "id")
+  {
+    if (_parsedElements.back() == "GESTURE_NUCLEUS")
+    {   
+      stringstream ss(parameterValue);
+      ss >> _currentNucleus.nucID;
+    }else if (_parsedElements.back() == "GESTURE_COMPONENT" && _currentComponent.type == "key-pose")
+    {
+      stringstream ss(parameterValue); 
+      ss >> _currentComponent.id;
+    }else
+    { 
+      LOG_ERROR(parserLogger,"ID parameter can only be nested in a NUCLEUS or K-POSE element and not in "<<_parsedElements.back());
+    }
+  }else
+  {
+    LOG_ERROR(parserLogger,parameterKey << " : This parameter is unknown");
+  }
+}
+
+void Parser::closeElementXML(stringstream &_commandLine, std::vector<string> &_parsedElements, string &_currentToken, GESTURE &_currentGesture, GESTURE_COMPONENT &_currentComponent, CONSTRAINT &_currentConstraint, NUCLEUS &_currentNucleus, int &_lastStopTime)
+{
+  if(_parsedElements.back() == "K_POSE_SEQUENCE")
+  {
+    LOG_TRACE(parserLogger,"Closing key-pose-sequenz " << endl);
+    //currentGesture = GESTURE();
+    //go through every component of the gesture, extract the constraints, set up and post the actuators.
+    std::vector<GESTURE_COMPONENT>::iterator componentIterator;
+    std::vector<GESTURE_COMPONENT> *components;
+    components = &_currentGesture.components;
+   
+    for (componentIterator = components->begin(); componentIterator < components->end(); componentIterator++)
+    {
+      GESTURE_COMPONENT currentComponent = *componentIterator;
+    }
+    float sequenceAbsoluteStartTime = (float)_currentGesture.absoluteStartMs;
+    float sequenceAbsoluteStopTime = (float)_currentGesture.absoluteStopMs;
+    float relativeFadeIn = (float)_currentGesture.fadeInMS / (float)(sequenceAbsoluteStopTime - sequenceAbsoluteStartTime);
+    float relativeFadeOut = 1.0f - ((float)_currentGesture.fadeOutMS / (float)(sequenceAbsoluteStopTime - sequenceAbsoluteStartTime));
+
+    string timeWarpSym = _currentGesture.timeWarpSym;
+    float timeWarpStipness = _currentGesture.timeWarpStipness;
+    ActuatorFactory::getInstance()->combinePoseSequence(_currentGesture.characterName,relativeFadeIn,relativeFadeOut, timeWarpSym, timeWarpStipness);
+  }
+  else if(_parsedElements.back() == "GESTURE_COMPONENT")
+  {
+    Scheduler *relevantScheduler = m_schedulerManager->getScheduler(_currentGesture.characterName);
+
+    if (_currentComponent.type == "animation-clip")
+    {
+      LOG_TRACE(parserLogger,"2 - Closing animation " << endl);
+      int segmentAbsoluteStartTime = 0;
+      int segmentAbsoluteStopTime = _currentComponent.absoluteTimePointInMs;
+      segmentAbsoluteStartTime = _lastStopTime;
+      float relativeFadeIn = (float)_currentGesture.fadeInMS / (float)(segmentAbsoluteStopTime - segmentAbsoluteStartTime);
+      float relativeFadeOut = (float)_currentGesture.fadeOutMS / (float)(segmentAbsoluteStopTime - segmentAbsoluteStartTime);
+
+      ActuatorFactory::getInstance()->setupAndPostAnimationSegment(relevantScheduler,
+        segmentAbsoluteStartTime,
+        segmentAbsoluteStopTime,
+        _currentComponent.holdDuration,
+        _currentComponent.stencil,
+        _currentComponent.animationClip,
+        relativeFadeIn,
+        relativeFadeOut
+        //TODO: add feedback mechanism for animations
+        );
+      ActuatorFactory::getInstance()->sendMotionSegments(relevantScheduler);
+    }
+    else if (_currentComponent.type == "key-pose") // this is a pose, build first posture
+    {
+      LOG_TRACE(parserLogger,"Closing key-pose " << endl);
+      //get the position constraint (at this state of advancement, this should be the only one)
+      std::vector<CONSTRAINT>::iterator constraintIterator;
+      std::vector<CONSTRAINT> *constraints;
+      constraints = &_currentComponent.constraints;
+      int segmentAbsoluteStartTime = _lastStopTime;
+      int segmentAbsoluteStopTime = _currentComponent.absoluteTimePointInMs;
+      if (segmentAbsoluteStartTime == segmentAbsoluteStopTime)
+      {
+        segmentAbsoluteStopTime += 40; // in case of overlap, delay stop time a little bit.
+      }
+      if (segmentAbsoluteStartTime > segmentAbsoluteStopTime)
+      {
+        segmentAbsoluteStartTime = segmentAbsoluteStopTime-40; // in case of overlap, delay stop time a little bit.
+      }
+      for (constraintIterator = constraints->begin(); constraintIterator < constraints->end(); constraintIterator++) // may occur if key frames are not ordered correctly...
+      {
+        CONSTRAINT constraint = * constraintIterator;
+        if (constraint.type == "morph-target")
+        {
+          //float relativeFadeIn = 0.0f;
+          //float relativeFadeOut = 0.0f;
+
+          LOG_INFO(parserLogger, "Posting MORPH_TARGET, key is " << constraint.morphKey << " value is: " << constraint.value << " start time is: " << segmentAbsoluteStartTime << " stop time is: " << segmentAbsoluteStopTime);
+          ActuatorFactory::getInstance()->setupAndPostMorphTargetSegment(relevantScheduler,
+            segmentAbsoluteStartTime,
+            segmentAbsoluteStopTime,
+            _currentComponent.holdDuration,
+            constraint.morphKey,
+            constraint.value
+            );
+        }
+        else if (constraint.type == "shader-target")
+        {
+          //float relativeFadeIn = 0.0f;
+          //float relativeFadeOut = 0.0f;
+
+          ActuatorFactory::getInstance()->setupAndPostShaderParameterSegment(relevantScheduler,
+            segmentAbsoluteStartTime,
+            segmentAbsoluteStopTime,
+            _currentComponent.holdDuration,
+            constraint.morphKey,
+            constraint.value
+            );
+        }
+        else if (constraint.type == "autonomous-behavior")
+        {
+
+          ActuatorFactory::getInstance()->setupAndPostAutonomousBehaviorParameterSegment(relevantScheduler,
+            segmentAbsoluteStartTime,
+            segmentAbsoluteStopTime,
+            constraint.morphKey,
+            constraint.value
+            );
+        }
+        else if (constraint.type == "pose-target")
+        {
+          //float relativeFadeIn = 0.0f;
+          //float relativeFadeOut = 0.0f;
+
+          ActuatorFactory::getInstance()->setupAndPostStoredPoseSegment(relevantScheduler,
+            segmentAbsoluteStartTime,
+            segmentAbsoluteStopTime,
+            _currentComponent.holdDuration,
+            constraint.stencil,
+            constraint.key,
+            constraint.influence
+            );
+        }
+        else if (constraint.type == "position-constraint")
+        {
+
+          //<PP> gesture modifier assignment
+          SMRSmartPtr<GestureModifier> *gestMod(NULL);
+          //Check if a nucleus is assigned to this K-Pose
+          if (_currentComponent.nucID != -1)
+          {
+            //get reference to the specific GestureModifier(GM)
+            LOG_INFO(parserLogger,"Nucleus to use is:" <<_currentComponent.nucID);
+            map<int,GMPtr*>::iterator gestModIt; 
+            gestModIt = m_gestureModifiers.find(_currentComponent.nucID);
+            if (gestModIt == m_gestureModifiers.end())
+            {
+              LOG_FATAL(parserLogger,"nucleus description for ID "<<_currentComponent.nucID<< " not found!");
+            }
+            else
+            { 
+              //create a reference to the gm
+              gestMod = new SMRSmartPtr<GestureModifier>(*(gestModIt->second));
+              LOG_INFO(parserLogger,"modifying target!!");
+            }
+          }
+          //end <PP>
+          stringstream target("");
+          target << constraint.target.X() << " ";
+          target << constraint.target.Y() << " ";
+          target << constraint.target.Z();
+          stringstream offset("");
+          offset << constraint.offset.X() << " ";
+          offset << constraint.offset.Y() << " ";
+          offset << constraint.offset.Z();
+          string target_position = target.str();
+
+          //float relativeFadeIn = 0.0f;
+          //float relativeFadeOut = 0.0f;
+
+          bool feedbackRequired = false;
+          if (constraint.feedbackID != "unlabelled")
+          {
+            feedbackRequired = true;
+          }
+
+          LOG_INFO(parserLogger,"posting position constraint, start= " << segmentAbsoluteStartTime << " stop= " << segmentAbsoluteStopTime);
+          ActuatorFactory::getInstance()->setupAndPostMotionSegment(relevantScheduler,
+            segmentAbsoluteStartTime,
+            segmentAbsoluteStopTime,
+            _currentComponent.holdDuration,
+            "positionConstraint",
+            constraint.stencil,
+            target.str(),
+            constraint.joint,
+            offset.str(),
+            gestMod,
+            feedbackRequired,
+            constraint.feedbackID
+            );
+          LOG_DEBUG(parserLogger,"segment posted");
+        }else if (constraint.type == "orientation-constraint")
+        {
+          stringstream direction("");
+          direction << constraint.direction.X() << " ";
+          direction << constraint.direction.Y() << " ";
+          direction << constraint.direction.Z();
+          string target_position = direction.str();
+          LOG_DEBUG(parserLogger,"posting orientation constraint, start= " << segmentAbsoluteStartTime << " stop= " << segmentAbsoluteStopTime);
+          ActuatorFactory::getInstance()->setupAndPostMotionSegment(relevantScheduler,
+            segmentAbsoluteStartTime,
+            segmentAbsoluteStopTime,
+            _currentComponent.holdDuration,
+            "orientationConstraint",
+            constraint.stencil,
+            direction.str(),
+            constraint.joint,
+            constraint.normal
+            );
+          LOG_DEBUG(parserLogger,"segment posted");
+        }else if (constraint.type == "swivel-constraint")
+        {
+          stringstream _angle;
+          _angle << constraint.angle;
+          LOG_DEBUG(parserLogger,"posting swivel constraint, start= " << segmentAbsoluteStartTime << " stop= " << segmentAbsoluteStopTime);
+          ActuatorFactory::getInstance()->setupAndPostMotionSegment(relevantScheduler,
+            segmentAbsoluteStartTime,
+            segmentAbsoluteStopTime,
+            0,//_currentComponent.holdDuration,
+            "swivelConstraint",
+            constraint.stencil,
+            _angle.str(),
+            constraint.joint,
+            constraint.normal
+            );
+          LOG_DEBUG(parserLogger,"segment posted");
+        }else if (constraint.type == "look-at-constraint")
+        {
+          stringstream target("");
+          target << constraint.target.X() << " ";
+          target << constraint.target.Y() << " ";
+          target << constraint.target.Z();
+          string target_position = target.str();
+          LOG_DEBUG(parserLogger,"posting look_at constraint, start= " << segmentAbsoluteStartTime << " stop= " << segmentAbsoluteStopTime);
+          ActuatorFactory::getInstance()->setupAndPostMotionSegment(relevantScheduler,
+            segmentAbsoluteStartTime,
+            segmentAbsoluteStopTime,
+            _currentComponent.holdDuration,
+            "lookAtConstraint",
+            constraint.stencil,
+            target.str()
+            );
+          LOG_DEBUG(parserLogger,"segment posted");
+        }else
+        {
+          LOG_ERROR(parserLogger, constraint.type << " : THIS CONSTRAINT IS UNKNOWN");
+        }
+
+      }
+      constraints->clear();
+      ActuatorFactory::getInstance()->sendMotionSegments(relevantScheduler);
+      _lastStopTime = segmentAbsoluteStopTime + _currentComponent.holdDuration;
+    }
+    //store the GESTURE_COMPONENT into GESTURE's component vector
+    _currentGesture.components.push_back(_currentComponent);
+    _currentComponent = GESTURE_COMPONENT();
+  }
+  else if(_parsedElements.back() == "CONSTRAINT")
+  {
+   LOG_TRACE(parserLogger,"2 - Closing constraint " << endl);
+    _currentComponent.constraints.push_back(_currentConstraint);
+    _currentConstraint = CONSTRAINT();
+  }
+  // <PP> new: end of a nucleus tag found, so set parameters.
+  else if(_parsedElements.back() == "GESTURE_NUCLEUS")
+  {
+    LOG_TRACE(parserLogger,"2 - Closing nucleus " << endl);
+    if (_currentNucleus.nucID == -1)
+    { 
+      LOG_ERROR(parserLogger,"No ID assigned to the nucleus!");
+    } 
+    else{
+      GestureModifier *GM(new GestureModifier(_currentNucleus.spatialExt,_currentNucleus.temporalExt,_currentNucleus.powerValue,_currentNucleus.fluidityValue));
+      SMRSmartPtr<GestureModifier> * currentGM = (new SMRSmartPtr<GestureModifier>(GM));
+      m_gestureModifiers.insert(pair<int,SMRSmartPtr<GestureModifier> *>(_currentNucleus.nucID,currentGM));
+    }
+  }else if (_parsedElements.back() == "ANIML")
+  {
+     LOG_TRACE(parserLogger,"2 - Closing animl " << endl);
+  }else
+  {
+    LOG_ERROR(parserLogger,"syntax error : this end element does not close anything");
+    //exit(1);
+  }        
+  _parsedElements.pop_back();
+}
+
+void Parser::parseShortElement(stringstream &_commandLine, std::vector<string> &_parsedElements, string &_currentToken, GESTURE &_currentGesture, GESTURE_COMPONENT &_currentComponent, CONSTRAINT &_currentConstraint, NUCLEUS &_currentNucleus,string &_currentElement)
+{
+  if  (_currentElement == "normal")
+  {
+    _currentConstraint.normal = _currentToken;
+  }else if  (_currentElement == "angle" )
+  { 
+    float angle;
+    stringstream ss(_currentToken);
+    ss >> angle;
+    _currentConstraint.angle = angle;
+  }else if  (_currentElement == "animation")
+  {
+    _currentComponent.animationClip = _currentToken;
+  }else
+  {
+    double posX,posY,posZ;
+    posX = tokenize(_currentToken,";");
+    posY = tokenize(_currentToken,";");
+    posZ = tokenize(_currentToken,";");   
+    if( _currentElement == "direction")
+    {
+      _currentConstraint.direction = SMRVector3(posX,posY,posZ);
+    }else if  (_currentElement == "target")
+    {
+      _currentConstraint.target = SMRVector3(posX,posY,posZ);
+    }else if  (_currentElement == "offset" )
+    {
+      _currentConstraint.offset = SMRVector3(posX,posY,posZ);
+    }
+  }
+  //_currentElement.clear();
+} 
 
 void Parser::openElement(stringstream &_commandLine, std::vector<string> &_parsedElements, string &_currentToken, GESTURE &_currentGesture, GESTURE_COMPONENT &_currentComponent, CONSTRAINT &_currentConstraint, NUCLEUS &_currentNucleus)
 {
