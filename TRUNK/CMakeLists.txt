@@ -87,6 +87,8 @@ IF(WIN32)
 
     SET ( LIBXML2_LIBRARIES
 	  libxml2
+    CACHE PATH
+        "Path to the libxml2 library"
 	)
 
 ELSE(WIN32)
