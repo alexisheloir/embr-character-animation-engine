@@ -107,7 +107,7 @@ string getAttribute(string &_commandLine, string &_attribute)
 // Singleton initialization.  At first, there is no object created.
 //Parser *Parser::m_singleton = NULL;
 
-Parser::Parser():m_schedulerManager(NULL),comment(0)
+Parser::Parser():m_schedulerManager(NULL)
 {
 }
 
@@ -125,7 +125,8 @@ void Parser::enqueueCommand(const string &_command)
     string line = stringTokenize(TIME_RESET,"\n");
     
     LOG_TRACE(parserLogger,"Current command to enqueue is " <<line<< endl);
-    line = removeCommentsXML(line,comment);
+    line = removeComments(line);
+    //line = removeCommentsXML(line,comment);  
     m_embotCommands.push_back(line);
   }
 }
@@ -143,27 +144,27 @@ void Parser::parse_commands(void)
   unsigned int timeOffset = 0;
   int lastStopTime = 0;
   bool parsedXML = false;
-  while(1)
+  for(;;)
   {
    // LOG_TRACE(parserLogger,"parser is looping" << endl);
     if (m_embotCommands.size() > 0)
     {
-      boost::mutex::scoped_lock lock(parserMutex);
-      commandLineString = (*(m_embotCommands.begin()));
-      commandLine.str(commandLineString.c_str()) ;
-     
-      commandLine.seekg(commandLine.beg);
-      m_embotCommands.erase(m_embotCommands.begin());
+      boost::mutex::scoped_lock lock(parserMutex); // lock the m_embotCommands command lines repository
+      commandLineString = (*(m_embotCommands.begin())); // put the first line in a string
+      commandLine.str(commandLineString.c_str()) ; // feed the stream
+      commandLine.seekg(commandLine.beg); //go to the beginning of the stream
+        
+      m_embotCommands.erase(m_embotCommands.begin()); //erase the first line of EMBOTSCommant
       size_t pos = commandLineString.find('<');
       if (parsedXML)  
       {
-        parse_commandLineXML(commandLine, parsedElements, currentGesture, currentComponent, currentConstraint, currentNucleus, timeOffset, lastStopTime, currentElement);
+        parse_commandLine(commandLine, parsedElements, currentGesture, currentComponent, currentConstraint, currentNucleus, timeOffset, lastStopTime);
       }else
       {
         size_t pos = commandLineString.find('<');
         if (pos != string::npos)
         {
-          parse_commandLineXML(commandLine, parsedElements, currentGesture, currentComponent, currentConstraint, currentNucleus, timeOffset, lastStopTime, currentElement);  
+          parse_commandLine(commandLine, parsedElements, currentGesture, currentComponent, currentConstraint, currentNucleus, timeOffset, lastStopTime);  
           parsedXML = true;
         }else 
         {
@@ -173,12 +174,12 @@ void Parser::parse_commands(void)
       }
     }else
     {
-      LOG_TRACE(parserLogger,"no command in heap, sleeping" << endl);
+      //LOG_TRACE(parserLogger,"no command in heap, sleeping" << endl);
       parsedXML = false;
 #ifdef WIN32
-      Sleep(1);
+      Sleep(60);
 #else
-      usleep(1);
+      usleep(60);
 #endif
     }
   }
@@ -363,7 +364,6 @@ void Parser::parseAttribute(stringstream &_commandLine, std::vector<string> &_pa
       stringstream ss(parameterValue);
       string characterName;
       ss >> characterName;
-      Character* character = ActuatorFactory::getInstance()->getCharacter(characterName);
       _currentGesture.characterName = characterName;
     }else
     {
@@ -1244,8 +1244,6 @@ void Parser::parseParameters(stringstream &_commandLine, std::vector<string> &_p
       stringstream ss(parameterValue);
       string characterName;
       ss >> characterName;
-      Character* character = ActuatorFactory::getInstance()->getCharacter(characterName);
-      //_currentGesture.motionSequence = new MotionSequence(character);
       _currentGesture.characterName = characterName;
     }else
     {

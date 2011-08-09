@@ -75,8 +75,8 @@ void handle_read_new(socket_ptr &_sock, Parser *_parser)
     string m_lineBuffer = "";
     for (;;)
     {
-        boost::system::error_code error;
-        LOG_TRACE(parserLogger,"start reading from socket");
+      boost::system::error_code error;
+      LOG_TRACE(parserLogger,"start reading from socket");
 //
 //      recvMsgSize += _sock->read_some(boost::asio::buffer(&m_buffer[recvMsgSize],MSG_LENGTH-recvMsgSize),error);
       recvMsgSize = _sock->read_some(boost::asio::buffer(&buf[0], 127),error);

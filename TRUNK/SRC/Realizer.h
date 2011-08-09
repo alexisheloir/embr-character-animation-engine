@@ -39,7 +39,6 @@ struct ParsingThreadWrapper
   void operator()()
   {
     m_parserPointer->parse_commands();
-    LOG_INFO(parserLogger,"finished parsing");
   }
   Parser *m_parserPointer;
 };

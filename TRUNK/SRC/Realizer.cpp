@@ -19,7 +19,6 @@ Realizer::Realizer()
   config.configure();
 
   m_schedulerManager = new SchedulerManager;
-
   //create the parser instance
   m_parser = new Parser;
   m_parser->setSchedulerManager(m_schedulerManager);
@@ -36,9 +35,9 @@ Realizer::Realizer()
 
 Realizer::~Realizer()
 {
-  delete m_socketListener;
   delete m_parser;
   delete m_schedulerManager;
+  delete m_socketListener;
 };
 
 SMRSkeleton *Realizer::getCharacterPose(string _character)
@@ -59,13 +58,13 @@ void Realizer::run()
   //launch the scheduling thread
   boost::thread thrd3(SchedulingThreadWrapper( boost::ref(m_schedulerManager) )); // boost::ref for non copyiable objects
 
+  //wait for socketmanager to stop  
+  thrd3.join();  
   //wait for parser thread to stop
   thrd2.join();
   LOG_INFO(parserLogger,"The parser thread finished lopping");
   //wait for socketlistener thread to stop
   thrd1.join();
-  //wait for socketlistener thread to stop
-  thrd3.join();
 }
 
 void Realizer::configureLogger(int _loggerID, int _level)

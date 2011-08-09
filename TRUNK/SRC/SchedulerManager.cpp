@@ -7,7 +7,7 @@ SchedulerManager::SchedulerManager()
 
 SchedulerManager::~SchedulerManager()
 {
-  boost::mutex::scoped_lock lock(schedulerMutex);
+  //boost::mutex::scoped_lock lock(schedulerMutex);
   std::map<string,Scheduler*>::iterator mapIterator;
   for ( mapIterator = m_schedulerPointers.begin(); mapIterator != m_schedulerPointers.end(); ++ mapIterator)
   {
@@ -29,7 +29,7 @@ SchedulerManager::~SchedulerManager()
 
 void SchedulerManager::triggerSchedulers()
 {
-  while(1)
+  for(;;)
   {
     std::map<string,Scheduler*>::iterator schedulerIterator;
     
@@ -38,10 +38,10 @@ void SchedulerManager::triggerSchedulers()
       (schedulerIterator->second)->schedule();
     }
 #ifdef WIN32
-      Sleep(5);
+      Sleep(20);//sleep 20 ms
 #else
-      usleep(5);
-#endif); 
+      usleep(20);
+#endif 
   }
 }
 
