@@ -18,6 +18,7 @@ Scheduler::Scheduler(string _characterName, SMRSkeleton* const _referencePose):m
 }
 
 Scheduler::~Scheduler() {
+  for_each( m_motionSegments.begin(), m_motionSegments.end(), DeleteObjectPtr());
 }
 
 void Scheduler::schedule()
@@ -29,6 +30,7 @@ void Scheduler::schedule()
   iterator = m_motionSegments.begin();
   bool skeletonHasBeenUpdated = false;
   SMRSkeleton resultPose;
+  if (m_motionSegments.size() == 0 ) boost::this_thread::sleep(boost::posix_time::milliseconds(100)); // TODO  use flags and move this to the schedulerManager
   while ( iterator != m_motionSegments.end() )
   {
     MotionSegment* currentSegment;
@@ -37,56 +39,40 @@ void Scheduler::schedule()
     LOG_TRACE(schedulerLogger, "startTime: " << currentSegment->getAbsoluteStartTime() << " || " \
                                "stopTime: " << currentSegment->getAbsoluteStopTime());
 
-    if( (currentTimeMs > currentSegment->getAbsoluteStartTime() && currentTimeMs < currentSegment->getAbsoluteStopTime()) || (currentTimeMs > currentSegment->getAbsoluteStartTime() && currentSegment->getAbsoluteStopTime() == 0 )) // add 40 ms to be sure all the motion is displayed
+    if(currentTimeMs > currentSegment->getAbsoluteStartTime()) // find a better way to handle relative postures here, rather use a consistent typology
     {
       boost::mutex::scoped_lock lockSkeletonModifier(skeletonMutex);
       LOG_TRACE(schedulerLogger,"updating posture " << " with absolute time: " << currentTimeMs);
       currentSegment->process(currentTimeMs);
       //LOG_TRACE(schedulerLogger,"combining resulting pose with currentSkeleton (" << currentSegment->getSkeleton()->getName() << ") at " << currentTimeMs << "ms");
       SMRSkeleton* resultSkeleton = currentSegment->getSkeleton();
-      if (resultSkeleton)//the motionSegment outputs a skeletal pose
-      {
-        LOG_TRACE(schedulerLogger,"combining resulting pose with currentSkeleton (");
-        //TODO:Declare a segment as relative if (currentSegment->getAbsoluteStopTime() == 0)//if motion segment is a self posting motion segment, should use relative rotations
-        //{
-        //  (resultPose)*=(*(resultSkeleton));
-        //}else
-        //{
+      if(resultSkeleton) skeletonHasBeenUpdated = true;  
+      switch (currentSegment->getType()) {
+        case MotionSegment::MORPH_TARGET:
+        // currently does nothing, but should update the corresponding morph target weight here
+          break;
+        case MotionSegment::ABSOLUTE_KINEMATIC_POSE:
           resultPose.combine(*(resultSkeleton),currentSegment->getAmount(currentTimeMs)); // amount is for fade_in / fade_out
-        //}
-        skeletonHasBeenUpdated = true;
-        LOG_TRACE(schedulerLogger,"done");
+          break;
+        case MotionSegment::RELATIVE_KINEMATIC_POSE:
+          (resultPose)*=(*(resultSkeleton));
+          break;                
+        default:
+          break;
       }
-      iterator++;
-
+      if (currentTimeMs > currentSegment->getAbsoluteStopTime())
+      {
+          LOG_DEBUG(schedulerLogger,"motion segment is deprecated, remove it: MS time :" << currentSegment->getAbsoluteStopTime() << " current time : " << currentTimeMs);
+          MotionSegment* segmentToFlush= *iterator;
+          iterator = m_motionSegments.erase(iterator);
+          delete(segmentToFlush);// !remove this line when using factory!          
+      }else
+      {
+          iterator++;
+      }
     }else if(currentTimeMs < currentSegment->getAbsoluteStartTime() )
     {
       iterator++;
-    }else if(currentTimeMs > currentSegment->getAbsoluteStopTime() && currentSegment->getAbsoluteStopTime() != 0 ) 
-    {
-      boost::mutex::scoped_lock lockSkeletonModifier(skeletonMutex);
-      LOG_TRACE(schedulerLogger,"updating posture " << " with absolute time: " << currentTimeMs);
-      currentSegment->process(currentTimeMs);
-      //LOG_TRACE(schedulerLogger,"combining resulting pose with currentSkeleton (" << currentSegment->getSkeleton()->getName() << ") at " << currentTimeMs << "ms");
-      SMRSkeleton* resultSkeleton = currentSegment->getSkeleton();
-      if (resultSkeleton)//the motionSegment outputs a skeletal pose
-      {
-        LOG_TRACE(schedulerLogger,"combining resulting pose with currentSkeleton (");
-        //TODO: Declare a segment as relative if (currentSegment->getAbsoluteStopTime() == 0)//if motion segment is a self posting motion segment, should use relative rotations
-        //{
-          (resultPose)*=(*(resultSkeleton));
-        //}else
-        //{
-          resultPose.combine(*(resultSkeleton),currentSegment->getAmount(currentTimeMs));
-        //}
-        skeletonHasBeenUpdated = true;
-        LOG_TRACE(schedulerLogger,"done");
-      }
-
-      LOG_DEBUG(schedulerLogger,"motion segment is deprecated, remove it: MS time :" << currentSegment->getAbsoluteStopTime() << " current time : " << currentTimeMs);
-      MotionSegment* segmentToFlush= *iterator;
-      iterator = m_motionSegments.erase(iterator);
-      delete(segmentToFlush);// !remove this line when using factory!
     }
   }
   if (skeletonHasBeenUpdated)

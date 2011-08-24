@@ -422,7 +422,6 @@ public:
     ActuatorFactory::getInstance()->addCharacter(_characterName, _skeleton);
   }
 
-
   handle<> default_getCharacterPosture(const string &_character)
   {
     boost::mutex::scoped_lock lockSkeletonModifier(skeletonMutex);
@@ -444,13 +443,25 @@ public:
 
   float default_getMorphTargetWeight(const string &_characterName, const string &_morphTargetName)
   {
-    //boost::mutex::scoped_lock lockSkeletonModifier(skeletonMutex);
     Character* currentCharacter = ActuatorFactory::getInstance()->getCharacter(_characterName);
     float weight=currentCharacter->getMorphTargetWeight(_morphTargetName);
     assert(!isNaN(weight));
     return weight;
   }
 
+  boost::python::list default_getModifiedMorphTargets(const string &_characterName)
+  {
+      boost::python::list myList; // find a way to register the modified morph targets here (in scheduler?)
+      Character* currentCharacter = ActuatorFactory::getInstance()->getCharacter(_characterName);
+      std::vector<string>::iterator morphTargetIterator = currentCharacter->m_modifiedMorphTargets.begin();
+      while (morphTargetIterator != currentCharacter->m_modifiedMorphTargets.end())
+      {
+          myList.append(*morphTargetIterator);
+          morphTargetIterator = currentCharacter->m_modifiedMorphTargets.erase(morphTargetIterator);
+      }
+      return myList;
+  }
+    
   void default_addShaderParameter(const string &_characterName, const string &_shaderParameterName)
   {
     Character* currentCharacter = ActuatorFactory::getInstance()->getCharacter(_characterName);
@@ -471,7 +482,6 @@ public:
 
   void default_addAnimation(string _characterName, string _animationKey)
   {
-    //Character* currentCharacter = ActuatorFactory::getInstance()->getCharacter(_characterName);
     ActuatorFactory::getInstance()->addAnimation(_characterName, _animationKey);
   }
 
@@ -627,6 +637,7 @@ BOOST_PYTHON_MODULE(SMRPy)
     .def("addMorphTarget",            &RealizerWrap::default_addMorphTarget)
     .def("setMorphTargetWeight",      &RealizerWrap::default_setMorphTargetWeight)
     .def("getMorphTargetWeight",      &RealizerWrap::default_getMorphTargetWeight)
+    .def("getModifiedMorphTargets",   &RealizerWrap::default_getModifiedMorphTargets)
     .def("addShaderParameter",        &RealizerWrap::default_addShaderParameter)
     .def("setShaderParameterWeight",  &RealizerWrap::default_setShaderParameterWeight)
     .def("getShaderParameterValue",   &RealizerWrap::default_getShaderParameterWeight)

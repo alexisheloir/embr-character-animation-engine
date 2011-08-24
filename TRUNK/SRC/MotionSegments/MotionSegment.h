@@ -9,7 +9,6 @@
 #include "../Character.h"
 
 
-typedef enum MotionSegmentTypeEnum{KINEMATIC_POSE, KINEMATIC_POSE_EYE, MORPH_TARGET, SHADER_TARGET, ANIMATION, AUTONOMOUS_BEHAVIOR_PARAMETER} MotionSegmentType;
 
 class GestureModifier;
 
@@ -49,12 +48,15 @@ protected:
 
   Character* m_relatedCharacter; /**< reference towards the related character */
 
+  
 
   //SocketListener *m_socketListener; /** reference towards the socket manager in charge of sending the feedback messages */
   
 
 public:
 
+  typedef enum MotionSegmentTypeEnum{RELATIVE_KINEMATIC_POSE, ABSOLUTE_KINEMATIC_POSE, MORPH_TARGET, SHADER_TARGET, ANIMATION, AUTONOMOUS_BEHAVIOR_PARAMETER} MotionSegmentType;
+    
   MotionSegmentType m_type; /**< specifies the channel which is modified by this motion segment (skeleton, shaders, morph targets) */
   string m_stencil; /**< specifies the subgroup which is modified by this motion segment (eg.: larm, blushing, smile_closed) */
 
@@ -99,5 +101,7 @@ public:
 
   SMRHermitePoly<double> getTemporalWarpSpline();
 
+  MotionSegmentType getType();
+    
 };
 #endif

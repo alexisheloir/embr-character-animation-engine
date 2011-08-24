@@ -36,7 +36,7 @@ void MotionSegment::process(const unsigned int _absoluteTimeMs, bool _timeForFee
     (*actuatorIterator)->m_absoluteTimeMs = _absoluteTimeMs;
     (*actuatorIterator)->process(warpedRelativeTime);
     //TODO register absolute time here to send it in the feedback messagge
-    if (this->m_type == KINEMATIC_POSE || this->m_type == KINEMATIC_POSE_EYE || this->m_type == ANIMATION  )
+    if (this->m_type == MotionSegment::ABSOLUTE_KINEMATIC_POSE || this->m_type == MotionSegment::RELATIVE_KINEMATIC_POSE)
     {
       EMBRKinematicActuator* skeletalActuator = static_cast<EMBRKinematicActuator*>(*actuatorIterator);
       m_skeleton += *(skeletalActuator->getSkeleton());
@@ -181,4 +181,9 @@ void MotionSegment::setGestureModifier(SMRSmartPtr<GestureModifier> * _gestMod)
 SMRSmartPtr<GestureModifier>* MotionSegment::getGestureModifier()
 {
   return m_gestureModifier;
+}
+
+MotionSegment::MotionSegmentType MotionSegment::getType()
+{
+    return m_type;
 }

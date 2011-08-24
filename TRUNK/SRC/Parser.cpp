@@ -176,11 +176,7 @@ void Parser::parse_commands(void)
     {
       //LOG_TRACE(parserLogger,"no command in heap, sleeping" << endl);
       parsedXML = false;
-#ifdef WIN32
-      Sleep(60);
-#else
-      usleep(60);
-#endif
+      boost::this_thread::sleep(boost::posix_time::milliseconds(100));
     }
   }
 }

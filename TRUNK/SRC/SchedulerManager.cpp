@@ -37,11 +37,7 @@ void SchedulerManager::triggerSchedulers()
     {
       (schedulerIterator->second)->schedule();
     }
-#ifdef WIN32
-      Sleep(20);//sleep 20 ms
-#else
-      usleep(20);
-#endif 
+      boost::this_thread::sleep(boost::posix_time::milliseconds(30));
   }
 }
 

@@ -346,7 +346,7 @@ void ActuatorFactory::init()
 
             ComplexMotionSegment *currentMotionSegment = new SelfPostingMotionSegment(currentCharacter, "",40);
             
-            currentMotionSegment->m_type = ANIMATION; //TODO:should be CORRELATIONMAP
+            currentMotionSegment->m_type = MotionSegment::ABSOLUTE_KINEMATIC_POSE; //TODO:should be CORRELATIONMAP
             {
               ActuatorCorrelationMap *newActuator = new ActuatorCorrelationMap(currentCharacter, sourceJointName, sourceMinValue, sourceMaxValue, targetJointName, targetMinValue, targetMaxValue, newScheduler->getCurrentPose());
               currentMotionSegment->addActuator(newActuator);
@@ -630,7 +630,7 @@ void ActuatorFactory::sendMotionSegments(Scheduler *_scheduler)
   {
     //    new papo
     //     decide if it is IK segment or not
-    if((*currentSegmentIterator)->m_type == KINEMATIC_POSE)
+    if((*currentSegmentIterator)->m_type == MotionSegment::ABSOLUTE_KINEMATIC_POSE)
     { 
       m_segmentToCombine.push_back(*currentSegmentIterator);   
     }else
@@ -699,7 +699,7 @@ void ActuatorFactory::setupAndPostAnimationSegment(Scheduler * _scheduler, int _
   }
   AnimationMotionSegment* animationSegment = new AnimationMotionSegment(currentCharacter, relativeFadeIn,relativeFadeOut);
 
-  animationSegment->m_type = ANIMATION;
+    animationSegment->m_type = MotionSegment::ABSOLUTE_KINEMATIC_POSE;
   animationSegment->m_stencil = _stencil;
   
   map<string,SMRMotion>::iterator animationIterator;
@@ -740,7 +740,7 @@ void ActuatorFactory::setupAndPostStoredPoseSegment(Scheduler * _scheduler, int 
     }
     MotionSegment* animationSegment = new MotionSegment(currentCharacter, relativeFadeIn,relativeFadeOut);
 
-    animationSegment->m_type = ANIMATION;
+    animationSegment->m_type = MotionSegment::ABSOLUTE_KINEMATIC_POSE;
     animationSegment->m_stencil = _stencil;
     
     map<string,SMRMotion>::iterator animationIterator;
@@ -783,7 +783,7 @@ void ActuatorFactory::setupAndPostMorphTargetSegment(Scheduler * _scheduler, int
     }
     MotionSegment* morphTargetSegment = new MotionSegment(currentCharacter, relativeFadeIn,relativeFadeOut);
 
-    morphTargetSegment->m_type = MORPH_TARGET;
+    morphTargetSegment->m_type = MotionSegment::MORPH_TARGET;
     morphTargetSegment->m_stencil = _morphKey;
 
     map<string,float>::iterator morphTargetIterator;
@@ -814,7 +814,7 @@ void ActuatorFactory::setupAndPostAutonomousBehaviorParameterSegment(Scheduler *
     }
     MotionSegment* autonomousBehaviorSegment = new MotionSegment(currentCharacter, relativeFadeIn,relativeFadeOut);
 
-    autonomousBehaviorSegment->m_type = ANIMATION;
+    autonomousBehaviorSegment->m_type = MotionSegment::RELATIVE_KINEMATIC_POSE;
     autonomousBehaviorSegment->m_stencil = _behaviorParameterKey;
 
     map<string,float>::iterator autonomousBehaviorIterator;
@@ -844,7 +844,7 @@ void ActuatorFactory::setupAndPostShaderParameterSegment(Scheduler * _scheduler,
     }
     MotionSegment* shaderParameterTargetSegment = new MotionSegment(currentCharacter, relativeFadeIn,relativeFadeOut);
 
-    shaderParameterTargetSegment->m_type = SHADER_TARGET;
+    shaderParameterTargetSegment->m_type = MotionSegment::SHADER_TARGET;
     shaderParameterTargetSegment->m_stencil = _shaderKey;
 
     map<string,float>::iterator shaderParametersIterator;
@@ -873,7 +873,7 @@ void ActuatorFactory::setupAndPostMotionSegment(Scheduler * _scheduler, int _sta
   {
     MotionSegment* slerpIKSegment = new MotionSegment(currentCharacter);
 
-    slerpIKSegment->m_type = KINEMATIC_POSE;
+    slerpIKSegment->m_type = MotionSegment::ABSOLUTE_KINEMATIC_POSE;
     slerpIKSegment->m_stencil = _stencil;
 
     slerpIKSegment->addActuator(new ActuatorHybridIKSlerp(currentCharacter));
@@ -919,7 +919,7 @@ void ActuatorFactory::setupAndPostMotionSegment(Scheduler * _scheduler, int _sta
     for (motionSegmentIt = m_segmentToSend.begin(); motionSegmentIt < m_segmentToSend.end(); motionSegmentIt++)
     {
       MotionSegment *motionSegment = *motionSegmentIt;
-      if ( _stencil == motionSegment->m_stencil && motionSegment->m_type == KINEMATIC_POSE)
+      if ( _stencil == motionSegment->m_stencil && motionSegment->m_type == MotionSegment::ABSOLUTE_KINEMATIC_POSE)
       {
         //this is it, get the actuator
         actuator = static_cast<ActuatorHybridIKSlerp *>(motionSegment->getActuator(0));
@@ -942,7 +942,7 @@ void ActuatorFactory::setupAndPostMotionSegment(Scheduler * _scheduler, int _sta
     for (motionSegmentIt = m_segmentToSend.begin(); motionSegmentIt < m_segmentToSend.end(); motionSegmentIt++)
     {
       MotionSegment *motionSegment = *motionSegmentIt;
-      if ( _stencil == motionSegment->m_stencil && ( motionSegment->m_type == KINEMATIC_POSE))
+      if ( _stencil == motionSegment->m_stencil && ( motionSegment->m_type == MotionSegment::ABSOLUTE_KINEMATIC_POSE))
       {
         //this is it, get the actuator
         actuator = static_cast<ActuatorHybridIKSlerp *>(motionSegment->getActuator(0));
@@ -952,7 +952,7 @@ void ActuatorFactory::setupAndPostMotionSegment(Scheduler * _scheduler, int _sta
     {
       MotionSegment* slerpIKSegment = new MotionSegment(currentCharacter);
 
-      slerpIKSegment->m_type = KINEMATIC_POSE;
+      slerpIKSegment->m_type = MotionSegment::ABSOLUTE_KINEMATIC_POSE;
       slerpIKSegment->m_stencil = _stencil;
 
       slerpIKSegment->addActuator(new ActuatorHybridIKSlerp(currentCharacter));
@@ -1006,7 +1006,7 @@ void ActuatorFactory::setupAndPostMotionSegment(Scheduler * _scheduler, int _sta
     {
       MotionSegment* slerpIKSegment = new MotionSegment(currentCharacter);
 
-      slerpIKSegment->m_type = KINEMATIC_POSE;
+      slerpIKSegment->m_type = MotionSegment::ABSOLUTE_KINEMATIC_POSE;
       slerpIKSegment->m_stencil = _stencil;
 
       slerpIKSegment->addActuator(new ActuatorHybridIKSlerp(currentCharacter));
@@ -1046,11 +1046,11 @@ void ActuatorFactory::setupAndPostMotionSegment(Scheduler * _scheduler, int _sta
     {
       // create a motion segment for each eye.
       MotionSegment* slerpLEyeIKSegment = new MotionSegment(currentCharacter);
-      slerpLEyeIKSegment->m_type = KINEMATIC_POSE;
+      slerpLEyeIKSegment->m_type = MotionSegment::ABSOLUTE_KINEMATIC_POSE;
       slerpLEyeIKSegment->m_stencil = "leye";
 
       MotionSegment* slerpREyeIKSegment = new MotionSegment(currentCharacter);
-      slerpREyeIKSegment->m_type = KINEMATIC_POSE;
+      slerpREyeIKSegment->m_type = MotionSegment::ABSOLUTE_KINEMATIC_POSE;
       slerpREyeIKSegment->m_stencil = "reye";
 
       slerpLEyeIKSegment->addActuator(new ActuatorIKSlerp(currentCharacter));
@@ -1115,7 +1115,7 @@ void ActuatorFactory::setupAndPostCorrelationMapMotionSegment(Scheduler * _sched
   AnimationMotionSegment *animationSegment = new AnimationMotionSegment(currentCharacter, 0.0f,0.0f);
 
   //animationSegment->m_type = ANIMATION;
-  animationSegment->m_type = ANIMATION; //TODO:should be CORRELATIONMAP
+  animationSegment->m_type = MotionSegment::ABSOLUTE_KINEMATIC_POSE; //TODO:should be CORRELATIONMAP
   {
     //ActuatorCorrelationMap *newActuator = new ActuatorCorrelationMap(currentCharacter, "lhand" , "spine4", _scheduler->getCurrentPose());
     //animationSegment->addActuator(newActuator);

@@ -7,7 +7,7 @@ ComplexMotionSegment::~ComplexMotionSegment()
 
 ComplexMotionSegment::ComplexMotionSegment(Character* _currentCharacter, float _relative_fade_in, float _relative_fade_out):MotionSegment(_currentCharacter, _relative_fade_in, _relative_fade_out)
 {
-  m_type = KINEMATIC_POSE;
+  m_type = MotionSegment::ABSOLUTE_KINEMATIC_POSE;
   m_holdDuration = 0;
   m_gestureModifier = NULL;
   m_firstNucleusPose = 0;
@@ -148,7 +148,7 @@ void ComplexMotionSegment::process(const unsigned int _absoluteTimePoint, bool _
 
   LOG_TRACE(logger," processing complex motion segment with relative time: "<<relativeTime<<" warped relativeTime: " << warpedRelativeTime <<" m_absoluteStopTim= " << this->getAbsoluteStopTime()<< " absoluteTimeMs= " << _absoluteTimePoint);
   LOG_INFO(modifierLogger,"Interpolating with parameters tension = "<<tensBiasCons->X()<<", bias = "<<tensBiasCons->Y()<<", continuity "<<tensBiasCons->Z());
-  if ( this->m_type == KINEMATIC_POSE || this->m_type == KINEMATIC_POSE_EYE || this->m_type == ANIMATION )
+  if ( this->m_type == MotionSegment::ABSOLUTE_KINEMATIC_POSE)
   {
     InterpolateSkeletons(m_timedSkeletons, m_skeleton, warpedRelativeTime, static_cast<float>(tensBiasCons->X()),static_cast<float>(tensBiasCons->Y()),static_cast<float>(tensBiasCons->Z()));
   }

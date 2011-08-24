@@ -88,6 +88,7 @@ void Character::appplyRealvaluedResult(const RealValuedResultStruct &_realValued
       name = _realValuedResultStruct.key;
       value = _realValuedResultStruct.value;
       this->setMorphTargetWeight(name, value);
+      m_modifiedMorphTargets.push_back(name);
       break;
     case SHADER :
       name = _realValuedResultStruct.key;

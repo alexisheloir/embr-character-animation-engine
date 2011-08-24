@@ -115,6 +115,8 @@ public:
   std::map<string, float> m_shaderParameters; /** a dictionnary of shader parameters (name and current value) */
   std::map<string, float> m_autonomousParameters; /** a dictionnary of autonomous parameters (name and current value) */
 
+  std::vector<string> m_modifiedMorphTargets; /** a list of morph targets that need to be updated */
+    
   std::map<string, SMRSkeleton> m_jointGroups; /** the joint groups defined for this actor (stored as skeletons) */
   std::map<string, SMRMotion> m_animations; /** the animations defined for this actor */
 };
