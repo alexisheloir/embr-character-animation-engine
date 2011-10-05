@@ -22,7 +22,7 @@ ActuatorCorrelationMap::ActuatorCorrelationMap(Character* _relatedCharacter, str
   {
      string currentParentName = currentJoint->getParentName();
      currentJoint = m_referenceSkeleton->getJointByName(currentParentName);
-     SMRJoint* parentJoint = m_referenceSkeleton->getJointByName(currentParentName);
+     //SMRJoint* parentJoint = m_referenceSkeleton->getJointByName(currentParentName);
      m_referenceChain.insertJoint(0,currentJoint);
   }
 

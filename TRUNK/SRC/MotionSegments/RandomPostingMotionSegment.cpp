@@ -15,7 +15,7 @@ void RandomPostingMotionSegment::process(const unsigned int _absoluteTimeMs, boo
   m_lastTick = currentTick;                                // currentTick becomes current time
 
 
-  float cursor = m_counter * 5.0f;                            // cursor moves betwen 0 and 1 every 200 ms
+  float cursor = m_counter*5;                            // cursor moves betwen 0 and 1 every 200 ms
 
   if (cursor > 1.0f)                                       // cursor cycles between 0 and 1...
   {

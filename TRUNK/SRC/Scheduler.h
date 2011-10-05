@@ -24,6 +24,7 @@
 #include "SmrUtils.h"
 #include <boost/thread/thread.hpp>
 #include <boost/thread/mutex.hpp>
+#include "Character.h"
 //#include "ComplexMotionSegment.h"
 
 
@@ -55,7 +56,7 @@ class Scheduler{
   protected:
     std::list<MotionSegment*> m_motionSegments; /**< list of motion segments handled by the scheduler */
     int m_missedFrames;  /**< missed frames between two skeleton requests. performance evaluation purpose */
-    string m_character;  /**< name of the character managed by the scheduler */
+    Character* m_character;  /**< name of the character managed by the scheduler */
 
   public:
     SMRMotion motion; /**< a data structure which stores a sequence of poses (to be exported as a bvh file for debugging purpose) */
@@ -89,7 +90,7 @@ class Scheduler{
      * \param _pose initial for the character handled by this scheduler
      */
     void setCurrentPose(const SMRSkeleton *_pose);
-
+    
     void enqueueMotionSegment(MotionSegment *_segment);
     void schedule();
     void setClockOffset(const unsigned int _clockOffset);
@@ -97,14 +98,14 @@ class Scheduler{
     void flush(void);
 
   public:
-    Scheduler(string _characterName, SMRSkeleton* const _referencePose);
+    Scheduler(Character *_character, SMRSkeleton* const _referencePose);
 
   protected:
     SMRSkeleton m_bufferedPose;  /**< */
     SMRSkeleton* const m_poseToBeDisplayed;  /**< */
     //SMRSkeleton m_resultPose;  /**< */
     unsigned int m_clockOffset;  /**< */
-
+    
     bool m_getCurrentPoseWasHere; /**< debug purpose */
 
   public:

@@ -43,7 +43,7 @@ public:
   void process(const unsigned int _absoluteTimeMs);
 
   unsigned int getAbsoluteStartTime(void) const;
-  unsigned int getAbsoluteStopTime(void) const;
+  int getAbsoluteStopTime(void) const;
 
   void setAbsoluteStartTime(const int &_startTime);
   void setAbsoluteStopTime(const int &_stopTime);

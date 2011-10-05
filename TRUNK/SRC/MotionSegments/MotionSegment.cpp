@@ -2,7 +2,7 @@
 #include "MotionSegment.h"
 
 
-MotionSegment::MotionSegment(Character* _relatedCharacter, float _relative_fade_in, float _relative_fade_out): m_absoluteStartTime(0), m_absoluteStopTime(0), m_relative_fade_in(_relative_fade_in), m_relative_fade_out(_relative_fade_out), m_gestureModifier(NULL), m_relatedCharacter(_relatedCharacter)
+MotionSegment::MotionSegment(Character* _relatedCharacter, float _relative_fade_in, float _relative_fade_out): m_absoluteStartTime(200), m_absoluteStopTime(0), m_relative_fade_in(_relative_fade_in), m_relative_fade_out(_relative_fade_out), m_gestureModifier(NULL), m_relatedCharacter(_relatedCharacter)
 {
   m_holdDuration = 0;
   m_temporalWarpSpline = SMRHermitePoly<double>(-1.0,0.0,1.0,2.0);

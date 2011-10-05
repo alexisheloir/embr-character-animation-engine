@@ -14,7 +14,7 @@ void SelfPostingMotionSegment::process(const unsigned int _absoluteTimeMs, bool 
   m_counter += m_increment;                               // increment m_counter
   
   float cursor = m_counter * frequency;                   // wtf ?
-
+    
   if (cursor > 1.0f)                                      // cursor cycles between 0 and 1...
   {
     m_counter = 0.0f;
