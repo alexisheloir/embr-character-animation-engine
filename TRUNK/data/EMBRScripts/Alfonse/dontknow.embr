@@ -1,0 +1,165 @@
+BEGIN K_POSE_SEQUENCE           # --- Rest Pose --- #
+  CHARACTER:Alfonse
+  START:asap
+  FADE_IN:200
+  FADE_OUT:200
+  BEGIN K_POSE
+    TIME_POINT:+200
+    HOLD:600
+    BEGIN POSITION_CONSTRAINT
+      BODY_GROUP:rarm
+      TARGET:-0.2;-0.03;0.02
+      JOINT:rhand
+      OFFSET:0.0;0.0;0.0
+    END
+    BEGIN POSITION_CONSTRAINT
+      BODY_GROUP:larm
+      TARGET:0.2;-0.03;0.02
+      JOINT:lhand
+      OFFSET:0.0;0.0;0.0
+    END
+  END
+  BEGIN K_POSE                  #   hand moves upward in front of body
+    TIME_POINT:+900
+    HOLD:0
+    BEGIN POSITION_CONSTRAINT
+      BODY_GROUP:rarm
+      TARGET:-0.16;-0.18;0.3
+      JOINT:rhand
+      OFFSET:0.0;0.0;0.0
+    END
+    BEGIN ORIENTATION_CONSTRAINT
+      BODY_GROUP:rarm
+      DIRECTION:0.0;-1.0;-0.6
+      NORMAL:Zaxis
+      JOINT:rhand
+    END
+    BEGIN ORIENTATION_CONSTRAINT
+      BODY_GROUP:rarm
+      DIRECTION:0.0;-0.7;1.0
+      NORMAL:Yaxis
+      JOINT:rhand
+    END
+    BEGIN POSITION_CONSTRAINT
+      BODY_GROUP:larm
+      TARGET:0.16;-0.18;0.3
+      JOINT:lhand
+      OFFSET:0.0;0.0;0.0
+    END
+    BEGIN ORIENTATION_CONSTRAINT
+      BODY_GROUP:larm
+      DIRECTION:0.0;-1.0;-0.6
+      NORMAL:Zaxis
+      JOINT:lhand
+    END
+    BEGIN ORIENTATION_CONSTRAINT
+      BODY_GROUP:larm
+      DIRECTION:0.0;-0.7;1.0
+      NORMAL:Yaxis
+      JOINT:lhand
+    END
+    BEGIN SWIVEL_CONSTRAINT
+      BODY_GROUP:rarm
+      TARGET:40
+      JOINT:rhumerus
+    END
+    BEGIN SWIVEL_CONSTRAINT
+      BODY_GROUP:larm
+      TARGET:40
+      JOINT:lhumerus
+    END
+  END
+  BEGIN K_POSE                #    hand high, front of shoulder
+    TIME_POINT:+1400
+    HOLD:300
+    BEGIN POSITION_CONSTRAINT
+      BODY_GROUP:rarm
+      TARGET:-0.26;-0.17;0.5
+      JOINT:rhand
+      OFFSET:0.0;0.0;0.0
+    END
+    BEGIN ORIENTATION_CONSTRAINT
+      BODY_GROUP:rarm
+      DIRECTION:0.0;-0.9;-1.0
+      NORMAL:Zaxis
+      JOINT:rhand
+    END
+    BEGIN ORIENTATION_CONSTRAINT
+      BODY_GROUP:rarm
+      DIRECTION:0.0;-0.01;1.0
+      NORMAL:Yaxis
+      JOINT:rhand
+    END
+    BEGIN POSITION_CONSTRAINT
+      BODY_GROUP:larm
+      TARGET:0.26;-0.17;0.5
+      JOINT:lhand
+      OFFSET:0.0;0.0;0.0
+    END
+    BEGIN ORIENTATION_CONSTRAINT
+      BODY_GROUP:larm
+      DIRECTION:0.0;-0.9;-1.0
+      NORMAL:Zaxis
+      JOINT:lhand
+    END
+    BEGIN ORIENTATION_CONSTRAINT
+      BODY_GROUP:larm
+      DIRECTION:0.0;-0.01;1.0
+      NORMAL:Yaxis
+      JOINT:lhand
+    END
+    BEGIN SWIVEL_CONSTRAINT
+      BODY_GROUP:rarm
+      TARGET:30
+      JOINT:rhumerus
+    END
+    BEGIN SWIVEL_CONSTRAINT
+      BODY_GROUP:larm
+      TARGET:30
+      JOINT:lhumerus
+    END
+  END
+  BEGIN K_POSE                      #  downward motion
+    TIME_POINT:+1900
+    HOLD:0
+    BEGIN POSITION_CONSTRAINT
+      BODY_GROUP:rarm
+      TARGET:-0.22;-0.18;0.18
+      JOINT:rhand
+      OFFSET:0.0;0.0;0.0
+    END
+    BEGIN POSITION_CONSTRAINT
+      BODY_GROUP:larm
+      TARGET:0.2;-0.18;0.18
+      JOINT:lhand
+      OFFSET:0.0;0.0;0.0
+    END
+    BEGIN SWIVEL_CONSTRAINT
+      BODY_GROUP:rarm
+      TARGET:40
+      JOINT:rhumerus
+    END
+    BEGIN SWIVEL_CONSTRAINT
+      BODY_GROUP:larm
+      TARGET:40
+      JOINT:lhumerus
+    END
+  END
+  BEGIN K_POSE
+    TIME_POINT:+2200
+    HOLD:0
+    BEGIN POSITION_CONSTRAINT
+      BODY_GROUP:rarm
+      TARGET:-0.22;-0.03;0.02
+      JOINT:rhand
+      OFFSET:0.0;0.0;0.0
+    END
+        BEGIN POSITION_CONSTRAINT
+      BODY_GROUP:larm
+      TARGET:0.2;-0.03;0.02
+      JOINT:lhand
+      OFFSET:0.0;0.0;0.0
+    END
+  END
+END
+

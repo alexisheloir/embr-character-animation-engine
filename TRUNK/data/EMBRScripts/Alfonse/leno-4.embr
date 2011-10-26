@@ -1,0 +1,201 @@
+TIME_RESET
+
+BEGIN K_POSE_SEQUENCE
+ CHARACTER:Alfonse
+ START:500
+ BEGIN K_POSE  # +++ REST POSE (RH) +++
+  TIME_POINT:600
+  HOLD:0
+  BEGIN POSITION_CONSTRAINT
+    BODY_GROUP:rarm
+    TARGET:-0.25;0;0
+    JOINT:rhand
+    OFFSET:0.0;0.0;0.0
+  END
+  BEGIN POSE_TARGET
+    BODY_GROUP:rhand
+    POSE_KEY:hands_open-relaxed
+  END
+ END
+END
+
+BEGIN K_POSE_SEQUENCE
+ CHARACTER:Alfonse
+ START:500
+ BEGIN K_POSE  # +++ REST POSE (LH) +++
+  TIME_POINT:600
+  HOLD:0
+  BEGIN POSITION_CONSTRAINT
+    BODY_GROUP:larm
+    TARGET:0.25;0;0
+    JOINT:lhand
+    OFFSET:0.0;0.0;0.0
+  END
+  BEGIN POSE_TARGET
+    BODY_GROUP:lhand
+    POSE_KEY:hands_open-relaxed
+  END
+ END
+END
+
+# ************** G-UNIT ******************
+BEGIN K_POSE_SEQUENCE  # +++ HAND UNIT [RH] +++
+ CHARACTER:Alfonse
+ START:1000
+ BEGIN K_POSE  # --- stroke start [Reject, RH]
+  TIME_POINT:1640
+  HOLD:0
+  BEGIN POSITION_CONSTRAINT
+    BODY_GROUP:rarm
+    TIME_WARP:EXP;3
+    TARGET:-0.1;-0.2;0.5
+    JOINT:rhand
+    OFFSET:0.0;0.0;0.0
+  END
+  BEGIN ORIENTATION_CONSTRAINT
+    BODY_GROUP:rarm
+    NORMAL:0;-0.8;-0.3
+    JOINT:rhand
+  END
+  BEGIN POSE_TARGET
+    BODY_GROUP:rhand
+    POSE_KEY:hands_open-straight
+  END
+ END
+ BEGIN K_POSE  # --- stroke end [Reject, RH]
+  TIME_POINT:1840
+  HOLD:720
+  BEGIN POSITION_CONSTRAINT
+    BODY_GROUP:rarm
+    TIME_WARP:EXP;.33
+    TARGET:-0.37;-0.2;0.35
+    JOINT:rhand
+    OFFSET:0.0;0.0;0.0
+  END
+  BEGIN ORIENTATION_CONSTRAINT
+    BODY_GROUP:rarm
+    NORMAL:0;-0.8;-0.3
+    JOINT:rhand
+  END
+  BEGIN POSE_TARGET
+    BODY_GROUP:rhand
+    POSE_KEY:hands_open-straight
+  END
+ END
+ BEGIN K_POSE  # --- stroke start [RaisedIndexfinger, RH]
+  TIME_POINT:2960
+  HOLD:0
+  BEGIN POSITION_CONSTRAINT
+    BODY_GROUP:rarm
+    TIME_WARP:EXP;3
+    TARGET:-0.1;-0.2;0.35
+    JOINT:rhand
+    OFFSET:0.0;0.0;0.0
+  END
+  BEGIN ORIENTATION_CONSTRAINT
+    BODY_GROUP:rarm
+    NORMAL:1;0;0.6
+    JOINT:rhand
+  END
+  BEGIN POSE_TARGET
+    BODY_GROUP:rhand
+    POSE_KEY:hands_index
+  END
+ END
+ BEGIN K_POSE  # --- stroke end [RaisedIndexfinger, RH]
+  TIME_POINT:3120
+  HOLD:520
+  BEGIN POSITION_CONSTRAINT
+    BODY_GROUP:rarm
+    TIME_WARP:EXP;.33
+    TARGET:-0.23;-0.28;0.35
+    JOINT:rhand
+    OFFSET:0.0;0.0;0.0
+  END
+  BEGIN ORIENTATION_CONSTRAINT
+    BODY_GROUP:rarm
+    NORMAL:1;0;0.6
+    JOINT:rhand
+  END
+  BEGIN POSE_TARGET
+    BODY_GROUP:rhand
+    POSE_KEY:hands_index
+  END
+ END
+ BEGIN K_POSE  # --- stroke start [Beat, RH]
+  TIME_POINT:3640
+  HOLD:0
+  BEGIN POSITION_CONSTRAINT
+    BODY_GROUP:rarm
+    TIME_WARP:EXP;1
+    TARGET:-0.1;-0.28;0.35
+    JOINT:rhand
+    OFFSET:0.0;0.0;0.0
+  END
+  BEGIN ORIENTATION_CONSTRAINT
+    BODY_GROUP:rarm
+    NORMAL:1;0;0
+    JOINT:rhand
+  END
+  BEGIN POSE_TARGET
+    BODY_GROUP:rhand
+    POSE_KEY:hands_open-relaxed
+  END
+ END
+ BEGIN K_POSE  # --- stroke middle [Beat, RH]
+  TIME_POINT:3900
+  HOLD:0
+  BEGIN POSITION_CONSTRAINT
+    BODY_GROUP:rarm
+    TIME_WARP:EXP;3
+    TARGET:-0.17;-0.28;0.45
+    JOINT:rhand
+    OFFSET:0.0;0.0;0.0
+  END
+  BEGIN ORIENTATION_CONSTRAINT
+    BODY_GROUP:rarm
+    NORMAL:1;0;0
+    JOINT:rhand
+  END
+ END
+ BEGIN K_POSE  # --- stroke end [Beat, RH]
+  TIME_POINT:4159
+  HOLD:360
+  BEGIN POSITION_CONSTRAINT
+    BODY_GROUP:rarm
+    TIME_WARP:EXP;.33
+    TARGET:-0.23;-0.28;0.35
+    JOINT:rhand
+    OFFSET:0.0;0.0;0.0
+  END
+  BEGIN ORIENTATION_CONSTRAINT
+    BODY_GROUP:rarm
+    NORMAL:1;0;0
+    JOINT:rhand
+  END
+  BEGIN POSE_TARGET
+    BODY_GROUP:rhand
+    POSE_KEY:hands_open-relaxed
+  END
+ END
+END
+
+# ++ G-UNIT FINAL RETRACT [RH] ++
+BEGIN K_POSE_SEQUENCE
+ CHARACTER:Alfonse
+ START:4820
+ BEGIN K_POSE  # +++ REST POSE (RH) +++
+  TIME_POINT:5520
+  HOLD:0
+  BEGIN POSITION_CONSTRAINT
+    BODY_GROUP:rarm
+    TARGET:-0.25;0;0
+    JOINT:rhand
+    OFFSET:0.0;0.0;0.0
+  END
+  BEGIN POSE_TARGET
+    BODY_GROUP:rhand
+    POSE_KEY:hands_open-relaxed
+  END
+ END
+END
