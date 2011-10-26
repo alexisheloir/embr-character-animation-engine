@@ -491,12 +491,6 @@ public:
     pose.setName(_animationKey);
     ActuatorFactory::getInstance()->addPoseToAnimation(_characterName, _animationKey, pose);
   }
-    
-  bool default_skeletonIsReadyToBeDisplayed(string _characterName)
-  {
-    Character* currentCharacter = ActuatorFactory::getInstance()->getCharacter(_characterName);
-    return currentCharacter->m_isReadyToBeDisplayed;
-  }
 
   void default_init(string _characterConfigurationFileContent)
   {
@@ -653,7 +647,6 @@ BOOST_PYTHON_MODULE(SMRPy)
     .def("configureLogger",           &RealizerWrap::configureLogger)
     .def("skeletonRequested",         &RealizerWrap::skeletonRequested)
     .def("getFeedbackMessage",        &RealizerWrap::getFeedbackMessage)
-    .def("skeletonIsReadyToBeDisplayed", &RealizerWrap::default_skeletonIsReadyToBeDisplayed) 
     //.def("lock",                      &RealizerWrap::lock)
     //.def("unLock",                    &RealizerWrap::unLock)
 ;

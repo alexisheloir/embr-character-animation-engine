@@ -11,9 +11,9 @@ void Scheduler::setCurrentPose(const SMRSkeleton *_pose) {
   //m_resultPose = *_pose;
 }
 
-Scheduler::Scheduler(Character *_character, SMRSkeleton* const _referencePose):m_missedFrames(0),m_poseToBeDisplayed(_referencePose),m_clockOffset(0),m_getCurrentPoseWasHere(false)
+Scheduler::Scheduler(string _characterName, SMRSkeleton* const _referencePose):m_missedFrames(0),m_poseToBeDisplayed(_referencePose),m_clockOffset(0),m_getCurrentPoseWasHere(false)
 {
-  m_character = _character;
+  m_character = _characterName;
   motion.setTimeStep(40.0);
 }
 
@@ -31,7 +31,6 @@ void Scheduler::schedule()
   bool skeletonHasBeenUpdated = false;
   SMRSkeleton resultPose;
   if (m_motionSegments.size() == 0 ) boost::this_thread::sleep(boost::posix_time::milliseconds(100)); // TODO  use flags and move this to the schedulerManager
-  else boost::this_thread::sleep(boost::posix_time::milliseconds(20));
   while ( iterator != m_motionSegments.end() )
   {
     MotionSegment* currentSegment;
@@ -40,15 +39,11 @@ void Scheduler::schedule()
     LOG_TRACE(schedulerLogger, "startTime: " << currentSegment->getAbsoluteStartTime() << " || " \
                                "stopTime: " << currentSegment->getAbsoluteStopTime());
 
-    if((currentTimeMs > currentSegment->getAbsoluteStartTime() && currentTimeMs < currentSegment->getAbsoluteStopTime()) || (currentTimeMs > currentSegment->getAbsoluteStartTime() && currentSegment->getAbsoluteStopTime() == 0 )) // find a better way to handle relative postures here, rather use a consistent typology
+    if(currentTimeMs > currentSegment->getAbsoluteStartTime()) // find a better way to handle relative postures here, rather use a consistent typology
     {
       boost::mutex::scoped_lock lockSkeletonModifier(skeletonMutex);
       LOG_TRACE(schedulerLogger,"updating posture " << " with absolute time: " << currentTimeMs);
-      
-      m_character->m_isReadyToBeDisplayed = false;
       currentSegment->process(currentTimeMs);
-      m_character->m_isReadyToBeDisplayed = true;
-  
       //LOG_TRACE(schedulerLogger,"combining resulting pose with currentSkeleton (" << currentSegment->getSkeleton()->getName() << ") at " << currentTimeMs << "ms");
       SMRSkeleton* resultSkeleton = currentSegment->getSkeleton();
       if(resultSkeleton) skeletonHasBeenUpdated = true;  
@@ -59,23 +54,23 @@ void Scheduler::schedule()
         case MotionSegment::ABSOLUTE_KINEMATIC_POSE:
           resultPose.combine(*(resultSkeleton),currentSegment->getAmount(currentTimeMs)); // amount is for fade_in / fade_out
           break;
-        case MotionSegment::ANIMATION:
-          resultPose.combine(*(resultSkeleton),currentSegment->getAmount(currentTimeMs)); // amount is for fade_in / fade_out
-          break;
         case MotionSegment::RELATIVE_KINEMATIC_POSE:
           (resultPose)*=(*(resultSkeleton));
           break;                
         default:
           break;
       }
-    }
-    if (currentTimeMs > currentSegment->getAbsoluteStopTime() && currentSegment->getAbsoluteStopTime() > 0) //segment whose stoptime is 0 are autonomous
-    {
-      LOG_DEBUG(schedulerLogger,"Motion segment is deprecated, remove it: MS time :" << currentSegment->getAbsoluteStopTime() << " current time : " << currentTimeMs);
-      MotionSegment* segmentToFlush= *iterator;
-      iterator = m_motionSegments.erase(iterator);
-      delete(segmentToFlush);// !remove this line when using factory!          
-    }else
+      if (currentTimeMs > currentSegment->getAbsoluteStopTime())
+      {
+          LOG_DEBUG(schedulerLogger,"motion segment is deprecated, remove it: MS time :" << currentSegment->getAbsoluteStopTime() << " current time : " << currentTimeMs);
+          MotionSegment* segmentToFlush= *iterator;
+          iterator = m_motionSegments.erase(iterator);
+          delete(segmentToFlush);// !remove this line when using factory!          
+      }else
+      {
+          iterator++;
+      }
+    }else if(currentTimeMs < currentSegment->getAbsoluteStartTime() )
     {
       iterator++;
     }
@@ -159,14 +154,18 @@ void Scheduler::enqueueMotionSegment(MotionSegment *_segment)
   while (segmentIterator != m_motionSegments.end())
   {
     MotionSegment *currentSegment = *segmentIterator;
+<<<<<<< local
+    if (currentSegment->getAbsoluteStartTime() > _segment->getAbsoluteStartTime() && currentSegment->getAbsoluteStartTime() > 0 ) // so that breathing is always the last motion segment
+=======
     if (currentSegment->getAbsoluteStartTime() > _segment->getAbsoluteStartTime() && currentSegment->getAbsoluteStopTime() != 0.0f )
+>>>>>>> other
     {
       m_motionSegments.insert(segmentIterator,_segment);
       return;
     }
     segmentIterator++;
   }
-  m_motionSegments.push_back(_segment);
+  m_motionSegments.push_front(_segment);
 }
 
 void Scheduler::skeletonRequested(){
@@ -184,6 +183,5 @@ void Scheduler::skeletonRequested(){
 
 string Scheduler::getRelatedCharacter(void)
 {
-  return m_character->m_name;
+  return m_character;
 }
-
