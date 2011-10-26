@@ -1,7 +1,7 @@
 <!ELEMENT characters (character*)>
 <!ELEMENT character (upVector,kinematics+,animations?,shaders?,behaviors?)>
   <!ELEMENT upVector	(#PCDATA)>
-  <!ELEMENT kinematics	(jointGroups,kinematicProperties)>
+  <!ELEMENT kinematics	(jointGroups,kinematicProperties,correlationMap*)>
     <!ELEMENT joints	(joint*)>
       <!ELEMENT joint		(DOFS*)>
         <!ELEMENT jointName	(#PCDATA)>
@@ -15,7 +15,10 @@
       <!ELEMENT CCDStructure (#PCDATA)>
       <!ELEMENT iterativeIKStructure (#PCDATA)>
       <!ELEMENT swivel (#PCDATA)>
-  <!ELEMENT animations		(#PCDATA)>
+  <!ELEMENT animations  (animation*)>
+      <!ELEMENT animation   (bvhmotion, ressource)>
+		 <!ELEMENT bvhmotion (#PCDATA)>
+		 <!ELEMENT ressource (#PCDATA)>
   <!ELEMENT shaders (shaderParameters)>
     <!ELEMENT shaderParameters (shaderParameter)>
       <!ELEMENT shaderParameter (#PCDATA)>
@@ -27,14 +30,14 @@
         <!ELEMENT morphKey (#PCDATA)>
       <!ELEMENT actuatorSkelAnimation (#PCDATA)>
 
+    <!ELEMENT correlationMap (targetJoint, sourceJoint)>
+      <!ELEMENT targetJoint EMPTY>
+      <!ELEMENT sourceJoint EMPTY>
+
 <!ATTLIST character name CDATA #REQUIRED>
 <!ATTLIST joint id CDATA #REQUIRED>
 <!ATTLIST jointGroup   id  CDATA #REQUIRED
                        sym CDATA #IMPLIED>
-<!ATTLIST DOF axis CDATA #REQUIRED
-              upperLimit CDATA #REQUIRED
-              lowerLimit CDATA #REQUIRED
-              gain CDATA #IMPLIED>
 <!ATTLIST jointReference   ref  CDATA #REQUIRED>
 <!ATTLIST HALStructure ref  CDATA #REQUIRED>
 <!ATTLIST CCDStructure ref  CDATA #REQUIRED>
@@ -57,3 +60,17 @@
 <!ATTLIST randomBehavior probability CDATA #REQUIRED>
 <!ATTLIST shaderParameter name CDATA #REQUIRED>
 <!ATTLIST shaderParameter initialValue CDATA #REQUIRED>
+<!ATTLIST bvhmotion name CDATA #REQUIRED>
+<!ATTLIST ressource filepath CDATA #REQUIRED>
+<!ATTLIST DOF axis CDATA #REQUIRED
+              upperLimit CDATA #REQUIRED
+              lowerLimit CDATA #REQUIRED
+              gain CDATA #IMPLIED>
+<!ATTLIST sourceJoint name CDATA #REQUIRED
+                      type CDATA #REQUIRED
+                      min  CDATA #REQUIRED
+                      max  CDATA #REQUIRED>
+<!ATTLIST targetJoint name CDATA #REQUIRED
+                      type CDATA #REQUIRED
+                      min  CDATA #REQUIRED
+                      max  CDATA #REQUIRED>

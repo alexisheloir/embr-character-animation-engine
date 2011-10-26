@@ -108,7 +108,7 @@ void findNode(string _nameToFind,xmlNode *_nodeToSearch, xmlNode **result)
     }
 }
 
-void ActuatorFactory::init()
+void ActuatorFactory::init(string _characterConfigurationFileContent)
 {
 
 /*
@@ -124,11 +124,13 @@ void ActuatorFactory::init()
  */
   //int ret=0;
 
-  char* filename("./characterConfiguration.xml");
+  //char* filename("./characterConfiguration.xml");
   std::vector<string> characters;
-  xmlDoc *doc = xmlReadFile(filename,NULL,XML_PARSE_DTDVALID |  /* validate with the DTD */
-                                         XML_PARSE_DTDATTR ); /* default DTD attributes */
-  
+
+  xmlDoc *doc = xmlReadMemory(_characterConfigurationFileContent.c_str(), _characterConfigurationFileContent.length(), NULL, NULL, XML_PARSE_NOERROR);  
+
+  //xmlDoc *doc = xmlReadFile(filename,NULL,XML_PARSE_DTDVALID |  /* validate with the DTD */
+  //                                       XML_PARSE_DTDATTR ); /* default DTD attributes */  
   
   if(doc != NULL)
   {
@@ -173,7 +175,7 @@ void ActuatorFactory::init()
         currentCharacter = getCharacter(characterName);
         posture = &(currentCharacter->m_TPose);
 
-        newScheduler = new Scheduler(currentCharacter, ActuatorFactory::getInstance()->getCharacterAnimationPosture(characterName));
+        newScheduler = new Scheduler(characterName, ActuatorFactory::getInstance()->getCharacterAnimationPosture(characterName));
         newScheduler->setCurrentPose(ActuatorFactory::getInstance()->getCharacterTPosture(characterName));
         m_schedulerManager->addScheduler(characterName, newScheduler);
       }
@@ -309,6 +311,56 @@ void ActuatorFactory::init()
         if (currentGroup) currentGroup = currentGroup->next;
         }while(currentGroup);
       }
+      findNode("correlationMap", characterNode->children, &correlationMapNode);
+      while(correlationMapNode)
+      {
+        if(correlationMapNode == NULL)
+        {
+          LOG_INFO(xmlLogger,"unable to find \"correlationMap\" node");
+        }else
+        {
+          xmlNode *targetJoint; 
+          xmlNode *sourceJoint;
+          findNode("targetJoint",correlationMapNode,&targetJoint);
+          findNode("sourceJoint",correlationMapNode,&sourceJoint);
+          if(targetJoint == NULL || sourceJoint == NULL)
+          {
+                LOG_INFO(xmlLogger,"unable to find \"targetJoint element or sourceJoint element\" ");
+          }else
+          {
+            string sourceJointName = getAttrValue("name", sourceJoint);
+            string sourceDOF = getAttrValue("type", sourceJoint);
+            float sourceMinValue;
+            istringstream minValueStream(getAttrValue("min",sourceJoint));
+            minValueStream >> sourceMinValue;
+            float sourceMaxValue;
+            istringstream maxValueStream(getAttrValue("max",sourceJoint));
+            maxValueStream >> sourceMaxValue;
+
+            string targetJointName = getAttrValue("name", targetJoint);
+            string targetDOF = getAttrValue("type", targetJoint);
+            float targetMinValue;
+            istringstream targetMinValueStream(getAttrValue("min",targetJoint));
+            targetMinValueStream >> targetMinValue;
+            float targetMaxValue;
+            istringstream targetMaxValueStream(getAttrValue("max",targetJoint));
+            targetMaxValueStream >> targetMaxValue;
+
+            ComplexMotionSegment *currentMotionSegment = new SelfPostingMotionSegment(currentCharacter, "",40);
+            
+            currentMotionSegment->m_type = MotionSegment::ABSOLUTE_KINEMATIC_POSE; //TODO:should be CORRELATIONMAP
+            {
+              ActuatorCorrelationMap *newActuator = new ActuatorCorrelationMap(currentCharacter, sourceJointName, sourceMinValue, sourceMaxValue, targetJointName, targetMinValue, targetMaxValue, newScheduler->getCurrentPose());
+              currentMotionSegment->addActuator(newActuator);
+              currentMotionSegment->setAbsoluteStartTime(0);
+              currentMotionSegment->setAbsoluteStopTime(0);
+              currentMotionSegment->setHoldDuration(0);
+              newScheduler->enqueueMotionSegment(currentMotionSegment);
+            }
+          }
+        findNode("correlationMap", correlationMapNode->next, &correlationMapNode);
+        }
+      }
       // New part, parse animation clips from the xml file
       findNode("animations", characterNode->children, &animationsNode);
       if(animationsNode == NULL)
@@ -428,7 +480,7 @@ void ActuatorFactory::init()
           currentMotionSegment->setAbsoluteStartTime(0);
           currentMotionSegment->setAbsoluteStopTime(0);
 
-          findNode("actuatorMorphAnimation", periodicBehaviorNode->children, &actuatorMorphAnimationNode);
+          findNode("actuatorMorphAnimation", periodicBehaviorNode, &actuatorMorphAnimationNode);
           if (actuatorMorphAnimationNode == NULL)
           {
             LOG_INFO(xmlLogger,"unable to find \"actuatorMorphAnimationNode\" node");
@@ -464,7 +516,7 @@ void ActuatorFactory::init()
               findNode("actuatorMorphAnimation", actuatorMorphAnimationNode->next, &actuatorMorphAnimationNode);
             }while(actuatorMorphAnimationNode);
           }
-          findNode("actuatorSkelAnimation", periodicBehaviorNode->children, &actuatorSkelAnimationNode);
+          findNode("actuatorSkelAnimation", periodicBehaviorNode, &actuatorSkelAnimationNode);
           if (actuatorSkelAnimationNode == NULL)
           {
             LOG_INFO(xmlLogger,"unable to find \"actuatorSkelAnimationNode\" node");
@@ -493,7 +545,6 @@ void ActuatorFactory::init()
                 }
 
                 ActuatorAnimation *currentSkelMotionActuator = new ActuatorAnimation(currentCharacter, &currentCharacter->m_animations[animation],currentCharacter->m_jointGroups[jointGroup],currentCharacter->m_animationPose,"derivate",value);
-                currentSkelMotionActuator->setEaseIn(1000); 
                 currentMotionSegment->addActuator(currentSkelMotionActuator);
               }else
               {
@@ -505,65 +556,15 @@ void ActuatorFactory::init()
           }
           findNode("autonomousBehavior", periodicBehaviorNode->next, &periodicBehaviorNode);
         }while(periodicBehaviorNode);
-         //LOG_ERROR(xmlLogger,"Exporting motion ");
+          LOG_ERROR(xmlLogger,"Exporting motion ");
          // exportMotionToBVH("hands_fist.bvh", currentCharacter->m_animations["hands_fist2"]);
       }
-      findNode("correlationMap", characterNode->children, &correlationMapNode);
-      while(correlationMapNode)
-      {
-            if(correlationMapNode == NULL)
-            {
-                LOG_INFO(xmlLogger,"unable to find \"correlationMap\" node");
-            }else
-            {
-                xmlNode *targetJoint; 
-                xmlNode *sourceJoint;
-                findNode("targetJoint",correlationMapNode,&targetJoint);
-                findNode("sourceJoint",correlationMapNode,&sourceJoint);
-                if(targetJoint == NULL || sourceJoint == NULL)
-                {
-                    LOG_INFO(xmlLogger,"unable to find \"targetJoint element or sourceJoint element\" ");
-                }else
-                {
-                    string sourceJointName = getAttrValue("name", sourceJoint);
-                    string sourceDOF = getAttrValue("type", sourceJoint);
-                    float sourceMinValue;
-                    istringstream minValueStream(getAttrValue("min",sourceJoint));
-                    minValueStream >> sourceMinValue;
-                    float sourceMaxValue;
-                    istringstream maxValueStream(getAttrValue("max",sourceJoint));
-                    maxValueStream >> sourceMaxValue;
-                    
-                    string targetJointName = getAttrValue("name", targetJoint);
-                    string targetDOF = getAttrValue("type", targetJoint);
-                    float targetMinValue;
-                    istringstream targetMinValueStream(getAttrValue("min",targetJoint));
-                    targetMinValueStream >> targetMinValue;
-                    float targetMaxValue;
-                    istringstream targetMaxValueStream(getAttrValue("max",targetJoint));
-                    targetMaxValueStream >> targetMaxValue;
-                    
-                    ComplexMotionSegment *currentMotionSegment = new SelfPostingMotionSegment(currentCharacter, "",40);
-                    
-                    currentMotionSegment->m_type = MotionSegment::ABSOLUTE_KINEMATIC_POSE; //TODO:should be CORRELATIONMAP
-                    {
-                        ActuatorCorrelationMap *newActuator = new ActuatorCorrelationMap(currentCharacter, sourceJointName, sourceMinValue, sourceMaxValue, targetJointName, targetMinValue, targetMaxValue, newScheduler->getCurrentPose());
-                        currentMotionSegment->addActuator(newActuator);
-                        currentMotionSegment->setAbsoluteStartTime(0);
-                        currentMotionSegment->setAbsoluteStopTime(0);
-                        currentMotionSegment->setHoldDuration(0);
-                        newScheduler->enqueueMotionSegment(currentMotionSegment);
-                    }
-                }
-                findNode("correlationMap", correlationMapNode->next, &correlationMapNode);
-            }
-        }  
       findNode("character", characterNode->next, &characterNode);
     }while(characterNode);
     
   } else 
   {
-    LOG_ERROR(xmlLogger,"Unable to open " << filename);
+    //LOG_ERROR(xmlLogger,"Unable to open " << filename);
   }
   
 
@@ -594,7 +595,7 @@ void ActuatorFactory::setSchedulerManager(SchedulerManager *_schedulerManager)
 void ActuatorFactory::addCharacter(const string &_characterName, SMRSkeleton* const _referencePose)
 {
   //create a new character and pile it
-  Character* newCharacter = new Character( _characterName, _referencePose);
+  Character* newCharacter = new Character(_referencePose);
   m_characters[_characterName] = newCharacter;
 }
 

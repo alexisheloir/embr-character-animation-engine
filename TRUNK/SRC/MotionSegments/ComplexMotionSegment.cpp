@@ -101,7 +101,7 @@ void ComplexMotionSegment::process(const unsigned int _absoluteTimePoint, bool _
   { 
     
     unsigned int motionSegmentStopTime = (*motionSegmentIterator)->getAbsoluteStopTime();
-    if( _absoluteTimePoint > motionSegmentStopTime-5 && _absoluteTimePoint < motionSegmentStopTime+5) // TODO: use instead _absoluteTimePoint > motionSegmentStopTime and a vector of elapsed motionSegments
+    if( _absoluteTimePoint > motionSegmentStopTime-5 && _absoluteTimePoint < motionSegmentStopTime+5)
     {
       (*motionSegmentIterator)->process(motionSegmentStopTime, true);
     }else

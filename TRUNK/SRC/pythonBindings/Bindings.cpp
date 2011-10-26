@@ -491,16 +491,10 @@ public:
     pose.setName(_animationKey);
     ActuatorFactory::getInstance()->addPoseToAnimation(_characterName, _animationKey, pose);
   }
-    
-  bool default_skeletonIsReadyToBeDisplayed(string _characterName)
-  {
-    Character* currentCharacter = ActuatorFactory::getInstance()->getCharacter(_characterName);
-    return currentCharacter->m_isReadyToBeDisplayed;
-  }
 
-  void init()
+  void default_init(string _characterConfigurationFileContent)
   {
-    ActuatorFactory::getInstance()->init();
+    ActuatorFactory::getInstance()->init(_characterConfigurationFileContent);
   }
 
   //void lock(string agentName)
@@ -649,11 +643,10 @@ BOOST_PYTHON_MODULE(SMRPy)
     .def("getShaderParameterValue",   &RealizerWrap::default_getShaderParameterWeight)
     .def("addPoseToAnimation",        &RealizerWrap::default_addPoseToAnimation)
     .def("addAnimation",              &RealizerWrap::default_addAnimation)
-    .def("init",                      &RealizerWrap::init)
+    .def("init",                      &RealizerWrap::default_init)
     .def("configureLogger",           &RealizerWrap::configureLogger)
     .def("skeletonRequested",         &RealizerWrap::skeletonRequested)
     .def("getFeedbackMessage",        &RealizerWrap::getFeedbackMessage)
-    .def("skeletonIsReadyToBeDisplayed", &RealizerWrap::default_skeletonIsReadyToBeDisplayed) 
     //.def("lock",                      &RealizerWrap::lock)
     //.def("unLock",                    &RealizerWrap::unLock)
 ;

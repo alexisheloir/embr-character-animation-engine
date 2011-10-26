@@ -156,13 +156,14 @@ class AlfonseModel:
         #shadowMap.setTexture( self.modelRShoe )
         
 class ShaderDirectionalLight:
-    def __init__( self, color, direction, intensity, index ):
+    def __init__( self, color, direction, intensity, index, anchor ):
         self.color = color
         self.direction = direction
         self.intensity = intensity
         self.index = index
         self.name = "directionalLight" + str( index )
-        
+        self.anchor = anchor
+
     def create( self, lightAttrib ):
         #create directional light
         directionalLight = DirectionalLight( self.name )
@@ -210,8 +211,9 @@ def hsvToRGB(h, s, v):
 # directionalColor - Vec4
 # direction - Vec3
 class Lighting:
-    def __init__( self, ambientColor ):
+    def __init__( self, ambientColor, anchor ):
         self.ambientColor = ambientColor
+        self.anchor = anchor
         self.create()
         
     def create( self ):
@@ -239,7 +241,7 @@ class Lighting:
         self.directionalLights = []
         
         for i in range(4):
-            self.directionalLights.append( ShaderDirectionalLight( colors[i], directions[i], intensities[i], i ) )
+            self.directionalLights.append( ShaderDirectionalLight( colors[i], directions[i], intensities[i], i , self.anchor) )
             lightAttrib = self.directionalLights[i].create( lightAttrib )
         
         #set light attributes

@@ -20,7 +20,7 @@ Realizer myRealizer;
 //ActuatorFactory::getInstance()->addCharacter("Alfonse");
 //Character* currentCharacter = ActuatorFactory::getInstance()->getCharacter("Alfonse");
 //currentCharacter->addPose(&posture);
-ActuatorFactory::getInstance()->init();
+//ActuatorFactory::getInstance()->init();
 
 myRealizer.run();
 

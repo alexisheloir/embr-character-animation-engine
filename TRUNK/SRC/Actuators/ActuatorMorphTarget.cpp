@@ -22,7 +22,7 @@ void ActuatorMorphTarget::process(float relativeTime)
   float currentWeight = m_morphTargetInitialValue + relativeTime *(m_morphTargetFinalValue-m_morphTargetInitialValue);
   // Alpha is an attenuation parameter usually defined by an autonomousParameter
   if (currentWeight < 0.0f) currentWeight = 0.0f;
-  if (currentWeight > 1.51f) currentWeight = 1.0f;
+  if (currentWeight > 1.51f) currentWeight = 1.51f;
 
   float alpha = 1.0;
   if (m_weightKey != "")

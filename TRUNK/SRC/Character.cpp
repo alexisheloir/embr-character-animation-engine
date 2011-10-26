@@ -11,7 +11,10 @@ void Character::setMorphTargetWeight(const string &_morphTargetName, float _valu
   if ( m_morphTargets.find(_morphTargetName) == m_morphTargets.end() )
     LOG_ERROR(logger,"morph target " << _morphTargetName << " has not been registered");
   else
+  {
     m_morphTargets[_morphTargetName] = _value;
+    m_modifiedMorphTargets.push_back(_morphTargetName);
+  }
 }
 
 float Character::getMorphTargetWeight(const string &_morphTargetName)
@@ -88,7 +91,6 @@ void Character::appplyRealvaluedResult(const RealValuedResultStruct &_realValued
       name = _realValuedResultStruct.key;
       value = _realValuedResultStruct.value;
       this->setMorphTargetWeight(name, value);
-      m_modifiedMorphTargets.push_back(name);
       break;
     case SHADER :
       name = _realValuedResultStruct.key;

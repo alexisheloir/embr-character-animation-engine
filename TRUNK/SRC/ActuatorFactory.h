@@ -173,7 +173,7 @@ public:
  /**
   * \brief parse a character configuration file (describes characters)
   */
-  void init();
+  void init(string _characterConfigurationFileContent);
 
 protected:
  /**

@@ -2,7 +2,7 @@
 #include "MotionSegment.h"
 
 
-MotionSegment::MotionSegment(Character* _relatedCharacter, float _relative_fade_in, float _relative_fade_out): m_absoluteStartTime(200), m_absoluteStopTime(0), m_relative_fade_in(_relative_fade_in), m_relative_fade_out(_relative_fade_out), m_gestureModifier(NULL), m_relatedCharacter(_relatedCharacter)
+MotionSegment::MotionSegment(Character* _relatedCharacter, float _relative_fade_in, float _relative_fade_out): m_absoluteStartTime(0), m_absoluteStopTime(0), m_relative_fade_in(_relative_fade_in), m_relative_fade_out(_relative_fade_out), m_gestureModifier(NULL), m_relatedCharacter(_relatedCharacter)
 {
   m_holdDuration = 0;
   m_temporalWarpSpline = SMRHermitePoly<double>(-1.0,0.0,1.0,2.0);
@@ -18,7 +18,7 @@ void MotionSegment::process(const unsigned int _absoluteTimeMs, bool _timeForFee
   float warpedRelativeTime = 0.0f;
   if (_absoluteTimeMs > m_absoluteStopTime-m_holdDuration)
   {
-   LOG_TRACE(logger," m_absoluteStopTim= " << m_absoluteStopTime << " m_holdDuration= " << m_holdDuration << " absoluteTimeMs= " << _absoluteTimeMs );
+    LOG_TRACE(logger," m_absoluteStopTime= " << m_absoluteStopTime << " m_holdDuration= " << m_holdDuration << " absoluteTimeMs= " << _absoluteTimeMs);
     warpedRelativeTime = 1.0f;
   }
   else
@@ -40,7 +40,6 @@ void MotionSegment::process(const unsigned int _absoluteTimeMs, bool _timeForFee
     {
       EMBRKinematicActuator* skeletalActuator = static_cast<EMBRKinematicActuator*>(*actuatorIterator);
       m_skeleton += *(skeletalActuator->getSkeleton());
-      //m_socketListener->gogogo();
     }
     else
     {

@@ -179,7 +179,7 @@ class Agent:
         
         #set lighting
         ambientColor = Vec4(0.0,0.0,0.0,0.0)
-        self.lighting = shaders.Lighting( ambientColor )
+        self.lighting = shaders.Lighting( ambientColor, self.agent )
         if self.loadLightingFromConfig == 1:
             self.lighting.loadFromConfig( self.lightingConfig, self.lightingConfigName )
         
@@ -319,8 +319,9 @@ class Agent:
         #synchronize root joint
         SMRJoint = _smrSkeleton.getJoint(0)
         PANDAJoint = agentControlJoints[0]
-        position = SMRJoint.getPos() 
-        PANDAJoint.setPos(position.X(),position.Y(),position.Z());
+        position = SMRJoint.getPos()
+        #PANDAJoint.setPos(position.X() + 0.65 ,position.Y()-0.35,position.Z() - 1.4);
+        PANDAJoint.setPos(position.X(), position.Y(), position.Z());
 
         for i in range(_smrSkeleton.getNumjoints()):
           SMRJoint = _smrSkeleton.getJoint(i)
