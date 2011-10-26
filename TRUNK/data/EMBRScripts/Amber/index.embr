@@ -1,0 +1,57 @@
+# +++ INDEXFINGER GESTURE +++
+
+BEGIN K_POSE_SEQUENCE  # +++ HAND UNIT [RH] +++
+  TIME_WARP:EXP;3
+  FADE_IN:200
+  FADE_OUT:200
+  CHARACTER:Amber
+  START:asap
+  BEGIN K_POSE  # --- POSE 1 (REST)
+   TIME_POINT:+100
+   HOLD:0
+   BEGIN POSITION_CONSTRAINT
+     BODY_GROUP:rarm
+     TARGET:-.3;-.2;-.4
+     JOINT:rhand
+     OFFSET:0.0;0.0;0.0
+   END
+  BEGIN POSE_TARGET
+    BODY_GROUP:rhand
+    POSE_KEY:hands_open-relaxed
+  END
+  END
+  BEGIN K_POSE  # --- POSE 2 (HOLD)
+   TIME_POINT:+600
+   HOLD:600
+   BEGIN POSITION_CONSTRAINT
+     BODY_GROUP:rarm
+     TARGET:-.22;-.2;.38
+     JOINT:rhand
+     OFFSET:0.0;0.0;0.0
+   END
+   BEGIN ORIENTATION_CONSTRAINT
+     BODY_GROUP:rarm
+     DIRECTION:1;-.5;0
+     JOINT:rhand
+   END
+  BEGIN POSE_TARGET
+    BODY_GROUP:rhand
+    POSE_KEY:hands_index
+  END
+  END
+  BEGIN K_POSE  # --- POSE 4 (REST)
+   TIME_POINT:+1700
+   HOLD:0
+   BEGIN POSITION_CONSTRAINT
+     BODY_GROUP:rarm
+     TARGET:-.3;-.2;-.4
+     JOINT:rhand
+     OFFSET:0.0;0.0;0.0
+   END
+  BEGIN POSE_TARGET
+    BODY_GROUP:rhand
+    POSE_KEY:hands_open-relaxed
+  END
+  END
+END
+

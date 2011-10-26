@@ -1,0 +1,59 @@
+<!ELEMENT characters (character*)>
+<!ELEMENT character (upVector,kinematics+,animations?,shaders?,behaviors?)>
+  <!ELEMENT upVector	(#PCDATA)>
+  <!ELEMENT kinematics	(jointGroups,kinematicProperties)>
+    <!ELEMENT joints	(joint*)>
+      <!ELEMENT joint		(DOFS*)>
+        <!ELEMENT jointName	(#PCDATA)>
+        <!ELEMENT DOFS		(DOF+)>
+          <!ELEMENT DOF         EMPTY>
+    <!ELEMENT jointGroups (jointGroup*)>
+      <!ELEMENT jointGroup (joints)>
+        <!ELEMENT jointReference (#PCDATA)>
+    <!ELEMENT kinematicProperties (HALStructure*, CCDStructure*, iterativeIKStructure, swivel)>
+      <!ELEMENT HALStructure (#PCDATA)>
+      <!ELEMENT CCDStructure (#PCDATA)>
+      <!ELEMENT iterativeIKStructure (#PCDATA)>
+      <!ELEMENT swivel (#PCDATA)>
+  <!ELEMENT animations		(#PCDATA)>
+  <!ELEMENT shaders (shaderParameters)>
+    <!ELEMENT shaderParameters (shaderParameter)>
+      <!ELEMENT shaderParameter (#PCDATA)>
+  <!ELEMENT behaviors (autonomousParameters*, autonomousBehavior*)>
+    <!ELEMENT autonomousParameters (autonomousParameter*)>
+      <!ELEMENT autonomousParameter (#PCDATA)>
+    <!ELEMENT autonomousBehavior (actuatorMorphAnimation*, actuatorSkelAnimation*)>
+      <!ELEMENT actuatorMorphAnimation (morphKey+)>
+        <!ELEMENT morphKey (#PCDATA)>
+      <!ELEMENT actuatorSkelAnimation (#PCDATA)>
+
+<!ATTLIST character name CDATA #REQUIRED>
+<!ATTLIST joint id CDATA #REQUIRED>
+<!ATTLIST jointGroup   id  CDATA #REQUIRED
+                       sym CDATA #IMPLIED>
+<!ATTLIST DOF axis CDATA #REQUIRED
+              upperLimit CDATA #REQUIRED
+              lowerLimit CDATA #REQUIRED
+              gain CDATA #IMPLIED>
+<!ATTLIST jointReference   ref  CDATA #REQUIRED>
+<!ATTLIST HALStructure ref  CDATA #REQUIRED>
+<!ATTLIST CCDStructure ref  CDATA #REQUIRED>
+<!ATTLIST iterativeIKStructure ref  CDATA #REQUIRED>
+<!ATTLIST swivel ref  CDATA #REQUIRED>
+<!ATTLIST autonomousParameter name CDATA #REQUIRED>
+<!ATTLIST autonomousParameter initialValue CDATA #REQUIRED>
+<!ATTLIST autonomousBehavior name CDATA #REQUIRED>
+<!ATTLIST autonomousBehavior frequency CDATA #REQUIRED>
+<!ATTLIST autonomousBehavior type CDATA #REQUIRED>
+<!ATTLIST actuatorMorphAnimation value CDATA #REQUIRED>
+<!ATTLIST morphKey name CDATA #REQUIRED>
+<!ATTLIST morphKey relativeKey CDATA #REQUIRED>
+<!ATTLIST morphKey value CDATA #REQUIRED>
+<!ATTLIST actuatorSkelAnimation animation CDATA #REQUIRED>
+<!ATTLIST actuatorSkelAnimation jointGroup CDATA #REQUIRED>
+<!ATTLIST actuatorSkelAnimation useVelocity CDATA #REQUIRED>
+<!ATTLIST actuatorSkelAnimation value CDATA #REQUIRED>
+<!ATTLIST randomBehavior name CDATA #REQUIRED>
+<!ATTLIST randomBehavior probability CDATA #REQUIRED>
+<!ATTLIST shaderParameter name CDATA #REQUIRED>
+<!ATTLIST shaderParameter initialValue CDATA #REQUIRED>

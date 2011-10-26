@@ -1,0 +1,74 @@
+#ifndef DEFAULT_FS_CG
+#define DEFAULT_FS_CG
+
+//////////////////////////////////////////////////////////////////////////////////
+//file:     defaultFragmentShader.cg
+//author:   Stefan John
+//date:     20090901
+//////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////
+// Fragment Shader
+//////////////////////////////////////////////////////////////////////////////////
+
+//fragment shader parameters
+#define FRAGMENT_SHADER_PARAMETERS \
+void fshader( \
+	in float2 l_texcoord0:TEXCOORD0, \
+	in float3 l_texcoord1:TEXCOORD1, \
+	in float3 l_texcoord2:TEXCOORD2, \
+	in float3 l_texcoord3:TEXCOORD3, \
+	in float3 l_texcoord4:TEXCOORD4, \
+    in float3 l_texcoord5:TEXCOORD5, \
+    \
+    uniform float4 k_ambientLight, \
+    uniform float4 k_directionalLightColor1, \
+    uniform float4 k_directionalLightDirection1, \
+    uniform float4 k_directionalLightColor2, \
+    uniform float4 k_directionalLightDirection2, \
+    uniform float4 k_directionalLightColor3, \
+    uniform float4 k_directionalLightDirection3, \
+    uniform float4 k_directionalLightColor4, \
+    uniform float4 k_directionalLightDirection4,
+
+//fragment shader begin
+#define FRAGMENT_SHADER_BEGIN \
+	out float4 o_color:COLOR \
+) \
+{ \
+    FSINPUT input; \
+	input.UV        = l_texcoord0; \
+	input.View      = normalize(l_texcoord1); \
+	input.Normal    = normalize(l_texcoord2); \
+	input.Tangent   = normalize(l_texcoord3); \
+	input.Binormal  = normalize(l_texcoord4); \
+        input.NormalMS  = normalize(l_texcoord5); \
+    \
+    LIGHTING lighting; \
+    lighting.Directional[0].Direction   = k_directionalLightDirection1.xyz; \
+    lighting.Directional[0].Color       = k_directionalLightColor1.xyz; \
+    lighting.Directional[1].Direction   = k_directionalLightDirection2.xyz; \
+    lighting.Directional[1].Color       = k_directionalLightColor2.xyz; \
+    lighting.Directional[2].Direction   = k_directionalLightDirection3.xyz; \
+    lighting.Directional[2].Color       = k_directionalLightColor3.xyz; \
+    lighting.Directional[3].Direction   = k_directionalLightDirection4.xyz; \
+    lighting.Directional[3].Color       = k_directionalLightColor4.xyz; \
+    lighting.Ambient.Color              = k_ambientLight.xyz; \
+
+//fragment shader end
+#define FRAGMENT_SHADER_END \
+    o_color = Shade( input, textures, lighting, constants ); \
+}
+   
+//input
+struct FSINPUT
+{
+    float2 UV;
+    float3 View;
+    float3 Normal;
+    float3 Tangent;
+    float3 Binormal;
+    float3 NormalMS;
+};
+
+#endif

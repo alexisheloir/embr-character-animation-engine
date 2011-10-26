@@ -1,0 +1,137 @@
+#ifndef DEFAULT_VS_CG
+#define DEFAULT_VS_CG
+
+//////////////////////////////////////////////////////////////////////////////////
+//file:     defaultVertexShader.cg
+//author:   Stefan John
+//date:     20090826
+
+//Panda3D shader basics:
+//http://panda3d.org/wiki/index.php/Shader_Basics
+
+//for Panda3D specific shader naming conventions see:
+//http://panda3d.org/wiki/index.php/List_of_Possible_Shader_Inputs
+
+//overview of Panda3D's coordinate systems:
+//http://panda3d.org/wiki/index.php/Shaders_and_Coordinate_Spaces
+//////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////
+// Vertex Shader
+//////////////////////////////////////////////////////////////////////////////////
+
+//input
+struct VSINPUT
+{
+    float4 Position;
+    float3 Normal;
+    float3 Tangent;
+    float3 Binormal;
+    float2 UV;
+};
+
+//matrices
+struct VSMATRICES
+{
+    float4x4 ModelToProjection;
+    float4x4 ModelToWorld;
+};
+
+//output
+struct VSOUTPUT
+{
+    float4 Position;
+    float3 Normal;
+    float3 Tangent;
+    float3 Binormal;
+    float3 View;
+    float2 UV;
+    float3 NormalMS; //model-space
+};
+
+VSOUTPUT Transform( VSINPUT input, VSMATRICES matrices, float3 cameraPosition )
+{
+    VSOUTPUT output;
+    
+    //transform vertex position to clip space
+    output.Position = mul( matrices.ModelToProjection, input.Position );
+	
+    //transform vertex's position, normal, tangent and binormal vector from model to world space
+    float3 positionWS   = mul( matrices.ModelToWorld, float4(input.Position.xyz,1) ).xyz;
+    float3 normalWS     = mul( matrices.ModelToWorld, float4(input.Normal,0) ).xyz;
+    float3 tangentWS    = mul( matrices.ModelToWorld, float4(input.Tangent,0) ).xyz;
+    float3 binormalWS   = mul( matrices.ModelToWorld, float4(input.Binormal,0) ).xyz;
+    
+    //compute normalized view direction
+    float3 view = normalize( cameraPosition - positionWS );
+    
+    //set vertex shader output
+    output.UV       = input.UV;
+    output.View     = view;
+    output.Normal   = normalWS;
+    output.Tangent  = tangentWS;
+    output.Binormal = binormalWS;
+    output.NormalMS = input.Normal;
+    
+    return output;
+}
+
+//////////////////////////////////////////////////////////////////////////////////
+// Vertex Shader - Panda3D
+//////////////////////////////////////////////////////////////////////////////////
+
+void vshader(
+    //vertex shader input 
+    in float4 vtx_position:POSITION,    //vertex position
+    in float3 vtx_normal:NORMAL,        //vertex normal
+    in float3 vtx_tangent0:TANGENT,     //tangent vector associated with the model's first texture
+    in float3 vtx_binormal0:BINORMAL,   //binormal vector associated with vtx_texcoord0
+    in float2 vtx_texcoord0:TEXCOORD0,  //texture coordinate associated with the model's first texture
+    
+    //transformation matrices:
+    uniform float4x4 mat_modelproj,         //composed modelview/projection matrix         
+    uniform float4x4 trans_model_to_world,  //matrix that transforms from model to world coordinate system
+
+    uniform float4 wspos_camera,//the camera's position in world-space coordinates
+
+    //vertex shader output
+    out float4 l_position:POSITION,     //linearly interpolated position
+    out float2 l_texcoord0:TEXCOORD0,   //linearly interpolated texture coordinates
+    out float3 l_texcoord1:TEXCOORD1,   //view direction
+    out float3 l_texcoord2:TEXCOORD2,   //normal in world-space coordinates
+    out float3 l_texcoord3:TEXCOORD3,   //tangent in world-space coordinates
+    out float3 l_texcoord4:TEXCOORD4,   //binormal in world-space coordinates
+    out float3 l_texcoord5:TEXCOORD5    //normal in model-space coordinates
+)
+{
+    //get input values
+    VSINPUT input;
+    input.Position  = vtx_position;
+    input.Normal    = vtx_normal;
+    input.Tangent   = vtx_tangent0;
+    input.Binormal  = vtx_binormal0;
+    input.UV        = vtx_texcoord0;
+    
+    //get matrices
+    VSMATRICES matrices;
+    matrices.ModelToProjection  = mat_modelproj;
+    matrices.ModelToWorld       = trans_model_to_world;
+    
+    //get camera position
+    float3 cameraPosition = wspos_camera.xyz;
+    
+    //transform
+    VSOUTPUT output = Transform( input, matrices, cameraPosition );
+    
+    //set vertex shader output
+    l_position  = output.Position;
+    l_texcoord0 = output.UV;
+    //l_texcoord1 = wspos_camera.xyz;//output.View;
+    l_texcoord1 = output.View;    
+    l_texcoord2 = output.Normal;
+    l_texcoord3 = output.Tangent;
+    l_texcoord4 = output.Binormal;
+    l_texcoord5 = output.NormalMS;
+}
+
+#endif
