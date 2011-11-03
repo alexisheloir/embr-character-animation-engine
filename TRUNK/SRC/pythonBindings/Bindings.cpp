@@ -513,7 +513,20 @@ public:
       run();
     Py_END_ALLOW_THREADS
   }
-
+    
+  void addBVHMotionToCharacter(string _characterName, string _motionID, string _motionFilePath)
+  {
+    Character* currentCharacter = ActuatorFactory::getInstance()->getCharacter(_characterName);
+    SMRMotion bvhMotion = loadMotionFromBVH(_motionFilePath,TRANSLATIONFIRST);    
+    currentCharacter->m_animations[_motionID] = bvhMotion;    
+  }
+    
+  bool default_skeletonIsReadyToBeDisplayed(string _characterName)
+  {
+    Character* currentCharacter = ActuatorFactory::getInstance()->getCharacter(_characterName);
+    return currentCharacter->m_isReadyToBeDisplayed;
+  }    
+    
 };
 
 /**
@@ -647,6 +660,9 @@ BOOST_PYTHON_MODULE(SMRPy)
     .def("configureLogger",           &RealizerWrap::configureLogger)
     .def("skeletonRequested",         &RealizerWrap::skeletonRequested)
     .def("getFeedbackMessage",        &RealizerWrap::getFeedbackMessage)
+    .def("addBVHMotionToCharacter",   &RealizerWrap::addBVHMotionToCharacter)
+    .def("skeletonIsReadyToBeDisplayed", &RealizerWrap::default_skeletonIsReadyToBeDisplayed)
+    
     //.def("lock",                      &RealizerWrap::lock)
     //.def("unLock",                    &RealizerWrap::unLock)
 ;

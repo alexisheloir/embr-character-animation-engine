@@ -37,8 +37,9 @@ typedef struct RealValuedResult{
 class Character{
 
 public:
-  Character(SMRSkeleton* const _referencePose):m_TPose(*(_referencePose)),m_animationPose(_referencePose)
+  Character(string _name, SMRSkeleton* const _referencePose):m_TPose(*(_referencePose)),m_animationPose(_referencePose)
   {
+    m_name = _name;  
     m_jointGroups["all"] = m_TPose;
   }
   ~Character(){;}
@@ -119,6 +120,12 @@ public:
     
   std::map<string, SMRSkeleton> m_jointGroups; /** the joint groups defined for this actor (stored as skeletons) */
   std::map<string, SMRMotion> m_animations; /** the animations defined for this actor */
+
+    
+  string m_name;
+    
+  bool m_isReadyToBeDisplayed;
+
 };
 
 #endif

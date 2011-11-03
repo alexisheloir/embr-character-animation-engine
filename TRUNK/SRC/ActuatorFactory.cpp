@@ -175,7 +175,7 @@ void ActuatorFactory::init(string _characterConfigurationFileContent)
         currentCharacter = getCharacter(characterName);
         posture = &(currentCharacter->m_TPose);
 
-        newScheduler = new Scheduler(characterName, ActuatorFactory::getInstance()->getCharacterAnimationPosture(characterName));
+        newScheduler = new Scheduler(currentCharacter, ActuatorFactory::getInstance()->getCharacterAnimationPosture(characterName));
         newScheduler->setCurrentPose(ActuatorFactory::getInstance()->getCharacterTPosture(characterName));
         m_schedulerManager->addScheduler(characterName, newScheduler);
       }
@@ -595,7 +595,7 @@ void ActuatorFactory::setSchedulerManager(SchedulerManager *_schedulerManager)
 void ActuatorFactory::addCharacter(const string &_characterName, SMRSkeleton* const _referencePose)
 {
   //create a new character and pile it
-  Character* newCharacter = new Character(_referencePose);
+  Character* newCharacter = new Character(_characterName, _referencePose);
   m_characters[_characterName] = newCharacter;
 }
 
