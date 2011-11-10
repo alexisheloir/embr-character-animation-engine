@@ -480,7 +480,7 @@ void ActuatorFactory::init(string _characterConfigurationFileContent)
           currentMotionSegment->setAbsoluteStartTime(0);
           currentMotionSegment->setAbsoluteStopTime(0);
 
-          findNode("actuatorMorphAnimation", periodicBehaviorNode, &actuatorMorphAnimationNode);
+          findNode("actuatorMorphAnimation", periodicBehaviorNode->children, &actuatorMorphAnimationNode);
           if (actuatorMorphAnimationNode == NULL)
           {
             LOG_INFO(xmlLogger,"unable to find \"actuatorMorphAnimationNode\" node");
@@ -516,7 +516,7 @@ void ActuatorFactory::init(string _characterConfigurationFileContent)
               findNode("actuatorMorphAnimation", actuatorMorphAnimationNode->next, &actuatorMorphAnimationNode);
             }while(actuatorMorphAnimationNode);
           }
-          findNode("actuatorSkelAnimation", periodicBehaviorNode, &actuatorSkelAnimationNode);
+          findNode("actuatorSkelAnimation", periodicBehaviorNode->children, &actuatorSkelAnimationNode);
           if (actuatorSkelAnimationNode == NULL)
           {
             LOG_INFO(xmlLogger,"unable to find \"actuatorSkelAnimationNode\" node");

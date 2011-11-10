@@ -41,6 +41,7 @@ public:
   {
     m_name = _name;  
     m_jointGroups["all"] = m_TPose;
+    m_isReadyToBeDisplayed = true;
   }
   ~Character(){;}
 

@@ -514,11 +514,12 @@ public:
     Py_END_ALLOW_THREADS
   }
     
-  void addBVHMotionToCharacter(string _characterName, string _motionID, string _motionFilePath)
+  void addBVHMotionToCharacter(string _characterName, string _motionID, string _motionFileContent)
   {
     Character* currentCharacter = ActuatorFactory::getInstance()->getCharacter(_characterName);
-    SMRMotion bvhMotion = loadMotionFromBVH(_motionFilePath,TRANSLATIONFIRST);    
-    currentCharacter->m_animations[_motionID] = bvhMotion;    
+    SMRMotion bvhMotion = loadMotionFromString(_motionFileContent,TRANSLATIONFIRST);    
+
+      currentCharacter->m_animations[_motionID] = bvhMotion;    
   }
     
   bool default_skeletonIsReadyToBeDisplayed(string _characterName)

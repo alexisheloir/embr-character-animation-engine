@@ -51,10 +51,6 @@ void RandomPostingMotionSegment::process(const unsigned int _absoluteTimeMs, boo
     m_absoluteStartTime = _absoluteTimeMs + m_nextPostTimeOffsetInMs;
   }else
   {
-    float currentTime = SMRUtils::getCurrentTime();
-    float randMax = (float)RAND_MAX;
-    float randomnumber = rand();
-
     m_absoluteStartTime = _absoluteTimeMs + (unsigned int)(((float)rand()/(float)RAND_MAX)*blinkProbability);
   }
   m_absoluteStopTime = 0;
