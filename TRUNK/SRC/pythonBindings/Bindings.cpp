@@ -454,7 +454,7 @@ public:
       boost::python::list myList; // find a way to register the modified morph targets here (in scheduler?)
       Character* currentCharacter = ActuatorFactory::getInstance()->getCharacter(_characterName);
       std::vector<string>::iterator morphTargetIterator = currentCharacter->m_modifiedMorphTargets.begin();
-      while (morphTargetIterator != currentCharacter->m_modifiedMorphTargets.end())
+      while (morphTargetIterator != currentCharacter->m_modifiedMorphTargets.end()) 
       {
           myList.append(*morphTargetIterator);
           morphTargetIterator = currentCharacter->m_modifiedMorphTargets.erase(morphTargetIterator);
@@ -526,7 +526,12 @@ public:
   {
     Character* currentCharacter = ActuatorFactory::getInstance()->getCharacter(_characterName);
     return currentCharacter->m_isReadyToBeDisplayed;
-  }    
+  }
+    
+  void sendEMBRScript(string _EMBRScript)
+  {
+    m_socketListener->readCommandsFromString(_EMBRScript);
+  }
     
 };
 
@@ -663,6 +668,8 @@ BOOST_PYTHON_MODULE(SMRPy)
     .def("getFeedbackMessage",        &RealizerWrap::getFeedbackMessage)
     .def("addBVHMotionToCharacter",   &RealizerWrap::addBVHMotionToCharacter)
     .def("skeletonIsReadyToBeDisplayed", &RealizerWrap::default_skeletonIsReadyToBeDisplayed)
+    .def("sendEMBRScript", &RealizerWrap::sendEMBRScript)
+    
     
     //.def("lock",                      &RealizerWrap::lock)
     //.def("unLock",                    &RealizerWrap::unLock)

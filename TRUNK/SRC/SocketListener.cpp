@@ -202,6 +202,22 @@ void SocketListener::readCommandsFromFile()
     
 }
 
+void SocketListener::readCommandsFromString( string _commands)
+{
+    istringstream commandsStream(_commands);
+
+    string nextCommand("");
+    
+    while(commandsStream)
+    {
+        char buffer[MSG_LENGTH] = "";
+        commandsStream.getline(buffer, MSG_LENGTH);
+        LOG_DEBUG(logger,buffer);
+        m_parser->enqueueCommand(string(buffer));
+    }
+}
+
+
 void SocketListener::listenSocket()
 {
   try

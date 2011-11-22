@@ -48,6 +48,8 @@ public:
   ~SocketListener();
   void listenSocket();
   void readCommandsFromFile();
+  void readCommandsFromString( string _commands);
+    
   void setParser(Parser *_parser);
   void server(boost::asio::io_service& _io_service, short _port);
   //void do_write(FeedbackMessage msg);

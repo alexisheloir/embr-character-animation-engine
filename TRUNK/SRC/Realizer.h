@@ -128,7 +128,7 @@ public:
  */
   string getFeedbackMessage(void);
 
-private:
+protected:
   Parser *m_parser;
   ActuatorFactory *m_factory;
   SocketListener *m_socketListener;
