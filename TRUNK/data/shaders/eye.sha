@@ -1,0 +1,89 @@
+//Cg
+
+//////////////////////////////////////////////////////////////////////////////////
+// Vertex Shader
+//////////////////////////////////////////////////////////////////////////////////
+
+#include "<SHADERPATH>defaultVertexShader.cg"
+
+//////////////////////////////////////////////////////////////////////////////////
+// Fragment Shader
+//////////////////////////////////////////////////////////////////////////////////
+
+#include "<SHADERPATH>lighting.cg"
+#include "<SHADERPATH>defaultFragmentShader.cg"
+
+//textures
+struct FSTEXTURES
+{
+    sampler2D Diffuse;
+    samplerCUBE Reflection;
+};
+
+//constants
+struct FSCONSTANTS
+{
+    float ReflectionContrast;
+    float ReflectionAmount;
+    float ReflectionExponent;
+};
+
+float4 ComputeReflection( float4 sampleCube, float3 normal, float reflectionContrast, float reflectionAmount, float reflectionExponent, float3 viewDirection )
+{
+    //compute angle-dependent values
+    float hdn = dot( normalize(normal), -normalize(viewDirection) );
+    float attenuation = clamp( pow( abs(hdn), reflectionExponent ), 0, 1 );
+    
+    float reflBrightness = (sampleCube.x+sampleCube.y+sampleCube.z)/3;
+    reflBrightness = clamp((reflBrightness-0.5)*reflectionContrast+0.5,0.0,1.0); //linear
+    //reflBrightness = clamp( pow( reflBrightness-0.5, reflectionContrast )+0.5,0.0,1.0); //exponential contrast
+    
+    float3 reflColor = lerp(float3(0,0,0),float3(1,1,1),reflBrightness);
+    
+    float3 result = reflColor*attenuation*reflectionAmount;
+
+    return float4(result,0);
+}
+
+float4 Shade( FSINPUT input, FSTEXTURES textures, LIGHTING lighting, FSCONSTANTS constants )
+{
+    //sample texture maps
+    float4 color=float4(0.8,0.8,0.8,0);
+    
+    //sample texture maps
+    float4 sampleDiffuse    = tex2D( textures.Diffuse, input.UV );
+	
+    //compute reflection
+    float3 r = reflect( -input.View, normalize(input.Normal) );
+
+    //float4 sampleCube = texCUBE( textures.Reflection, r );
+    float4 sampleCube = texCUBE( textures.Reflection, float3(r.x,-r.z,r.y) ); //convert orientation to Panda coordinate system
+
+    float4 reflection = ComputeReflection( sampleCube, input.Normal, constants.ReflectionContrast, constants.ReflectionAmount, constants.ReflectionExponent, -input.View );
+    
+    float4 result = ComputeDiffuse( input.Normal, sampleDiffuse.xyz, color, lighting ) + reflection;
+    //result = float4(sampleCube.xyz,1);
+        
+    return float4(result.xyz,1);
+}
+
+//fragment shader
+FRAGMENT_SHADER_PARAMETERS
+    //texture samplers
+    uniform sampler2D tex_0,//diffuse map
+    uniform samplerCUBE tex_1,//reflection map
+    
+    uniform float4 k_values,//constant vector that was stored using setShaderInput
+    
+FRAGMENT_SHADER_BEGIN
+    //get textures
+    FSTEXTURES textures;
+    textures.Diffuse    = tex_0;
+    textures.Reflection = tex_1;
+    
+    FSCONSTANTS constants;    
+    constants.ReflectionContrast    = k_values.x;
+    constants.ReflectionAmount      = k_values.y;
+    constants.ReflectionExponent    = k_values.z;
+    
+FRAGMENT_SHADER_END

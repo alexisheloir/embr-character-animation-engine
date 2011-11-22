@@ -1,0 +1,81 @@
+#ifndef LIGHTING_CG
+#define LIGHTING_CG
+
+struct DIRECTIONALLIGHT
+{
+    float3 Direction;
+    float3 Color;
+};
+
+struct AMBIENTLIGHT
+{
+    float3 Color;
+};
+
+struct LIGHTING
+{
+    DIRECTIONALLIGHT Directional[4];
+    AMBIENTLIGHT Ambient;
+};
+
+// http://www.panda3d.org/wiki/index.php/Light_Ramps
+
+float4 ComputeDiffuseAO_Single( float3 normal, float3 lightDirection, float3 lightColor )
+{
+    float ldn = max( dot( normal, -lightDirection ), 0 );
+    
+    float3 light = lightColor;
+    //light = min( light, float3(1,1,1) );
+    light = max( light, float3(0,0,0) );
+    
+    return float4(light.xyz,ldn);
+}
+
+float4 ComputeDiffuseAO( float3 normal, float3 sampleDiffuse, float sampleAO, float3 materialDiffuse, LIGHTING lighting )
+{
+    float3 light = float3(0,0,0);
+    
+    for( int i=0; i<4; i++ )
+    {
+        float4 currentLight = ComputeDiffuseAO_Single( normal, lighting.Directional[i].Direction, lighting.Directional[i].Color );
+    
+        light += currentLight.xyz * currentLight.w;
+    }
+    
+    lighting.Ambient.Color = clamp( lighting.Ambient.Color, 0.0,1.0 );
+    
+    float3 result = sampleDiffuse * (sampleAO + float3(0.2,0.2,0.2) ) * ( light + lighting.Ambient.Color );
+    
+    return float4(result,1);
+}
+
+float4 ComputeDiffuse( float3 normal, float3 sampleDiffuse, float3 materialDiffuse, LIGHTING lighting )
+{
+    return ComputeDiffuseAO( normal, sampleDiffuse, 1, materialDiffuse, lighting );
+}
+
+// GPU Gems 1
+
+float SampleSpecularAnisotropic_Single( float3 normal, float3 view, float3 lightDirection, sampler2D specularTexture )
+{
+	float3 reflected = reflect(-lightDirection, normal);
+
+	float alpha = dot( -normal, lightDirection );
+	float beta  = dot( reflected, view );
+
+	float4 sampleSpecular = tex2D( specularTexture, float2( alpha, beta ) );
+    
+	return pow(sampleSpecular.x,25);
+}
+
+float3 SampleSpecularAnisotropic( float3 normal, float3 view, LIGHTING lighting, sampler2D specularTexture )
+{
+    float3 result = float3(0,0,0);
+    for( int i=0; i<4; i++ )
+    {
+        result += SampleSpecularAnisotropic_Single( normal, -view, lighting.Directional[i].Direction, specularTexture ) * lighting.Directional[i].Color;
+    }
+    return result;
+}
+
+#endif

@@ -1,0 +1,62 @@
+//Cg
+
+//////////////////////////////////////////////////////////////////////////////////
+// Vertex Shader
+//////////////////////////////////////////////////////////////////////////////////
+
+#include "<SHADERPATH>defaultVertexShader.cg"
+
+//////////////////////////////////////////////////////////////////////////////////
+// Fragment Shader
+//////////////////////////////////////////////////////////////////////////////////
+
+#include "<SHADERPATH>lighting.cg"
+#include "<SHADERPATH>defaultFragmentShader.cg"
+
+//textures
+struct FSTEXTURES
+{
+    sampler2D Diffuse;
+    sampler2D Specular;
+};
+
+//constants
+struct FSCONSTANTS
+{
+    float SpecularIntensity;
+    float SpecularIntensity2;
+};
+
+float4 Shade( FSINPUT input, FSTEXTURES textures, LIGHTING lighting, FSCONSTANTS constants )
+{
+	//sample texture maps
+	float4 sampleDiffuse    = tex2D( textures.Diffuse, input.UV );
+	float3 sampleSpecular   = SampleSpecularAnisotropic( input.Normal, input.View, lighting, textures.Specular );
+	
+    	//lighting
+	float3 diffuse = ComputeDiffuse( input.Normal, sampleDiffuse, float3(0.5,0.5,0.5), lighting );
+	float3 result;
+	//result = sampleSpecular * constants.SpecularIntensity.xxx * sampleDiffuse + sampleSpecular * constants.SpecularIntensity2.xxx + diffuse;
+
+	result = sampleSpecular * 3 * sampleDiffuse + diffuse;
+
+	return float4(result.xyz,1);
+}
+
+//fragment shader
+FRAGMENT_SHADER_PARAMETERS
+    //texture samplers
+	uniform sampler2D tex_0,//diffuse map
+	uniform sampler2D tex_1,//specular map
+    
+FRAGMENT_SHADER_BEGIN
+    //get textures
+    FSTEXTURES textures;
+    textures.Diffuse    = tex_0;
+    textures.Specular   = tex_1;
+    
+    FSCONSTANTS constants;    
+    constants.SpecularIntensity = 1.0f;
+    constants.SpecularIntensity2 = 0.2f;
+    
+FRAGMENT_SHADER_END

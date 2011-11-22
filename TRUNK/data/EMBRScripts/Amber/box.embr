@@ -1,0 +1,215 @@
+TIME_RESET
+
+BEGIN K_POSE_SEQUENCE
+  CHARACTER:Amber
+  START:asap
+  BEGIN K_POSE
+    TIME_POINT:+200
+    HOLD:200
+    BEGIN POSITION_CONSTRAINT
+      BODY_GROUP:rarm
+      TARGET:-0.2;-0.03;0.02
+      JOINT:rhand
+      OFFSET:0.0;0.0;0.0
+    END
+    BEGIN POSITION_CONSTRAINT
+      BODY_GROUP:larm
+      TARGET:0.2;-0.03;0.02
+      JOINT:lhand
+      OFFSET:0.0;0.0;0.0
+    END
+    BEGIN POSE_TARGET
+      BODY_GROUP:rhand
+      POSE_KEY:hands_open-straight
+    END
+    BEGIN POSE_TARGET
+      BODY_GROUP:lhand
+      POSE_KEY:hands_open-straight
+    END
+  END
+  BEGIN K_POSE                     # first box pose lower middle
+    TIME_POINT:+800
+    HOLD:300
+    BEGIN POSITION_CONSTRAINT   
+      BODY_GROUP:rarm
+      TARGET:-0.13;-0.25;0.13
+      JOINT:rhand
+      OFFSET:0.0;0.0;0.0
+    END
+    BEGIN ORIENTATION_CONSTRAINT
+      BODY_GROUP:rarm
+      NORMAL:Zaxis
+      DIRECTION:0.0;0.0;-1.0
+      JOINT:rhand
+    END
+    BEGIN POSITION_CONSTRAINT
+      BODY_GROUP:larm
+      TARGET:0.13;-0.25;0.13
+      JOINT:lhand
+      OFFSET:0.0;0.0;0.0
+    END
+    BEGIN ORIENTATION_CONSTRAINT
+      BODY_GROUP:larm
+      NORMAL:Zaxis
+      DIRECTION:0.0;0.0;-1.0
+      JOINT:lhand
+    END
+  END
+  BEGIN K_POSE                      # second box pose, lower outside
+    TIME_POINT:+1400
+    HOLD:300
+    BEGIN POSITION_CONSTRAINT
+      BODY_GROUP:rarm
+      TARGET:-0.23;-0.25;0.13
+      JOINT:rhand
+      OFFSET:0.0;0.0;0.0
+    END
+    BEGIN ORIENTATION_CONSTRAINT
+      BODY_GROUP:rarm
+      NORMAL:Zaxis
+      DIRECTION:0.0;0.0;-1.0
+      JOINT:rhand
+    END
+    BEGIN POSITION_CONSTRAINT
+      BODY_GROUP:larm
+      TARGET:0.23;-0.25;0.13
+      JOINT:lhand
+      OFFSET:0.0;0.0;0.0
+    END
+    BEGIN ORIENTATION_CONSTRAINT
+      BODY_GROUP:larm
+      NORMAL:Zaxis
+      DIRECTION:0.0;0.0;-1.0
+      JOINT:lhand
+    END
+  END
+  BEGIN K_POSE                      # third box pose, lower side
+    TIME_POINT:+2000
+    HOLD:300
+    BEGIN POSITION_CONSTRAINT
+      BODY_GROUP:rarm
+      TARGET:-0.25;-0.25;0.15
+      JOINT:rhand
+      OFFSET:0.0;0.0;0.0
+    END
+    BEGIN ORIENTATION_CONSTRAINT
+      BODY_GROUP:rarm
+      NORMAL:Zaxis
+      DIRECTION:-1.0;0.0;0.0
+      JOINT:rhand
+    END
+    BEGIN POSITION_CONSTRAINT
+      BODY_GROUP:larm
+      TARGET:0.25;-0.25;0.15
+      JOINT:lhand
+      OFFSET:0.0;0.0;0.0
+    END
+    BEGIN ORIENTATION_CONSTRAINT
+      BODY_GROUP:larm
+      NORMAL:Zaxis
+      DIRECTION:1.0;0.0;0.0
+      JOINT:lhand
+    END
+  END
+  BEGIN K_POSE                      # fourth box pose, upper side
+    TIME_POINT:+2800
+    HOLD:300
+    BEGIN POSITION_CONSTRAINT
+      BODY_GROUP:rarm
+      TARGET:-0.25;-0.25;0.40
+      JOINT:rhand
+      OFFSET:0.0;0.0;0.0
+    END
+    BEGIN ORIENTATION_CONSTRAINT
+      BODY_GROUP:rarm
+      NORMAL:Zaxis
+      DIRECTION:-1.0;0.0;0.0
+      JOINT:rhand
+    END
+    BEGIN POSITION_CONSTRAINT
+      BODY_GROUP:larm
+      TARGET:0.25;-0.25;0.40
+      JOINT:lhand
+      OFFSET:0.0;0.0;0.0
+    END
+    BEGIN ORIENTATION_CONSTRAINT
+      BODY_GROUP:larm
+      NORMAL:Zaxis
+      DIRECTION:1.0;0.0;0.0
+      JOINT:lhand
+    END
+  END
+  BEGIN K_POSE                      # fifth box pose, upper outside
+    TIME_POINT:+3400
+    HOLD:300
+    BEGIN POSITION_CONSTRAINT
+      BODY_GROUP:rarm
+      TARGET:-0.23;-0.25;0.42
+      JOINT:rhand
+      OFFSET:0.0;0.0;0.0
+    END
+    BEGIN ORIENTATION_CONSTRAINT
+      BODY_GROUP:rarm
+      NORMAL:Zaxis
+      DIRECTION:0.0;0.0;1.0
+      JOINT:rhand
+    END
+    BEGIN POSITION_CONSTRAINT
+      BODY_GROUP:larm
+      TARGET:0.23;-0.25;0.42
+      JOINT:lhand
+      OFFSET:0.0;0.0;0.0
+    END
+    BEGIN ORIENTATION_CONSTRAINT
+      BODY_GROUP:larm
+      NORMAL:Zaxis
+      DIRECTION:0.0;0.0;1.0
+      JOINT:lhand
+    END
+  END
+  BEGIN K_POSE                     # sixth box pose upper middle
+    TIME_POINT:+4000
+    HOLD:500
+    BEGIN POSITION_CONSTRAINT   
+      BODY_GROUP:rarm
+      TARGET:-0.13;-0.25;0.42
+      JOINT:rhand
+      OFFSET:0.0;0.0;0.0
+    END
+    BEGIN ORIENTATION_CONSTRAINT
+      BODY_GROUP:rarm
+      NORMAL:Zaxis
+      DIRECTION:0.0;0.0;1.0
+      JOINT:rhand
+    END
+    BEGIN POSITION_CONSTRAINT
+      BODY_GROUP:larm
+      TARGET:0.13;-0.25;0.42
+      JOINT:lhand
+      OFFSET:0.0;0.0;0.0
+    END
+    BEGIN ORIENTATION_CONSTRAINT
+      BODY_GROUP:larm
+      NORMAL:Zaxis
+      DIRECTION:0.0;0.0;1.0
+      JOINT:lhand
+    END
+  END
+  BEGIN K_POSE            #           Restpose 
+    TIME_POINT:+4900
+    HOLD:0
+    BEGIN POSITION_CONSTRAINT
+      BODY_GROUP:rarm
+      TARGET:-0.2;-0.03;0.02
+      JOINT:rhand
+      OFFSET:0.0;0.0;0.0
+    END
+    BEGIN POSITION_CONSTRAINT
+      BODY_GROUP:larm
+      TARGET:0.2;-0.03;0.02
+      JOINT:lhand
+      OFFSET:0.0;0.0;0.0
+    END
+  END
+END
+

@@ -1,0 +1,630 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE characters SYSTEM "./EMBRCHConfig.dtd">
+<characters>
+  <character name="Ben">
+    <upVector>Z</upVector>
+    <kinematics>
+      <jointGroups>
+        <jointGroup id="leye" sym="left">
+          <joints>
+            <joint id="leye">
+            </joint>
+            <joint id="leyeEnd">
+              <DOFS>
+                <DOF axis="Xaxis" upperLimit="7" lowerLimit="-7" gain="0.01"/>
+                <DOF axis="Zaxis" upperLimit="7" lowerLimit="-7" gain="0.01"/>
+              </DOFS>
+            </joint>
+          </joints>
+        </jointGroup>
+        <jointGroup id="reye" sym="right">
+          <joints>
+            <joint id="reye">
+            </joint>
+            <joint id="reyeEnd">
+              <DOFS>
+                <DOF axis="Xaxis" upperLimit="7" lowerLimit="-7" gain="0.01"/>
+                <DOF axis="Zaxis" upperLimit="7" lowerLimit="-7" gain="0.01"/>
+              </DOFS>
+            </joint>
+          </joints>
+        </jointGroup>
+        <jointGroup id="head">
+          <joints>
+            <joint id="head">
+              <DOFS>
+                <DOF axis="Xaxis" upperLimit="30" lowerLimit="-40" gain="0.02"/>
+                <DOF axis="Yaxis" upperLimit="30" lowerLimit="-30" gain="0.04"/>
+                <DOF axis="Zaxis" upperLimit="8" lowerLimit="-8" gain="0.02"/>
+              </DOFS>
+            </joint>
+            <joint id="headDir">
+            </joint>
+            <joint id="headEnd">
+            </joint>
+          </joints>
+        </jointGroup>
+        <jointGroup id="headNeck">
+          <joints>
+            <joint id="neck">
+              <DOFS>
+                <DOF axis="Xaxis" upperLimit="8" lowerLimit="-8" gain="0.02"/>
+                <DOF axis="Yaxis" upperLimit="30" lowerLimit="-30" gain="0.04"/>
+                <DOF axis="Zaxis" upperLimit="30" lowerLimit="-30" gain="0.04"/>
+              </DOFS>
+            </joint>
+            <joint id="head">
+              <DOFS>
+                <DOF axis="Xaxis" upperLimit="30" lowerLimit="-40" gain="0.2"/>
+                <DOF axis="Yaxis" upperLimit="30" lowerLimit="-30" gain="0.4"/>
+                <DOF axis="Zaxis" upperLimit="40" lowerLimit="-40" gain="0.4"/>
+              </DOFS>
+            </joint>
+            <joint id="headDir">
+            </joint>
+            <joint id="headEnd">
+            </joint>
+          </joints>
+        </jointGroup>
+        <jointGroup id="headThorax">
+          <joints>
+            <joint id="spine3">
+              <DOFS>
+                <DOF axis="Yaxis" upperLimit="8" lowerLimit="-8" gain="0.002"/>
+              </DOFS>
+            </joint>
+            <joint id="spine4">
+              <DOFS>
+                <DOF axis="Yaxis" upperLimit="8" lowerLimit="-8" gain="0.003"/>
+              </DOFS>
+            </joint>
+            <joint id="neck">
+              <DOFS>
+                <DOF axis="Xaxis" upperLimit="15" lowerLimit="-15" gain="0.002"/>
+                <DOF axis="Yaxis" upperLimit="30" lowerLimit="-30" gain="0.004"/>
+              </DOFS>
+            </joint>
+            <joint id="head">
+              <DOFS>
+                <DOF axis="Xaxis" upperLimit="30" lowerLimit="-40" gain="0.02"/>
+                <DOF axis="Yaxis" upperLimit="30" lowerLimit="-30" gain="0.04"/>
+                <DOF axis="Zaxis" upperLimit="8" lowerLimit="-8" gain="0.02"/>
+              </DOFS>
+            </joint>
+            <joint id="headDir">
+            </joint>
+            <joint id="headEnd">
+            </joint>
+          </joints>
+        </jointGroup>
+        <jointGroup id="headAbdomen">
+          <joints>
+            <joint id="spine1">
+              <DOFS>
+                <DOF axis="Xaxis" upperLimit="4" lowerLimit="-4" gain="0.001"/>
+                <DOF axis="Zaxis" upperLimit="4" lowerLimit="-4" gain="0.001"/>
+              </DOFS>
+            </joint>
+            <joint id="spine2">
+              <DOFS>
+                <DOF axis="Yaxis" upperLimit="6" lowerLimit="-6" gain="0.01"/>
+              </DOFS>
+            </joint>	  
+            <joint id="spine3">
+              <DOFS>
+                <DOF axis="Yaxis" upperLimit="8" lowerLimit="-8" gain="0.02"/>
+              </DOFS>
+            </joint>
+            <joint id="spine4">
+              <DOFS>
+                <DOF axis="Yaxis" upperLimit="8" lowerLimit="-8" gain="0.03"/>
+              </DOFS>
+            </joint>
+            <joint id="neck">
+              <DOFS>
+                <DOF axis="Xaxis" upperLimit="15" lowerLimit="-15" gain="0.02"/>
+                <DOF axis="Yaxis" upperLimit="30" lowerLimit="-30" gain="0.04"/>
+              </DOFS>
+            </joint>
+            <joint id="head">
+              <DOFS>
+                <DOF axis="Xaxis" upperLimit="30" lowerLimit="-40" gain="0.02"/>
+                <DOF axis="Yaxis" upperLimit="30" lowerLimit="-30" gain="0.04"/>
+                <DOF axis="Zaxis" upperLimit="8" lowerLimit="-8" gain="0.02"/>
+              </DOFS>
+            </joint>
+            <joint id="headDir">
+            </joint>
+            <joint id="headEnd">
+            </joint>
+          </joints>
+        </jointGroup>
+        <jointGroup id="shoulders">
+          <joints>
+            <joint id="lclavicle"/>
+            <joint id="rclavicle"/>
+          </joints>
+        </jointGroup>
+        <jointGroup id="spine">
+          <joints>
+            <joint id="spine1">
+              <DOFS>
+                <DOF axis="Xaxis" upperLimit="10" lowerLimit="-10" gain="0.01"/>
+                <DOF axis="Yaxis" upperLimit="60" lowerLimit="-60" gain="0.1"/>
+                <DOF axis="Zaxis" upperLimit="10" lowerLimit="-10" gain="0.01"/>
+              </DOFS>
+            </joint>
+            <joint id="spine2">
+              <DOFS>
+                <DOF axis="Xaxis" upperLimit="10" lowerLimit="-10" gain="0.02"/>
+                <DOF axis="Yaxis" upperLimit="60" lowerLimit="-60" gain="0.2"/>
+                <DOF axis="Zaxis" upperLimit="10" lowerLimit="-10" gain="0.02"/>
+              </DOFS>
+            </joint>	  
+            <joint id="spine3">
+              <DOFS>
+                <DOF axis="Xaxis" upperLimit="10" lowerLimit="-10" gain="0.02"/>
+                <DOF axis="Yaxis" upperLimit="60" lowerLimit="-60" gain="0.2"/>
+                <DOF axis="Zaxis" upperLimit="10" lowerLimit="-10" gain="0.02"/>
+              </DOFS>
+            </joint>
+            <joint id="spine4">
+              <DOFS>
+                <DOF axis="Xaxis" upperLimit="10" lowerLimit="-10" gain="0.05"/>
+                <DOF axis="Yaxis" upperLimit="60" lowerLimit="-60" gain="0.5"/>
+                <DOF axis="Zaxis" upperLimit="10" lowerLimit="-10" gain="0.05"/>
+              </DOFS>
+            </joint>
+          </joints>
+        </jointGroup>
+        <jointGroup id="upperBodyNoArms">
+          <joints>
+            <joint id="spine1"/>
+            <joint id="spine2"/>
+            <joint id="spine3"/>
+            <joint id="spine4"/>
+          </joints>
+        </jointGroup>
+        <jointGroup id="lhand">
+          <joints>
+            <joint id="1Cp.Left"/>
+            <joint id="1Mcp.Left"/>
+            <joint id="1Prox.Left"/>
+            <joint id="1Dist.Left"/>
+            <joint id="2Cp.Left"/>
+            <joint id="2Mcp.Left"/>
+            <joint id="2Prox.Left"/>
+            <joint id="2Dist.Left"/>
+            <joint id="3Cp.Left"/>
+            <joint id="3Mcp.Left"/>
+            <joint id="3Prox.Left"/>
+            <joint id="3Dist.Left"/>
+            <joint id="4Mcp.Left"/>
+            <joint id="4Cp.Left"/>
+            <joint id="4Prox.Left"/>
+            <joint id="4Dist.Left"/>
+            <joint id="5Cp.Left"/>
+            <joint id="5Mcp.Left"/>
+            <joint id="5Prox.Left"/>
+            <joint id="5Dist.Left"/>
+          </joints>
+        </jointGroup>
+        <jointGroup id="rhand">
+          <joints>
+            <joint id="1Cp.Right"/>
+            <joint id="1Mcp.Right"/>
+            <joint id="1Prox.Right"/>
+            <joint id="1Dist.Right"/>
+            <joint id="2Cp.Right"/>
+            <joint id="2Mcp.Right"/>
+            <joint id="2Prox.Right"/>
+            <joint id="2Dist.Right"/>
+            <joint id="3Cp.Right"/>
+            <joint id="3Mcp.Right"/>
+            <joint id="3Prox.Right"/>
+            <joint id="3Dist.Right"/>
+            <joint id="4Cp.Right"/>
+            <joint id="4Mcp.Right"/>
+            <joint id="4Prox.Right"/>
+            <joint id="4Dist.Right"/>
+            <joint id="5Cp.Right"/>
+            <joint id="5Mcp.Right"/>
+            <joint id="5Prox.Right"/>
+            <joint id="5Dist.Right"/>
+          </joints>
+        </jointGroup>
+        <jointGroup id="rarm" sym="right">
+          <joints>
+            <joint id="rclavicle">
+              <DOFS>
+                <DOF axis="Xaxis" upperLimit="10" lowerLimit="-10" gain="0.05"/>
+                <DOF axis="Yaxis" upperLimit="8" lowerLimit="-8" gain="0.00"/>
+                <DOF axis="Zaxis" upperLimit="20" lowerLimit="-20" gain="0.05"/>
+              </DOFS>
+            </joint>
+            <joint id="rhumerus">
+              <DOFS>
+                <DOF axis="Xaxis" upperLimit="75" lowerLimit="-60" gain="0.05"/>
+                <DOF axis="Yaxis" upperLimit="120" lowerLimit="-120" gain="0.05"/>
+                <DOF axis="Zaxis" upperLimit="100" lowerLimit="15" gain="0.05"/>
+              </DOFS>
+            </joint>
+            <joint id="rradius">
+              <DOFS>
+                <DOF axis="Yaxis" upperLimit="30" lowerLimit="-30" gain="0.1"/>
+                <DOF axis="Zaxis" upperLimit="150" lowerLimit="0" gain="0.08"/>
+              </DOFS>
+            </joint>
+            <joint id="rhand">
+              <DOFS>
+                <DOF axis="Xaxis" upperLimit="90" lowerLimit="-90" gain="1.0"/>
+                <DOF axis="Yaxis" upperLimit="90" lowerLimit="-90" gain="1.0"/>
+                <DOF axis="Zaxis" upperLimit="60" lowerLimit="-60" gain="1.0"/>
+              </DOFS>
+            </joint>
+          </joints>
+        </jointGroup>
+        <jointGroup id="larm" sym="left">
+          <joints>
+            <joint id="lclavicle">
+              <DOFS>
+                <DOF axis="Xaxis" upperLimit="10" lowerLimit="-10" gain="0.05"/>
+                <DOF axis="Yaxis" upperLimit="8" lowerLimit="-8" gain="0.00"/>
+                <DOF axis="Zaxis" upperLimit="20" lowerLimit="-20" gain="0.05"/>
+              </DOFS>
+            </joint>
+            <joint id="lhumerus">
+              <DOFS>
+                <DOF axis="Xaxis" upperLimit="75" lowerLimit="-60" gain="0.05"/>
+                <DOF axis="Yaxis" upperLimit="120" lowerLimit="-120" gain="0.05"/>
+                <DOF axis="Zaxis" upperLimit="-15" lowerLimit="-100" gain="0.05"/>
+              </DOFS>
+            </joint>
+            <joint id="lradius">
+              <DOFS>
+                <DOF axis="Yaxis" upperLimit="30" lowerLimit="-30" gain="0.1"/>
+                <DOF axis="Zaxis" upperLimit="0" lowerLimit="-150" gain="0.08"/>
+              </DOFS>
+            </joint>
+            <joint id="lhand">
+              <DOFS>
+                <DOF axis="Xaxis" upperLimit="90" lowerLimit="-90" gain="1.0"/>
+                <DOF axis="Yaxis" upperLimit="90" lowerLimit="-90" gain="1.0"/>
+                <DOF axis="Zaxis" upperLimit="60" lowerLimit="-60" gain="1.0"/>
+              </DOFS>
+            </joint>
+          </joints>
+        </jointGroup>
+      </jointGroups>
+      <kinematicProperties>
+        <HALStructure ref="larm">
+        </HALStructure>
+        <CCDStructure ref="larm">
+        </CCDStructure>
+        <iterativeIKStructure ref="larm">
+        </iterativeIKStructure>
+        <swivel ref="larm">
+        </swivel>
+      </kinematicProperties>
+    </kinematics>
+
+    <!--<correlationMap>
+      <targetJoint name="spine1" type="XROTATION" min="-0.11" max="0.11"/>
+      <sourceJoint name="lhand" type="ZPOSITION" min="0.9" max="1.3"/>
+    </correlationMap>
+    <correlationMap>
+      <targetJoint name="spine2" type="XROTATION" min="-0.11" max="0.11"/>
+      <sourceJoint name="lhand" type="ZPOSITION" min="0.9" max="1.3"/>
+    </correlationMap>
+    <correlationMap>
+      <targetJoint name="spine3" type="XROTATION" min="-0.11" max="0.11"/>
+      <sourceJoint name="lhand" type="ZPOSITION" min="0.9" max="1.3"/>
+    </correlationMap>
+    <correlationMap>
+      <targetJoint name="spine4" type="XROTATION" min="-0.11" max="0.11"/>
+      <sourceJoint name="lhand" type="ZPOSITION" min="0.9" max="1.3"/>
+    </correlationMap>-->
+
+    <!-- <animations> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_ASL_1CL"/> -->
+    <!--     <ressource filepath="./animations/hands_ASL_1CL.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_ASL_2CL"/> -->
+    <!--     <ressource filepath="./animations/hands_ASL_2CL.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_ASL_3CL"/> -->
+    <!--     <ressource filepath="./animations/hands_ASL_3CL.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_ASL_4CL"/> -->
+    <!--     <ressource filepath="./animations/hands_ASL_4CL.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_ASL_5aCL"/> -->
+    <!--     <ressource filepath="./animations/hands_ASL_5aCL.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_ASL_A5bCL"/> -->
+    <!--     <ressource filepath="./animations/hands_ASL_5bCL.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_ASL_ACL"/> -->
+    <!--     <ressource filepath="./animations/hands_ASL_ACL.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_ASL_BCL"/> -->
+    <!--     <ressource filepath="./animations/hands_ASL_BCL.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_ASL_CbCL"/> -->
+    <!--     <ressource filepath="./animations/hands_ASL_CbCL.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_ASL_CCL"/> -->
+    <!--     <ressource filepath="./animations/hands_ASL_CCL.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_ASL_FCL"/> -->
+    <!--     <ressource filepath="./animations/hands_ASL_FCL.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_ASL_GCL"/> -->
+    <!--     <ressource filepath="./animations/hands_ASL_G.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_ASL_G"/> -->
+    <!--     <ressource filepath="./animations/hands_ASL_G.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_ASL_ICL"/> -->
+    <!--     <ressource filepath="./animations/hands_ASL_ICL.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_ASL_ILYCL"/> -->
+    <!--     <ressource filepath="./animations/hands_ASL_ILYCL.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_ASL_M"/> -->
+    <!--     <ressource filepath="./animations/hands_ASL_M.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_ASL_N"/> -->
+    <!--     <ressource filepath="./animations/hands_ASL_N.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_ASL_SCL"/> -->
+    <!--     <ressource filepath="./animations/hands_ASL_SCL.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_ASL_TCL"/> -->
+    <!--     <ressource filepath="./animations/hands_ASL_TCL.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_ASL_T"/> -->
+    <!--     <ressource filepath="./animations/hands_ASL_T.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_ASL_VaCL"/> -->
+    <!--     <ressource filepath="./animations/hands_ASL_VaCL.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_ASL_VbCL"/> -->
+    <!--     <ressource filepath="./animations/hands_ASL_VbCL.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_ASL_YCL"/> -->
+    <!--     <ressource filepath="./animations/hands_ASL_YCL.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_claw"/> -->
+    <!--     <ressource filepath="./animations/hands_claw.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_fist"/> -->
+    <!--     <ressource filepath="./animations/hands_fist.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_ring"/> -->
+    <!--     <ressource filepath="./animations/hands_ring.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_purse"/> -->
+    <!--     <ressource filepath="./animations/hands_purse.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_open-straight"/> -->
+    <!--     <ressource filepath="./animations/hands_open-straight.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_open-spread"/> -->
+    <!--     <ressource filepath="./animations/hands_open-spread.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_open-relaxed"/> -->
+    <!--     <ressource filepath="./animations/hands_open-relaxed.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_index"/> -->
+    <!--     <ressource filepath="./animations/hands_index.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="poseNeutral"/> -->
+    <!--     <ressource filepath="./animations/poseNeutral.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_DGS_A"/> -->
+    <!--     <ressource filepath="./animations/hands_DGS_A.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_DGS_B"/> -->
+    <!--     <ressource filepath="./animations/hands_DGS_B.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_DGS_C"/> -->
+    <!--     <ressource filepath="./animations/hands_DGS_C.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_DGS_D"/> -->
+    <!--     <ressource filepath="./animations/hands_DGS_D.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_DGS_E"/> -->
+    <!--     <ressource filepath="./animations/hands_DGS_E.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_DGS_F"/> -->
+    <!--     <ressource filepath="./animations/hands_DGS_F.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_DGS_G"/> -->
+    <!--     <ressource filepath="./animations/hands_DGS_G.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_DGS_H"/> -->
+    <!--     <ressource filepath="./animations/hands_DGS_H.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_DGS_I"/> -->
+    <!--     <ressource filepath="./animations/hands_DGS_I.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_DGS_J"/> -->
+    <!--     <ressource filepath="./animations/hands_DGS_J.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_DGS_K"/> -->
+    <!--     <ressource filepath="./animations/hands_DGS_K.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_DGS_L"/> -->
+    <!--     <ressource filepath="./animations/hands_DGS_L.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_DGS_M"/> -->
+    <!--     <ressource filepath="./animations/hands_DGS_M.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_DGS_N"/> -->
+    <!--     <ressource filepath="./animations/hands_DGS_N.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_DGS_O"/> -->
+    <!--     <ressource filepath="./animations/hands_DGS_O.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_DGS_P"/> -->
+    <!--     <ressource filepath="./animations/hands_DGS_P.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_DGS_Q"/> -->
+    <!--     <ressource filepath="./animations/hands_DGS_Q.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_DGS_R"/> -->
+    <!--     <ressource filepath="./animations/hands_DGS_R.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_DGS_SCH"/> -->
+    <!--     <ressource filepath="./animations/hands_DGS_SCH.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_DGS_T"/> -->
+    <!--     <ressource filepath="./animations/hands_DGS_T.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_DGS_U"/> -->
+    <!--     <ressource filepath="./animations/hands_DGS_U.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_DGS_V"/> -->
+    <!--     <ressource filepath="./animations/hands_DGS_V.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_DGS_W"/> -->
+    <!--     <ressource filepath="./animations/hands_DGS_W.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_DGS_X"/> -->
+    <!--     <ressource filepath="./animations/hands_DGS_X.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_DGS_Y"/> -->
+    <!--     <ressource filepath="./animations/hands_DGS_Y.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="hands_DGS_Z"/> -->
+    <!--     <ressource filepath="./animations/hands_DGS_Z.bvh"/> -->
+    <!--   </animation> -->
+      
+    <!--   <animation> -->
+    <!--     <bvhmotion name="CorruptedJudgeLow"/> -->
+    <!--     <ressource filepath="./animations/alfonse-CorruptedJudgeLow.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="CorruptedJudgeHigh"/> -->
+    <!--     <ressource filepath="./animations/alfonse-CorruptedJudgeHigh.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="EndianArgument"/> -->
+    <!--     <ressource filepath="./animations/alfonse-EndianArgument.bvh"/> -->
+    <!--   </animation>-\-> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="FiringStevenHigh"/> -->
+    <!--     <ressource filepath="./animations/alfonse-FiringStevenHigh.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="FiringStevenLow"/> -->
+    <!--     <ressource filepath="./animations/alfonse-FiringStevenLow.bvh"/> -->
+    <!--   </animation> -->
+    <!--   <animation> -->
+    <!--     <bvhmotion name="NewNeighborsHigh"/> -->
+    <!--     <ressource filepath="./animations/alfonse-NewNeighborsHigh.bvh"/> -->
+    <!--   </animation>-\-> -->
+    <!-- </animations> -->
+    <shaders>
+      <shaderParameters>
+        <shaderParameter name="blushing" initialValue="0.0"/>
+      </shaderParameters>
+    </shaders>
+    <behaviors>
+     <autonomousParameters>
+        <autonomousParameter name="ambientFrequency" initialValue="0.01"/>
+        <autonomousParameter name="breathingFrequency" initialValue="0.35"/>
+        <autonomousParameter name="breathingAmplitude" initialValue="0.1"/>
+        <autonomousParameter name="blinkIntensity" initialValue="1.0"/>
+        <autonomousParameter name="blinkProbability" initialValue="4000.0"/>
+        <autonomousParameter name="ambientValue" initialValue="1.0"/>
+      </autonomousParameters>
+      <!--<autonomousBehavior name="breathing" type="periodic" frequency="breathingFrequency">
+        <actuatorMorphAnimation value="breathingAmplitude">
+          <morphKey name="inspire" relativeKey="0.0"  value="0.5"/>
+          <morphKey name="inspire" relativeKey="0.25" value="1.0"/>
+          <morphKey name="inspire" relativeKey="0.75" value="0.0"/>
+          <morphKey name="inspire" relativeKey="1.0"  value="0.5"/>
+        </actuatorMorphAnimation>
+        <actuatorSkelAnimation animation="breathing" jointGroup="upperBodyNoArms" useVelocity="True" value="breathingAmplitude"/>
+      </autonomousBehavior>
+      -->
+
+      <autonomousBehavior name="ambient" type="periodic" frequency="ambientFrequency">
+        <actuatorSkelAnimation animation="FiringStevenHigh" jointGroup="all" useVelocity="False" value="ambientValue"/>
+      </autonomousBehavior>
+
+      <autonomousBehavior name="blinking" type="random" frequency="blinkProbability">
+        <actuatorMorphAnimation value="blinkIntensity">
+          <morphKey name="ModBlinkLeft" relativeKey="0.0"  value="0.0"/>
+          <morphKey name="ModBlinkLeft" relativeKey="0.5"  value="1.0"/>
+          <morphKey name="ModBlinkLeft" relativeKey="1.0"  value="0.0"/>
+        </actuatorMorphAnimation>
+        <actuatorMorphAnimation value="blinkIntensity">
+          <morphKey name="ModBlinkRight" relativeKey="0.0" value="0.0"/>
+          <morphKey name="ModBlinkRight" relativeKey="0.5" value="1.0"/>
+          <morphKey name="ModBlinkRight" relativeKey="1.0" value="0.0"/>
+        </actuatorMorphAnimation>
+      </autonomousBehavior>
+    </behaviors>
+  </character>
+</characters>
