@@ -609,9 +609,9 @@
       </autonomousBehavior>
       -->
 
-      <autonomousBehavior name="ambient" type="periodic" frequency="ambientFrequency">
+      <!--<autonomousBehavior name="ambient" type="periodic" frequency="ambientFrequency">
         <actuatorSkelAnimation animation="FiringStevenHigh" jointGroup="all" useVelocity="False" value="ambientValue"/>
-      </autonomousBehavior>
+      </autonomousBehavior>-->
 
       <autonomousBehavior name="blinking" type="random" frequency="blinkProbability">
         <actuatorMorphAnimation value="blinkIntensity">

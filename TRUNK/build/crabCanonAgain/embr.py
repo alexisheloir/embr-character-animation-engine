@@ -80,7 +80,17 @@ class World(DirectObject):
             base.appRunner.main.base  = base
             base.appRunner.main.sendEMBRScript  = self.sendEMBRScript
 
-            #base.appRunner.main.base.toggleWireframe()
+        #base.appRunner.main.base.toggleWireframe()
+        #Next door stereo display
+
+        #dr = base.camNode.getDisplayRegion(0)
+        #window = dr.getWindow()
+
+        #dr1 = window.makeDisplayRegion(0, 0.5, 0, 1)
+        #dr1.setSort(dr.getSort())
+
+        #dr2 = window.makeDisplayRegion(0.5, 1, 0, 1)
+        #dr2.setSort(dr.getSort())
 
         
         base.camLens.setFilmSize(24, 36)  # 35 mm film
