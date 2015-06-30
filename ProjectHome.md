@@ -1,0 +1,2 @@
+EMBR is a realtime character animation engine. In EMBR, animations are described either by pre-recorded animations or by sequences of key poses influencing parts of a character. A key pose may specify a sub-skeleton configuration, a shader parameter value, a set of kinematic constraints or a combination of morph targets.
+Although EMBR has been initially developed in order to animate embodied conversational agents (ECAs), it is also well suited for a broader range of application like video games, virtual puppetry and theater.
