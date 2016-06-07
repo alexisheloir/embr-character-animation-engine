@@ -11,7 +11,7 @@ project(EMBR)
 
 SET(CMAKE_BUILD_TYPE Release)
 
-SET(LOG4CPLUS_INCLUDE_DIR ${SAMSARA_SOURCE_DIR}/thirdParty/Universal/log4cplus-1.0.3/include)
+SET(LOG4CPLUS_INCLUDE_DIR ${SAMSARA_SOURCE_DIR}/thirdParty/Universal/log4cplus-1.2.0/include)
 
 
 IF(WIN32)
@@ -33,6 +33,11 @@ ELSE(WIN32)
 ENDIF(WIN32)
 
 ADD_DEFINITIONS (-DLOG4CPLUS_STATIC)
+
+IF(APPLE)
+  add_definitions(-D__MWERKS__)
+  add_definitions(-D__MACOS__)
+ENDIF(APPLE)
 
 SET(SAMSARA_HOME_DIR
     CACHE PATH
@@ -120,7 +125,7 @@ ENDIF(WIN32)
 
    
 
-    FIND_PACKAGE(Boost 1.36.0 REQUIRED)
+    FIND_PACKAGE(Boost 1.60.0)
     SET(Boost_USE_STATIC_LIBS ON)
     SET(Boost_USE_MULTITHREAD ON) 
     
@@ -132,45 +137,45 @@ ENDIF(WIN32)
 
 IF(WIN32)
   IF(${CMAKE_BUILD_TYPE} MATCHES "Debug")
-    SET(Boost_PYTHON_LIBRARY ${Boost_LIBRARY_DIRS}/boost_python-vc90-mt-gd-1_36.lib)
-    SET(Boost_THREAD_LIBRARY ${Boost_LIBRARY_DIRS}/libboost_thread-vc90-mt-gd-1_36.lib)
-    SET(Boost_DATE_TIME_LIBRARY ${Boost_LIBRARY_DIRS}/libboost_date_time-vc90-mt-gd-1_36.lib)
-    SET(Boost_SYSTEM_LIBRARY ${Boost_LIBRARY_DIRS}/libboost_system-vc90-mt-gd-1_36.lib)
-    #SET(Boost_ASIO_LIBRARY ${Boost_LIBRARY_DIRS}/libboost_asio-vc90-mt-gd-1_36.lib)
+    SET(Boost_PYTHON_LIBRARY ${Boost_LIBRARY_DIRS}/boost_python-vc90-mt-gd-1_59_0.lib)
+    SET(Boost_THREAD_LIBRARY ${Boost_LIBRARY_DIRS}/libboost_thread-vc90-mt-gd-1_59_0.lib)
+    SET(Boost_DATE_TIME_LIBRARY ${Boost_LIBRARY_DIRS}/libboost_date_time-vc90-mt-gd-1_59_0.lib)
+    SET(Boost_SYSTEM_LIBRARY ${Boost_LIBRARY_DIRS}/libboost_system-vc90-mt-gd-1_59_0.lib)
+    #SET(Boost_ASIO_LIBRARY ${Boost_LIBRARY_DIRS}/libboost_asio-vc90-mt-gd-1_59_0.lib)
 
 
 
   ELSE(${CMAKE_BUILD_TYPE} MATCHES "Debug")
-    SET(Boost_PYTHON_LIBRARY ${Boost_LIBRARY_DIRS}/boost_python-vc90-mt-1_36.lib)
-    SET(Boost_THREAD_LIBRARY ${Boost_LIBRARY_DIRS}/libboost_thread-vc90-mt-1_36.lib)
-    SET(Boost_DATE_TIME_LIBRARY ${Boost_LIBRARY_DIRS}/libboost_date_time-vc90-mt-1_36.lib)
-    SET(Boost_SYSTEM_LIBRARY ${Boost_LIBRARY_DIRS}/libboost_system-vc90-mt-1_36.lib)
-    #SET(Boost_ASIO_LIBRARY ${Boost_LIBRARY_DIRS}/libboost_asio-vc90-mt-1_36.lib)
+    SET(Boost_PYTHON_LIBRARY ${Boost_LIBRARY_DIRS}/boost_python-vc90-mt-1_59_0.lib)
+    SET(Boost_THREAD_LIBRARY ${Boost_LIBRARY_DIRS}/libboost_thread-vc90-mt-1_59_0.lib)
+    SET(Boost_DATE_TIME_LIBRARY ${Boost_LIBRARY_DIRS}/libboost_date_time-vc90-mt-1_59_0.lib)
+    SET(Boost_SYSTEM_LIBRARY ${Boost_LIBRARY_DIRS}/libboost_system-vc90-mt-1_59_0.lib)
+    #SET(Boost_ASIO_LIBRARY ${Boost_LIBRARY_DIRS}/libboost_asio-vc90-mt-1_59_0.lib)
 
   ENDIF(${CMAKE_BUILD_TYPE} MATCHES "Debug")
 ELSE(WIN32)
  IF(APPLE)
-    SET(Boost_PYTHON_LIBRARY ${Boost_LIBRARY_DIRS}/libboost_python-mt-s.a)
-    SET(Boost_THREAD_LIBRARY ${Boost_LIBRARY_DIRS}/libboost_thread-mt-s.a)
-    SET(Boost_DATE_TIME_LIBRARY ${Boost_LIBRARY_DIRS}/libboost_date_time-mt-s.a)
-    SET(Boost_SYSTEM_LIBRARY ${Boost_LIBRARY_DIRS}/libboost_system-mt-s.a)
-    #SET(Boost_ASIO_LIBRARY ${Boost_LIBRARY_DIRS}/libboost_asio-mt-s.a)
+    SET(Boost_PYTHON_LIBRARY ${Boost_LIBRARY_DIRS}/libboost_python.a)
+    SET(Boost_THREAD_LIBRARY ${Boost_LIBRARY_DIRS}/libboost_thread.a)
+    SET(Boost_DATE_TIME_LIBRARY ${Boost_LIBRARY_DIRS}/libboost_date_time.a)
+    SET(Boost_SYSTEM_LIBRARY ${Boost_LIBRARY_DIRS}/libboost_system.a)
+    #SET(Boost_ASIO_LIBRARY ${Boost_LIBRARY_DIRS}/libboost_asio.a)
 
 
  ELSE(APPLE)
   IF(${CMAKE_BUILD_TYPE} MATCHES "Debug")
-    SET(Boost_PYTHON_LIBRARY ${Boost_LIBRARY_DIRS}/boost_python-gcc42-mt-gd-1_36.so)
-    SET(Boost_THREAD_LIBRARY ${Boost_LIBRARY_DIRS}/libboost_thread-gcc42-mt-gd-1_36.so)
-    SET(Boost_DATE_TIME_LIBRARY ${Boost_LIBRARY_DIRS}/libboost_date_time-gcc42-mt-gd-1_36.so)
-    SET(Boost_SYSTEM_LIBRARY ${Boost_LIBRARY_DIRS}/libboost_system-gcc42-mt-gd-1_36.so)
-    #SET(Boost_ASIO_LIBRARY ${Boost_LIBRARY_DIRS}/libboost_asio-gcc42-mt-gd-1_36.so)
+    SET(Boost_PYTHON_LIBRARY ${Boost_LIBRARY_DIRS}/boost_python-gcc42-mt-gd-1_59_0.so)
+    SET(Boost_THREAD_LIBRARY ${Boost_LIBRARY_DIRS}/libboost_thread-gcc42-mt-gd-1_59_0.so)
+    SET(Boost_DATE_TIME_LIBRARY ${Boost_LIBRARY_DIRS}/libboost_date_time-gcc42-mt-gd-1_59_0.so)
+    SET(Boost_SYSTEM_LIBRARY ${Boost_LIBRARY_DIRS}/libboost_system-gcc42-mt-gd-1_59_0.so)
+    #SET(Boost_ASIO_LIBRARY ${Boost_LIBRARY_DIRS}/libboost_asio-gcc42-mt-gd-1_59_0.so)
 
   ELSE(${CMAKE_BUILD_TYPE} MATCHES "Debug")
-    SET(Boost_PYTHON_LIBRARY ${Boost_LIBRARY_DIRS}/libboost_python-gcc42-mt-1_36.so)
-    SET(Boost_THREAD_LIBRARY ${Boost_LIBRARY_DIRS}/libboost_thread-gcc42-mt-1_36.so)
-    SET(Boost_DATE_TIME_LIBRARY ${Boost_LIBRARY_DIRS}/libboost_date_time-gcc42-mt-1_36.so)
-    SET(Boost_SYSTEM_LIBRARY ${Boost_LIBRARY_DIRS}/libboost_system-gcc42-mt-1_36.so)
-    #SET(Boost_ASIO_LIBRARY ${Boost_LIBRARY_DIRS}/libboost_asio-gcc42-mt-1_36.so)
+    SET(Boost_PYTHON_LIBRARY ${Boost_LIBRARY_DIRS}/libboost_python-gcc42-mt-1_59_0.so)
+    SET(Boost_THREAD_LIBRARY ${Boost_LIBRARY_DIRS}/libboost_thread-gcc42-mt-1_59_0.so)
+    SET(Boost_DATE_TIME_LIBRARY ${Boost_LIBRARY_DIRS}/libboost_date_time-gcc42-mt-1_59_0.so)
+    SET(Boost_SYSTEM_LIBRARY ${Boost_LIBRARY_DIRS}/libboost_system-gcc42-mt-1_59_0.so)
+    #SET(Boost_ASIO_LIBRARY ${Boost_LIBRARY_DIRS}/libboost_asio-gcc42-mt-1_59_0.so)
   ENDIF(${CMAKE_BUILD_TYPE} MATCHES "Debug")
  ENDIF(APPLE)
 ENDIF(WIN32)  

@@ -1,6 +1,6 @@
 #include "GestureModifier.h"
 
-GestureModifier::GestureModifier(float init_v_s=0.0f,float init_v_t=0.0f,float init_v_p=0.0f,float init_v_f=0.0f)
+GestureModifier::GestureModifier(float init_v_s,float init_v_t,float init_v_p,float init_v_f)
     :m_v_s(init_v_s), m_v_t(init_v_t),m_v_p(init_v_p),m_v_f(init_v_f)
   {
     if (m_v_t< 0.0) m_v_t*= 0.6f;
