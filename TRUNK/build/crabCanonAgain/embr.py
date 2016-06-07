@@ -105,8 +105,8 @@ class World(DirectObject):
 
         #PStatClient.connect()
 
-        render.setAntialias(AntialiasAttrib.MMultisample) #Enable Antialiasingy
-        render.setShaderAuto(True) #Enable perpixel lighting
+        #render.setAntialias(AntialiasAttrib.MMultisample) #Enable Antialiasingy
+        #render.setShaderAuto(True) #Enable perpixel lighting
 
         taskMgr.doMethodLater(0.02, self.refreshSkels, "refreshSkels")
 
@@ -279,7 +279,7 @@ BEGIN K_POSE_SEQUENCE  # --- LEXEME:Wie \n\
     def setDataPath(self, _dataPath):
         self.dataPath = _dataPath
 
-    def refreshSkels(self,task):        
+    def refreshSkels(self,task):
         self.time+=0.02
         self.ben.update()
         return Task.again
