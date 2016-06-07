@@ -35,6 +35,7 @@ TARGET_LINK_LIBRARIES( SMRPy
 	        ${LIBXML2_LIBRARIES}
             )
 
+
 IF(WIN32)
   TARGET_LINK_LIBRARIES(SMRPy actuators motionsegments Ws2_32.lib )
 ENDIF(WIN32)

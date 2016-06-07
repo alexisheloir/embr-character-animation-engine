@@ -35,7 +35,7 @@ UDPFeedbackSender *UDPFeedbackSender::getInstance( void )
     }
     catch (std::exception& e)
     {
-      std::cerr << e.what() << std::endl;
+      //tcerr << e.what() << std::endl;
     }
   }
   return m_singleton;

@@ -80,4 +80,4 @@ realizer.configureLogger(1,ikLoggerLevel)
 realizer.configureLogger(0,globalLoggerLevel)
 
 w = embr.World( realizer )
-run()              #Run the realizer
+base.run()              #Run the realizer

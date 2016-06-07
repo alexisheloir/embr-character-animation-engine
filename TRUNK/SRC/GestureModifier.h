@@ -62,7 +62,7 @@ private:
 public:
     
 
-    GestureModifier(float init_v_s,float init_v_t,float init_v_p,float init_v_f);
+    GestureModifier(float init_v_s=0.0f,float init_v_t=0.0f,float init_v_p=0.0f,float init_v_f=0.0f);
     
     ~GestureModifier();
 
