@@ -308,7 +308,7 @@
       </kinematicProperties>
     </kinematics>
     <animations>
-      <animation>
+      <!--<animation>
         <bvhmotion name="hands_ASL_1CL"/>
         <ressource filepath="./animations/hands_ASL_1CL.bvh"/>
       </animation>
@@ -544,7 +544,7 @@
       <animation>
         <bvhmotion name="CorruptedJudgeLow"/>
         <ressource filepath="./animations/amber-CorruptedJudgeLow.bvh"/>
-      </animation>
+      </animation>-->
       <!--<animation>
         <bvhmotion name="CorruptedJudgeHigh"/>
         <ressource filepath="./animations/amber-CorruptedJudgeHigh.bvh"/>
@@ -932,7 +932,7 @@
   </kinematics>
 
     <animations>
-      <animation>
+      <!--<animation>
         <bvhmotion name="hands_ASL_1CL"/>
         <ressource filepath="./animations/hands_ASL_1CL.bvh"/>
       </animation>
@@ -1163,7 +1163,7 @@
       <animation>
         <bvhmotion name="hands_DGS_Z"/>
         <ressource filepath="./animations/hands_DGS_Z.bvh"/>
-      </animation>
+      </animation>-->
       <!--
       <animation>
         <bvhmotion name="CorruptedJudgeLow"/>

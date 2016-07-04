@@ -93,9 +93,15 @@ class World(DirectObject):
         self.alfonse.setTransform( 0,0,0,0,0,0, 10 )
         self.alfonse.setShaders( shaders.AlfonseModel( self.alfonse.agent, self.alfonse.lighting, self.dataPath ) )
         self.alfonse.agent.show()
-                
+
+        characterConfigurationFileContent = open("./characterConfiguration.xml", "r").read()
         #create realizer    
-        self.realizer.init()
+
+        print("read characterConf. file")
+
+        #create realizer    
+        self.realizer.init(characterConfigurationFileContent)
+       
         thread.start_new_thread ( self.realizer.run,())
 
         self.time=0

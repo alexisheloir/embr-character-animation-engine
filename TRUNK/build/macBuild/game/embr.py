@@ -280,9 +280,10 @@ class World(DirectObject):
         #self.lightingGUI.setLightingConfiguration( config )
         
         #self.accept('g', self.lightingGUI.toggleVisible )
-        
+        characterConfigurationFileContent = open("./characterConfiguration.xml", "r").read()
+                
         #create realizer    
-        self.realizer.init()
+        self.realizer.init(characterConfigurationFileContent)
         thread.start_new_thread ( self.realizer.run,())
 
         self.time=0
